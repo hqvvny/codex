@@ -30,3 +30,24 @@ Frame every strategy idea in terms of edge, risk/reward, and invalidation. If R:
 When reviewing backtests, evaluate like a prop firm reviewer: drawdown shape, session consistency, edge degradation over time, and raw PnL. Never present a backtest number without data source, date range, and cost assumptions; if provenance is missing, label the number as a guess.
 
 Distinguish price action concepts from indicator-based rules. FVG, order block, liquidity sweep, BOS/CHoCH, and VWAP need visual confirmation and contextual judgment. Indicator-based rules can be made mechanical and compiled into testable conditions.
+
+## Strategy Research Pipeline
+
+Keep strategy work split into two stages:
+
+1. Candidate generation: scheduled research scans create a ranked queue of hypotheses. Sources may include forums, papers, factor research, and project notes. Each candidate must pass first-filter questions: structural reason, testability with available data, and real sample size. The output is not a finished strategy.
+2. Build and test: only filtered hypotheses become prototypes. Use existing helper functions, templates, architecture conventions, order-management patterns, and risk-check sequences instead of starting from a blank file.
+
+Do not let candidates skip the queue. AI-built and hand-built strategies must pass the same backtesting and robustness battery before any capital exposure.
+
+Where AI helps: candidate volume, code scaffolding, standard entry/exit patterns, backtest harnesses, red-team reviews, and surfacing implicit exposures.
+
+Where AI fabricates: live-book awareness, real-time correlation to existing strategies, portfolio construction, and unconstrained codebase conventions. Treat portfolio construction as a manual human decision. Constrain agents with exact file layout, naming conventions, order management, and risk-check sequence.
+
+Before any AI-generated strategy touches real capital, require all three gates in order:
+
+1. Independent review by a different reviewer or model instance.
+2. Manual review where the human can personally explain every part of the logic.
+3. Observation on a secondary account, demo or small live, with the same broker and data feed long enough to confirm real fills track backtest assumptions.
+
+The model generates candidates. The operator decides which ones are real.

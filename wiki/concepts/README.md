@@ -12,3 +12,4 @@ This folder holds shared vocabulary pages.
 ## Current Pages
 
 - [[trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
+- [[strategy-research-pipeline]] - durable strategy research pipeline, AI boundaries, and trust gates.

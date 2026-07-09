@@ -7,17 +7,18 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-09
-- Indexed wiki pages: 12
+- Indexed wiki pages: 14
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
-- `work-items/`: 2
-- `concepts/`: 1
+- `work-items/`: 3
+- `concepts/`: 2
 - `research/`: 0
 - `reference/`: 0
 - `Failed Ideas/`: 1
 
 ## Recent Log Entries
 
+- [2026-07-09] preference | Captured two-stage strategy research pipeline and AI trust gates | Future strategy work separates candidate generation from build/test and requires review before capital exposure
 - [2026-07-09] preference | Captured trading-analysis defaults and reasoning rules | Future market work should lead with structure, sessions, liquidity, edge, R:R, invalidation, and provenance
 - [2026-07-09] setup | Moved GitHub SSH key to ~/.ssh/id_ed25519 and verified authentication | Normal git push can now work from hooks
 - [2026-07-09] setup | Pushed main branch to GitHub remote hqvvny/codex | Repository now tracks origin/main
