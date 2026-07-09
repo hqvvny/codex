@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'git pull --ff-only >/dev/null 2>&1 || true'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'python3 wiki/update_hot.py >/dev/null 2>&1 || true'"
+          },
+          {
+            "type": "command",
+            "command": "bash -lc 'git rev-parse --is-inside-work-tree >/dev/null 2>&1 || exit 0; if [ -n \"$(git status --porcelain)\" ]; then git add -A >/dev/null 2>&1 || true; git commit -m \"chore: auto-save wiki $(date +%Y-%m-%dT%H:%M:%S%z)\" >/dev/null 2>&1 || true; git push >/dev/null 2>&1 || true; fi; true'"
+          }
+        ]
+      }
+    ]
+  }
+}
