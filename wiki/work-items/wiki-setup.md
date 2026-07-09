@@ -26,7 +26,7 @@ The workspace began as an empty projectless Codex folder with `work/` and `outpu
 
 ## Outcome
 
-The wiki skeleton, schema, failed-ideas ledger, hot-page generator, CLAUDE rules, Claude hooks, Obsidian graph config, git repository, and GitHub remote were created. Pushing to GitHub is blocked until a local SSH key is created and added to the GitHub account.
+The wiki skeleton, schema, failed-ideas ledger, hot-page generator, CLAUDE rules, Claude hooks, Obsidian graph config, git repository, and GitHub remote were created. The `main` branch was pushed to GitHub and now tracks `origin/main`.
 
 ## Links
 
