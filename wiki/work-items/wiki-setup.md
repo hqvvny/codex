@@ -22,10 +22,11 @@ The workspace began as an empty projectless Codex folder with `work/` and `outpu
 - Main content folder: `wiki/work-items/`.
 - OS-specific hooks use bash because the detected OS is macOS.
 - Git was initialized after the wiki setup so the wiki can be committed from the start.
+- GitHub remote is `git@github.com:hqvvny/codex.git`.
 
 ## Outcome
 
-The wiki skeleton, schema, failed-ideas ledger, hot-page generator, CLAUDE rules, Claude hooks, Obsidian graph config, and git repository were created.
+The wiki skeleton, schema, failed-ideas ledger, hot-page generator, CLAUDE rules, Claude hooks, Obsidian graph config, git repository, and GitHub remote were created. Pushing to GitHub is blocked until a local SSH key is created and added to the GitHub account.
 
 ## Links
 

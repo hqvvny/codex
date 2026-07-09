@@ -10,3 +10,5 @@ Read this before starting any new substantive work. Every abandoned idea belongs
 
 | Date | Idea | Context | Reason It Failed | Replacement / Next Move | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-07-09 | Push to GitHub via unauthenticated HTTPS | Tried to push `main` to `https://github.com/hqvvny/codex.git` from the local repo | Git could not read an interactive GitHub username/token in this environment | Use SSH remote after adding a GitHub SSH key, or provide a configured credential helper/token | [[../work-items/wiki-setup]] |
+| 2026-07-09 | Push to GitHub via SSH before key setup | Tried to push to `git@github.com:hqvvny/codex.git` | No local SSH public key exists, so GitHub returned `Permission denied (publickey)` | Create an SSH key locally, add it to GitHub, then run `git push -u origin main` | [[../work-items/wiki-setup]] |
