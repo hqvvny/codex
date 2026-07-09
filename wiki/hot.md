@@ -7,17 +7,18 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-09
-- Indexed wiki pages: 10
+- Indexed wiki pages: 12
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
-- `work-items/`: 1
-- `concepts/`: 0
+- `work-items/`: 2
+- `concepts/`: 1
 - `research/`: 0
 - `reference/`: 0
 - `Failed Ideas/`: 1
 
 ## Recent Log Entries
 
+- [2026-07-09] preference | Captured trading-analysis defaults and reasoning rules | Future market work should lead with structure, sessions, liquidity, edge, R:R, invalidation, and provenance
 - [2026-07-09] setup | Moved GitHub SSH key to ~/.ssh/id_ed25519 and verified authentication | Normal git push can now work from hooks
 - [2026-07-09] setup | Pushed main branch to GitHub remote hqvvny/codex | Repository now tracks origin/main
 - [2026-07-09] setup | Configured GitHub remote git@github.com:hqvvny/codex.git | Push is blocked until this machine has a GitHub-authenticated SSH key

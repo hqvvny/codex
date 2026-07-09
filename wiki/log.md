@@ -9,3 +9,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-09] setup | Configured GitHub remote git@github.com:hqvvny/codex.git | Push is blocked until this machine has a GitHub-authenticated SSH key
 ## [2026-07-09] setup | Pushed main branch to GitHub remote hqvvny/codex | Repository now tracks origin/main
 ## [2026-07-09] setup | Moved GitHub SSH key to ~/.ssh/id_ed25519 and verified authentication | Normal git push can now work from hooks
+## [2026-07-09] preference | Captured trading-analysis defaults and reasoning rules | Future market work should lead with structure, sessions, liquidity, edge, R:R, invalidation, and provenance

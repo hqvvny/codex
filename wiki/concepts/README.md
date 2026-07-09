@@ -11,4 +11,4 @@ This folder holds shared vocabulary pages.
 
 ## Current Pages
 
-- No concept pages yet.
+- [[trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
