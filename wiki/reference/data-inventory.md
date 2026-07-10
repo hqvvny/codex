@@ -29,8 +29,10 @@ This page registers local datasets. It links to raw sources and records provenan
 - Ingestor: `scripts/ingest_ohlcv_csv.py`.
 - Loader: `lib/market_data.py`.
 - Session summarizer: `scripts/summarize_dataset.py`.
+- Time-of-day profiler: `scripts/time_of_day_profile.py`.
 - Profile artifact: `outputs/DATA-001-profile.json`.
 - Session summary artifact: `outputs/DATA-001-session-summary.csv`.
+- Time-of-day artifacts: `outputs/DATA-001-time-of-day-session-minute.csv`, `outputs/DATA-001-time-of-day-session-hour.csv`, `outputs/DATA-001-time-of-day-local-time.csv`, and `outputs/DATA-001-time-of-day-summary.json`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## Required Before Backtests
@@ -68,6 +70,25 @@ Summary:
 - Median close-to-open move: 13.0 points.
 
 These numbers describe the dataset only. They are not strategy performance and still inherit DATA-001 provenance limitations.
+
+## DATA-001 Time-Of-Day Profile
+
+Generated with:
+
+```bash
+python3 scripts/time_of_day_profile.py --input data/processed/DATA-001/ohlcv_1m.csv --output-dir outputs --min-bars 300
+```
+
+Summary:
+
+- Sessions used for session-aligned profiles: 2,185.
+- First 60 session minutes average 15.18 points of 1m range.
+- Second 60 session minutes average 11.04 points of 1m range.
+- Session minute 0 averages 25.00 points of 1m range.
+- Session minute 1 averages 22.42 points of 1m range.
+- Session minute 30 averages 21.28 points of 1m range.
+
+These numbers describe where movement concentrates. They are not entry rules, R:R, or strategy performance.
 
 ## Related
 

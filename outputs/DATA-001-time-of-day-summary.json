@@ -1,0 +1,166 @@
+{
+  "input": "data/processed/DATA-001/ohlcv_1m.csv",
+  "min_bars": 300,
+  "sessions": 2379,
+  "sessions_used_for_session_aligned_profiles": 2185,
+  "session_minute_buckets": 870,
+  "session_hour_buckets": 15,
+  "local_time_buckets": 930,
+  "top_session_minutes_by_avg_range": [
+    {
+      "bucket": "0",
+      "observations": 2185,
+      "avg_range_points": 25.0005
+    },
+    {
+      "bucket": "1",
+      "observations": 2185,
+      "avg_range_points": 22.4241
+    },
+    {
+      "bucket": "30",
+      "observations": 2185,
+      "avg_range_points": 21.2788
+    },
+    {
+      "bucket": "2",
+      "observations": 2185,
+      "avg_range_points": 20.3816
+    },
+    {
+      "bucket": "5",
+      "observations": 2185,
+      "avg_range_points": 19.5232
+    },
+    {
+      "bucket": "3",
+      "observations": 2185,
+      "avg_range_points": 18.9033
+    },
+    {
+      "bucket": "15",
+      "observations": 2185,
+      "avg_range_points": 18.397
+    },
+    {
+      "bucket": "10",
+      "observations": 2185,
+      "avg_range_points": 18.231
+    },
+    {
+      "bucket": "380",
+      "observations": 2181,
+      "avg_range_points": 18.1374
+    },
+    {
+      "bucket": "4",
+      "observations": 2185,
+      "avg_range_points": 18.1283
+    }
+  ],
+  "top_session_hours_by_avg_range": [
+    {
+      "bucket": "000-059",
+      "observations": 131100,
+      "avg_range_points": 15.1803
+    },
+    {
+      "bucket": "060-119",
+      "observations": 131100,
+      "avg_range_points": 11.0358
+    },
+    {
+      "bucket": "480-539",
+      "observations": 720,
+      "avg_range_points": 9.6931
+    },
+    {
+      "bucket": "120-179",
+      "observations": 131100,
+      "avg_range_points": 8.9731
+    },
+    {
+      "bucket": "300-359",
+      "observations": 130974,
+      "avg_range_points": 8.4437
+    },
+    {
+      "bucket": "240-299",
+      "observations": 131100,
+      "avg_range_points": 8.1091
+    },
+    {
+      "bucket": "180-239",
+      "observations": 131100,
+      "avg_range_points": 8.0752
+    },
+    {
+      "bucket": "360-419",
+      "observations": 130786,
+      "avg_range_points": 7.7932
+    },
+    {
+      "bucket": "540-599",
+      "observations": 720,
+      "avg_range_points": 7.1378
+    },
+    {
+      "bucket": "600-659",
+      "observations": 720,
+      "avg_range_points": 7.1069
+    }
+  ],
+  "top_local_times_by_avg_range": [
+    {
+      "bucket": "14:30",
+      "observations": 151,
+      "avg_range_points": 30.2815
+    },
+    {
+      "bucket": "15:00",
+      "observations": 148,
+      "avg_range_points": 25.3801
+    },
+    {
+      "bucket": "14:31",
+      "observations": 149,
+      "avg_range_points": 25.1158
+    },
+    {
+      "bucket": "14:32",
+      "observations": 149,
+      "avg_range_points": 23.693
+    },
+    {
+      "bucket": "15:30",
+      "observations": 2342,
+      "avg_range_points": 22.9646
+    },
+    {
+      "bucket": "14:45",
+      "observations": 149,
+      "avg_range_points": 22.849
+    },
+    {
+      "bucket": "14:33",
+      "observations": 149,
+      "avg_range_points": 22.4513
+    },
+    {
+      "bucket": "14:35",
+      "observations": 152,
+      "avg_range_points": 21.4523
+    },
+    {
+      "bucket": "14:34",
+      "observations": 149,
+      "avg_range_points": 21.2601
+    },
+    {
+      "bucket": "14:40",
+      "observations": 149,
+      "avg_range_points": 20.8054
+    }
+  ],
+  "caveat": "Descriptive market-profile stats only; not strategy performance."
+}

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, time
 from pathlib import Path
@@ -32,6 +33,17 @@ class SessionStats:
     volume: int
     range_points: float
     close_to_open_points: float
+
+
+@dataclass(frozen=True)
+class TimeBucketStats:
+    bucket: str
+    observations: int
+    avg_range_points: float
+    median_range_points: float
+    avg_abs_close_to_open_points: float
+    median_abs_close_to_open_points: float
+    avg_volume: float
 
 
 def load_bars(path: Path | str) -> list[Bar]:
@@ -134,3 +146,77 @@ def opening_window(bars: Iterable[Bar], minutes: int) -> list[Bar]:
     start = ordered[0].timestamp
     cutoff = start + timedelta(minutes=minutes - 1)
     return [bar for bar in ordered if start <= bar.timestamp <= cutoff]
+
+
+def median(values: list[float]) -> float:
+    if not values:
+        raise ValueError("cannot compute median of empty values")
+    ordered = sorted(values)
+    middle = len(ordered) // 2
+    if len(ordered) % 2:
+        return ordered[middle]
+    return (ordered[middle - 1] + ordered[middle]) / 2
+
+
+def average(values: list[float]) -> float:
+    if not values:
+        raise ValueError("cannot compute average of empty values")
+    return sum(values) / len(values)
+
+
+def time_bucket_stats(buckets: dict[str, list[Bar]]) -> list[TimeBucketStats]:
+    stats: list[TimeBucketStats] = []
+    for bucket, bucket_bars in sorted(buckets.items(), key=lambda item: bucket_sort_key(item[0])):
+        ranges = [bar.high - bar.low for bar in bucket_bars]
+        abs_moves = [abs(bar.close - bar.open) for bar in bucket_bars]
+        volumes = [float(bar.volume) for bar in bucket_bars]
+        stats.append(
+            TimeBucketStats(
+                bucket=bucket,
+                observations=len(bucket_bars),
+                avg_range_points=average(ranges),
+                median_range_points=median(ranges),
+                avg_abs_close_to_open_points=average(abs_moves),
+                median_abs_close_to_open_points=median(abs_moves),
+                avg_volume=average(volumes),
+            )
+        )
+    return stats
+
+
+def bucket_sort_key(bucket: str) -> tuple[int, int | str]:
+    if bucket.isdigit():
+        return (0, int(bucket))
+    if "-" in bucket and bucket.split("-", 1)[0].isdigit():
+        return (0, int(bucket.split("-", 1)[0]))
+    return (1, bucket)
+
+
+def buckets_by_session_minute(sessions: Iterable[list[Bar]], min_bars: int = 300) -> dict[str, list[Bar]]:
+    buckets: dict[str, list[Bar]] = defaultdict(list)
+    for session in sessions:
+        ordered = sorted(session, key=lambda bar: bar.timestamp)
+        if len(ordered) < min_bars:
+            continue
+        for index, bar in enumerate(ordered):
+            buckets[str(index)].append(bar)
+    return dict(buckets)
+
+
+def buckets_by_local_time(bars: Iterable[Bar]) -> dict[str, list[Bar]]:
+    buckets: dict[str, list[Bar]] = defaultdict(list)
+    for bar in bars:
+        buckets[bar.timestamp.strftime("%H:%M")].append(bar)
+    return dict(buckets)
+
+
+def buckets_by_session_hour(sessions: Iterable[list[Bar]], min_bars: int = 300) -> dict[str, list[Bar]]:
+    buckets: dict[str, list[Bar]] = defaultdict(list)
+    for session in sessions:
+        ordered = sorted(session, key=lambda bar: bar.timestamp)
+        if len(ordered) < min_bars:
+            continue
+        for index, bar in enumerate(ordered):
+            bucket_start = (index // 60) * 60
+            buckets[f"{bucket_start:03d}-{bucket_start + 59:03d}"].append(bar)
+    return dict(buckets)

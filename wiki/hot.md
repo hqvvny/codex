@@ -7,10 +7,10 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-10
-- Indexed wiki pages: 25
+- Indexed wiki pages: 26
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
-- `work-items/`: 6
+- `work-items/`: 7
 - `concepts/`: 2
 - `research/`: 2
 - `reference/`: 5
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-10] analysis | Built DATA-001 time-of-day profile | First RTH/session hour dominates average 1m range; artifacts are descriptive only, not strategy results
 - [2026-07-10] reminder | Deferred MotiveWave Big Trades study export comparison | Reminder suggested for 2026-07-11 10:00 Europe/Berlin; continue simple data work for now
 - [2026-07-10] data | Confirmed DATA-001 MotiveWave export settings from screenshot | Study export checkbox was off; Big Trades study export requires a small comparison export before assuming availability
 - [2026-07-10] infrastructure | Built session-aware DATA-001 loader and summary script | Unit tests pass and outputs/DATA-001-session-summary.csv records descriptive session stats
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] data | Registered local NQU6 1m RTH CSV as DATA-001 | Dataset spans 2017-04-17 to 2026-07-10 with 1,006,460 valid rows; timezone, source platform, and contract-roll handling still need confirmation
 - [2026-07-10] constraint | Added MotiveWave to the zero-budget data/execution stack | MotiveWave export and Data Export Groups should be tested as high-priority data path
 - [2026-07-10] constraint | Recorded no paid data budget and zero-budget data ladder | Future research must use free/account-included/exported data first and label data limitations clearly
-- [2026-07-10] abandonment | Moved MNQ-001 opening range liquidity sweep to Failed Ideas | User rejected it as low-quality/not worth pursuing; do not build this generic setup
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

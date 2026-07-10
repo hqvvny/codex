@@ -14,6 +14,7 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[work-items/research-ops-infrastructure]] - first operating layer for strategy queue, filters, and testing gates.
 - [[work-items/data-ingestion-layer]] - reusable CSV ingestor and DATA-001 canonical profile.
 - [[work-items/data-loader-layer]] - session-aware DATA-001 loader and summary artifact.
+- [[work-items/time-of-day-profile]] - DATA-001 session-minute and local-time movement profile.
 - [[concepts/README]] - router for shared vocabulary.
 - [[concepts/trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
 - [[concepts/strategy-research-pipeline]] - durable strategy research pipeline, AI boundaries, and trust gates.

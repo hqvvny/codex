@@ -1,7 +1,16 @@
 from datetime import date, datetime, time
 import unittest
 
-from lib.market_data import Bar, bars_between_times, bars_for_date, opening_window, session_stats
+from lib.market_data import (
+    Bar,
+    bars_between_times,
+    bars_for_date,
+    buckets_by_session_hour,
+    buckets_by_session_minute,
+    opening_window,
+    session_stats,
+    time_bucket_stats,
+)
 
 
 def sample_bars():
@@ -35,6 +44,24 @@ class MarketDataTest(unittest.TestCase):
         bars = opening_window(bars_for_date(sample_bars(), date(2026, 7, 10)), 2)
         self.assertEqual(len(bars), 2)
         self.assertEqual(bars[-1].timestamp, datetime(2026, 7, 10, 15, 31))
+
+    def test_session_minute_buckets(self):
+        session = bars_for_date(sample_bars(), date(2026, 7, 10))
+        buckets = buckets_by_session_minute([session], min_bars=1)
+        self.assertEqual(len(buckets["0"]), 1)
+        self.assertEqual(buckets["1"][0].timestamp, datetime(2026, 7, 10, 15, 31))
+
+    def test_session_hour_buckets(self):
+        session = bars_for_date(sample_bars(), date(2026, 7, 10))
+        buckets = buckets_by_session_hour([session], min_bars=1)
+        self.assertEqual(len(buckets["000-059"]), 3)
+
+    def test_time_bucket_stats(self):
+        session = bars_for_date(sample_bars(), date(2026, 7, 10))
+        stats = time_bucket_stats({"x": session})
+        self.assertEqual(stats[0].bucket, "x")
+        self.assertEqual(stats[0].observations, 3)
+        self.assertEqual(stats[0].median_range_points, 1.5)
 
 
 if __name__ == "__main__":

@@ -22,3 +22,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-10] infrastructure | Built session-aware DATA-001 loader and summary script | Unit tests pass and outputs/DATA-001-session-summary.csv records descriptive session stats
 ## [2026-07-10] data | Confirmed DATA-001 MotiveWave export settings from screenshot | Study export checkbox was off; Big Trades study export requires a small comparison export before assuming availability
 ## [2026-07-10] reminder | Deferred MotiveWave Big Trades study export comparison | Reminder suggested for 2026-07-11 10:00 Europe/Berlin; continue simple data work for now
+## [2026-07-10] analysis | Built DATA-001 time-of-day profile | First RTH/session hour dominates average 1m range; artifacts are descriptive only, not strategy results
