@@ -43,6 +43,10 @@ This page registers local datasets. It links to raw sources and records provenan
 - Confirm whether the normalized output should use local platform time or converted exchange time before time-of-day strategies.
 - Test whether MotiveWave Big Trades study values appear as extra columns when `Export Chart Data Including Study Values` is enabled.
 
+## Deferred Checks
+
+- MotiveWave Big Trades study export comparison: deferred by user on 2026-07-10, maybe later or tomorrow. Reminder suggestion was created for 2026-07-11 10:00 Europe/Berlin. When ready, export a small sample once without `Export Chart Data Including Study Values` and once with it enabled, then compare columns and rows.
+
 ## DATA-001 Descriptive Session Summary
 
 Generated with:
