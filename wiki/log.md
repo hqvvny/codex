@@ -25,3 +25,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-10] analysis | Built DATA-001 time-of-day profile | First RTH/session hour dominates average 1m range; artifacts are descriptive only, not strategy results
 ## [2026-07-10] analysis | Built DATA-001 range-build profile | First 30/60/120 session minutes average 46.35%/59.10%/71.80% of full RTH range, descriptive only
 ## [2026-07-10] data | Clarified DATA-001 does not include full ETH/overnight coverage | Separate all-sessions/ETH export is required for overnight, London, Asia, gap, or prior overnight high/low research
+## [2026-07-10] reminder | Added second reminder for MotiveWave ETH/all-sessions export | Reminder suggested for 2026-07-11 10:15 Europe/Berlin so DATA-002 can cover overnight context
