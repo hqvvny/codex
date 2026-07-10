@@ -75,6 +75,10 @@ Next definition work:
 5. Register data source, date range, and cost/slippage assumptions.
 6. Only then move status to `filtered`.
 
+Definition worksheet for the user-facing fill-in pass:
+
+- [MNQ-001 definition worksheet](../../../outputs/MNQ-001-definition-worksheet.md)
+
 ## Backtest Provenance
 
 - Data: none yet.

@@ -13,3 +13,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-09] preference | Captured two-stage strategy research pipeline and AI trust gates | Future strategy work separates candidate generation from build/test and requires review before capital exposure
 ## [2026-07-10] infrastructure | Created strategy queue, candidate workflow, hypothesis template, first filter, and backtest battery | Research pipeline now has an operating layer for Stage 1 and Stage 2 handoff
 ## [2026-07-10] filter | Ran first filter on MNQ-001 opening range liquidity sweep hypothesis | Verdict is needs-definition before build/test because data source, R:R, and exact rules are not final
+## [2026-07-10] artifact | Created MNQ-001 definition worksheet for user input | Next step is filling rule, data, cost, and invalidation fields before build/test
