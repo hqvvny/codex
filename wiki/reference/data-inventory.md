@@ -32,10 +32,12 @@ This page registers local datasets. It links to raw sources and records provenan
 - Session summarizer: `scripts/summarize_dataset.py`.
 - Time-of-day profiler: `scripts/time_of_day_profile.py`.
 - Range-build profiler: `scripts/range_build_profile.py`.
+- Open-time baseline tester: `scripts/open_time_baseline.py`.
 - Profile artifact: `outputs/DATA-001-profile.json`.
 - Session summary artifact: `outputs/DATA-001-session-summary.csv`.
 - Time-of-day artifacts: `outputs/DATA-001-time-of-day-session-minute.csv`, `outputs/DATA-001-time-of-day-session-hour.csv`, `outputs/DATA-001-time-of-day-local-time.csv`, and `outputs/DATA-001-time-of-day-summary.json`.
 - Range-build artifacts: `outputs/DATA-001-range-build-detail.csv`, `outputs/DATA-001-range-build-summary.csv`, and `outputs/DATA-001-range-build-summary.json`.
+- MNQ-002 baseline artifacts: `outputs/MNQ-002-open-long-baseline-summary.json`, `outputs/MNQ-002-local-clock-trades.csv`, and `outputs/MNQ-002-session-aligned-trades.csv`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## Required Before Backtests
@@ -113,6 +115,22 @@ Summary over 2,185 sessions:
 - First 60 minutes contain one eventual session extreme on 75.93% of usable sessions.
 
 These numbers describe range development only. They are not entry rules, R:R, or strategy performance.
+
+## MNQ-002 Open-Long Baseline
+
+Generated with:
+
+```bash
+python3 scripts/open_time_baseline.py --input data/processed/DATA-001/ohlcv_1m.csv --output-dir outputs --entry-time 15:30 --exit-time 16:00 --hold-minutes 30 --min-bars 300 --point-value 20 --round-turn-cost-points 0
+```
+
+Summary:
+
+- Exact local-clock 15:30 to 16:00: 2,314 trades, gross average 1.48 points, win rate 52.42%, profit factor 1.065, max drawdown -2,170.5 points.
+- Session-aligned first RTH bar plus 30m: 2,185 trades, gross average 0.98 points, win rate 52.17%, profit factor 1.04, max drawdown -2,923.5 points.
+- Costs/slippage: 0.0 points round turn in first pass.
+
+This is a weak gross baseline, not a promotable strategy. It has no stop/target, no R:R, no ETH context, and poor year-to-year consistency.
 
 ## ETH Data Status
 

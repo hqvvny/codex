@@ -7,7 +7,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-10
-- Indexed wiki pages: 27
+- Indexed wiki pages: 28
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
 - `work-items/`: 8
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-10] baseline | Tested MNQ-002 open-long 15:30 to 16:00 thesis on DATA-001 | Gross positive but weak: PF 1.065 exact local-clock, poor year consistency, no R:R because no stop/target
 - [2026-07-10] reminder | Added second reminder for MotiveWave ETH/all-sessions export | Reminder suggested for 2026-07-11 10:15 Europe/Berlin so DATA-002 can cover overnight context
 - [2026-07-10] data | Clarified DATA-001 does not include full ETH/overnight coverage | Separate all-sessions/ETH export is required for overnight, London, Asia, gap, or prior overnight high/low research
 - [2026-07-10] analysis | Built DATA-001 range-build profile | First 30/60/120 session minutes average 46.35%/59.10%/71.80% of full RTH range, descriptive only
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] reminder | Deferred MotiveWave Big Trades study export comparison | Reminder suggested for 2026-07-11 10:00 Europe/Berlin; continue simple data work for now
 - [2026-07-10] data | Confirmed DATA-001 MotiveWave export settings from screenshot | Study export checkbox was off; Big Trades study export requires a small comparison export before assuming availability
 - [2026-07-10] infrastructure | Built session-aware DATA-001 loader and summary script | Unit tests pass and outputs/DATA-001-session-summary.csv records descriptive session stats
-- [2026-07-10] infrastructure | Built stdlib OHLCV CSV ingestor and ran it on DATA-001 | Normalized local CSV was generated under ignored data/processed and profile metadata was written to outputs/DATA-001-profile.json
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

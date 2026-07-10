@@ -1,0 +1,171 @@
+{
+  "input": "data/processed/DATA-001/ohlcv_1m.csv",
+  "data_source": "DATA-001 MotiveWave NQU6 1m RTH export",
+  "date_range": "2017-04-17 to 2026-07-10",
+  "cost_assumption": "0.0 points round turn",
+  "point_value": 20.0,
+  "variants": {
+    "local_clock_1530_to_1600": {
+      "definition": "Long at 15:30 bar open, exit at 16:00 bar close.",
+      "trades": 2314,
+      "gross_total_points": 3423.75,
+      "gross_avg_points": 1.4796,
+      "net_total_points": 3423.75,
+      "net_avg_points": 1.4796,
+      "net_total_dollars": 68475.0,
+      "win_rate": 0.5242,
+      "avg_win_points": 46.2333,
+      "avg_loss_points": -48.0449,
+      "median_net_points": 3.0,
+      "profit_factor": 1.065,
+      "max_drawdown_points": -2170.5,
+      "max_drawdown_dollars": -43410.0,
+      "by_year": {
+        "2017": {
+          "trades": 152,
+          "net_total_points": -328.0,
+          "net_avg_points": -2.1579,
+          "win_rate": 0.4474
+        },
+        "2018": {
+          "trades": 224,
+          "net_total_points": 143.5,
+          "net_avg_points": 0.6406,
+          "win_rate": 0.5402
+        },
+        "2019": {
+          "trades": 258,
+          "net_total_points": 457.5,
+          "net_avg_points": 1.7733,
+          "win_rate": 0.4922
+        },
+        "2020": {
+          "trades": 258,
+          "net_total_points": 1245.75,
+          "net_avg_points": 4.8285,
+          "win_rate": 0.5543
+        },
+        "2021": {
+          "trades": 258,
+          "net_total_points": 468.25,
+          "net_avg_points": 1.8149,
+          "win_rate": 0.5349
+        },
+        "2022": {
+          "trades": 256,
+          "net_total_points": -400.0,
+          "net_avg_points": -1.5625,
+          "win_rate": 0.5156
+        },
+        "2023": {
+          "trades": 257,
+          "net_total_points": 1257.25,
+          "net_avg_points": 4.892,
+          "win_rate": 0.5486
+        },
+        "2024": {
+          "trades": 259,
+          "net_total_points": -361.25,
+          "net_avg_points": -1.3948,
+          "win_rate": 0.4942
+        },
+        "2025": {
+          "trades": 257,
+          "net_total_points": 18.5,
+          "net_avg_points": 0.072,
+          "win_rate": 0.5292
+        },
+        "2026": {
+          "trades": 135,
+          "net_total_points": 922.25,
+          "net_avg_points": 6.8315,
+          "win_rate": 0.5852
+        }
+      }
+    },
+    "session_first_bar_plus_30m": {
+      "definition": "Long at first RTH bar open, exit at bar index 30 close.",
+      "trades": 2185,
+      "gross_total_points": 2147.25,
+      "gross_avg_points": 0.9827,
+      "net_total_points": 2147.25,
+      "net_avg_points": 0.9827,
+      "net_total_dollars": 42945.0,
+      "win_rate": 0.5217,
+      "avg_win_points": 48.9809,
+      "avg_loss_points": -51.626,
+      "median_net_points": 3.0,
+      "profit_factor": 1.04,
+      "max_drawdown_points": -2923.5,
+      "max_drawdown_dollars": -58470.0,
+      "by_year": {
+        "2017": {
+          "trades": 124,
+          "net_total_points": -242.5,
+          "net_avg_points": -1.9556,
+          "win_rate": 0.4597
+        },
+        "2018": {
+          "trades": 190,
+          "net_total_points": 405.0,
+          "net_avg_points": 2.1316,
+          "win_rate": 0.5474
+        },
+        "2019": {
+          "trades": 249,
+          "net_total_points": 483.5,
+          "net_avg_points": 1.9418,
+          "win_rate": 0.49
+        },
+        "2020": {
+          "trades": 250,
+          "net_total_points": 1070.25,
+          "net_avg_points": 4.281,
+          "win_rate": 0.556
+        },
+        "2021": {
+          "trades": 251,
+          "net_total_points": 569.0,
+          "net_avg_points": 2.2669,
+          "win_rate": 0.5259
+        },
+        "2022": {
+          "trades": 248,
+          "net_total_points": -529.75,
+          "net_avg_points": -2.1361,
+          "win_rate": 0.496
+        },
+        "2023": {
+          "trades": 248,
+          "net_total_points": 1391.0,
+          "net_avg_points": 5.6089,
+          "win_rate": 0.5605
+        },
+        "2024": {
+          "trades": 249,
+          "net_total_points": -1234.5,
+          "net_avg_points": -4.9578,
+          "win_rate": 0.4779
+        },
+        "2025": {
+          "trades": 247,
+          "net_total_points": 26.75,
+          "net_avg_points": 0.1083,
+          "win_rate": 0.5425
+        },
+        "2026": {
+          "trades": 129,
+          "net_total_points": 208.5,
+          "net_avg_points": 1.6163,
+          "win_rate": 0.5504
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Gross/simple baseline unless round_turn_cost_points is set.",
+    "DATA-001 is RTH-only and likely Europe/Berlin platform time.",
+    "No stop, target, slippage, commissions, news filter, or ETH context.",
+    "This is a baseline test, not a capital-ready strategy."
+  ]
+}
