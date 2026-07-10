@@ -1,0 +1,38 @@
+---
+type: reference
+updated: 2026-07-10
+status: active
+verdict: authoritative-link
+---
+
+# Data Inventory
+
+This page registers local datasets. It links to raw sources and records provenance; it does not copy raw data into the wiki as source of truth.
+
+## Registered Datasets
+
+| ID | Path | Instrument Label | Timeframe | Session Label | Rows | First Timestamp | Last Timestamp | Status | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| DATA-001 | `/Users/farell.trades/NQU6 - 1 min - RTH.csv` | NQU6 / likely NQ continuous or current-contract export label | 1 minute | RTH | 1,006,460 | 2017-04-17 17:55 | 2026-07-10 20:17 | usable-for-research | No header. Format appears `YYYYMMDD HHMMSS,open,high,low,close,volume`. No parse errors, duplicate timestamps, negative volume, or OHLC sanity violations found in first registration pass. |
+
+## DATA-001 Notes
+
+- Source platform: unknown from file alone; likely MotiveWave or another chart export. Confirm manually.
+- Export method: unknown from file alone. Confirm manually.
+- Timezone: likely Europe/Berlin platform time, inferred from common session starts at 15:30/14:30 and ends at 22:59/21:59. Confirm manually before time-of-day research.
+- Contract handling: file name says `NQU6`; however the date range spans 2017-2026, so this is probably a continuous series or platform-adjusted symbol export rather than a single September 2026 contract. Confirm before contract-roll-sensitive research.
+- Session treatment: labelled RTH in filename. Row counts commonly show 450 or 435 minutes per day, with some holiday/partial days. Confirm session template.
+- Known limitations: no header, no cost/slippage assumptions, no explicit timezone metadata, no explicit roll metadata.
+
+## Required Before Backtests
+
+- Confirm source platform and feed.
+- Confirm timezone.
+- Confirm whether prices are back-adjusted, merged continuous, or raw contract data.
+- Confirm RTH definition and whether holidays/half-days are included.
+- Define canonical imported copy path if this dataset becomes the project baseline.
+
+## Related
+
+- [[data-execution-stack]]
+- [[backtest-battery]]

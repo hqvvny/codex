@@ -7,17 +7,18 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-10
-- Indexed wiki pages: 22
+- Indexed wiki pages: 23
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
 - `work-items/`: 4
 - `concepts/`: 2
 - `research/`: 2
-- `reference/`: 4
+- `reference/`: 5
 - `Failed Ideas/`: 1
 
 ## Recent Log Entries
 
+- [2026-07-10] data | Registered local NQU6 1m RTH CSV as DATA-001 | Dataset spans 2017-04-17 to 2026-07-10 with 1,006,460 valid rows; timezone, source platform, and contract-roll handling still need confirmation
 - [2026-07-10] constraint | Added MotiveWave to the zero-budget data/execution stack | MotiveWave export and Data Export Groups should be tested as high-priority data path
 - [2026-07-10] constraint | Recorded no paid data budget and zero-budget data ladder | Future research must use free/account-included/exported data first and label data limitations clearly
 - [2026-07-10] abandonment | Moved MNQ-001 opening range liquidity sweep to Failed Ideas | User rejected it as low-quality/not worth pursuing; do not build this generic setup
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] filter | Ran first filter on MNQ-001 opening range liquidity sweep hypothesis | Verdict is needs-definition before build/test because data source, R:R, and exact rules are not final
 - [2026-07-10] infrastructure | Created strategy queue, candidate workflow, hypothesis template, first filter, and backtest battery | Research pipeline now has an operating layer for Stage 1 and Stage 2 handoff
 - [2026-07-09] preference | Captured two-stage strategy research pipeline and AI trust gates | Future strategy work separates candidate generation from build/test and requires review before capital exposure
-- [2026-07-09] preference | Captured trading-analysis defaults and reasoning rules | Future market work should lead with structure, sessions, liquidity, edge, R:R, invalidation, and provenance
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

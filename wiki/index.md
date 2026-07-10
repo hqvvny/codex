@@ -24,3 +24,4 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[reference/first-filter]] - first-pass acceptance criteria for raw strategy ideas.
 - [[reference/backtest-battery]] - minimum robustness tests before strategy promotion.
 - [[reference/data-execution-stack]] - available-data-first plan for Apex Tradovate, NinjaTrader, and MNQ work.
+- [[reference/data-inventory]] - registered local datasets and provenance notes.
