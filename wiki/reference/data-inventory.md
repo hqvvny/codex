@@ -30,9 +30,11 @@ This page registers local datasets. It links to raw sources and records provenan
 - Loader: `lib/market_data.py`.
 - Session summarizer: `scripts/summarize_dataset.py`.
 - Time-of-day profiler: `scripts/time_of_day_profile.py`.
+- Range-build profiler: `scripts/range_build_profile.py`.
 - Profile artifact: `outputs/DATA-001-profile.json`.
 - Session summary artifact: `outputs/DATA-001-session-summary.csv`.
 - Time-of-day artifacts: `outputs/DATA-001-time-of-day-session-minute.csv`, `outputs/DATA-001-time-of-day-session-hour.csv`, `outputs/DATA-001-time-of-day-local-time.csv`, and `outputs/DATA-001-time-of-day-summary.json`.
+- Range-build artifacts: `outputs/DATA-001-range-build-detail.csv`, `outputs/DATA-001-range-build-summary.csv`, and `outputs/DATA-001-range-build-summary.json`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## Required Before Backtests
@@ -89,6 +91,25 @@ Summary:
 - Session minute 30 averages 21.28 points of 1m range.
 
 These numbers describe where movement concentrates. They are not entry rules, R:R, or strategy performance.
+
+## DATA-001 Range-Build Profile
+
+Generated with:
+
+```bash
+python3 scripts/range_build_profile.py --input data/processed/DATA-001/ohlcv_1m.csv --output-dir outputs --min-bars 300 --windows 5 15 30 60 120
+```
+
+Summary over 2,185 sessions:
+
+- First 5 minutes: average 48.06 points, 24.32% average share of full RTH range.
+- First 15 minutes: average 72.58 points, 36.35% average share.
+- First 30 minutes: average 94.01 points, 46.35% average share.
+- First 60 minutes: average 122.69 points, 59.10% average share.
+- First 120 minutes: average 152.23 points, 71.80% average share.
+- First 60 minutes contain one eventual session extreme on 75.93% of usable sessions.
+
+These numbers describe range development only. They are not entry rules, R:R, or strategy performance.
 
 ## Related
 

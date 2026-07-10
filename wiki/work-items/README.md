@@ -18,3 +18,4 @@ This folder holds one page per substantive unit of work.
 - [[data-ingestion-layer]] - reusable CSV ingestor and DATA-001 canonical profile.
 - [[data-loader-layer]] - session-aware DATA-001 loader and summary artifact.
 - [[time-of-day-profile]] - DATA-001 session-minute and local-time movement profile.
+- [[range-build-profile]] - DATA-001 early-session cumulative range profile.
