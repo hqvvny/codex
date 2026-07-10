@@ -13,3 +13,4 @@ This folder holds external research and reference summaries. Link to raw sources
 
 - [[strategy-queue]] - ranked queue of raw and filtered strategy hypotheses.
 - [[candidate-generation-workflow]] - scheduled Stage 1 research scan procedure and output format.
+- [[hypotheses/MNQ-001-opening-range-liquidity-sweep]] - NY open liquidity sweep hypothesis and first-filter review.

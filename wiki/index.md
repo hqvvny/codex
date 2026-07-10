@@ -18,6 +18,7 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[research/README]] - router for external references.
 - [[research/strategy-queue]] - ranked queue of raw and filtered strategy hypotheses.
 - [[research/candidate-generation-workflow]] - scheduled Stage 1 research scan procedure and output format.
+- [[research/hypotheses/MNQ-001-opening-range-liquidity-sweep]] - NY open liquidity sweep hypothesis and first-filter review.
 - [[reference/README]] - router pages that point to authoritative sources.
 - [[reference/hypothesis-template]] - canonical template for strategy hypothesis pages.
 - [[reference/first-filter]] - first-pass acceptance criteria for raw strategy ideas.

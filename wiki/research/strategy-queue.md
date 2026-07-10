@@ -32,7 +32,7 @@ This is the ranked queue of hypotheses. It is not a list of approved strategies.
 
 | Rank | ID | Idea | Source | Market | Session | Type | Structural Reason | Data Needed | Sample Size Check | Expected R:R | Status | Next Action | Links |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | MNQ-001 | Opening range liquidity sweep continuation/reversal after NY open | Project seed | MNQ | NY open | Price action + mechanical candidate | Index futures often sweep opening liquidity before choosing direction; needs objective sweep and reclaim rules | MNQ 1m/5m OHLCV, regular + ETH session markers, costs/slippage | Needs count of NY open sessions over available history | Unknown; must estimate before testing and reject if <1.5:1 | raw | Run first filter and define mechanical event rules | [[candidate-generation-workflow]], [[../reference/first-filter]] |
+| 1 | MNQ-001 | Opening range liquidity sweep continuation/reversal after NY open | Project seed | MNQ | NY open | Price action + mechanical candidate | Index futures often sweep opening liquidity before choosing direction; needs objective sweep and reclaim rules | MNQ 1m/5m OHLCV, ETH/RTH session markers, commission, fees, slippage | Likely enough sessions if at least 1-2 years of 1m data are available, but not proven yet | Unknown; must estimate before testing and reject if <1.5:1 | needs-definition | Define exact sweep/reclaim/entry/stop/target rules and confirm data source | [[hypotheses/MNQ-001-opening-range-liquidity-sweep]], [[../reference/first-filter]] |
 
 ## Promotion Notes
 
