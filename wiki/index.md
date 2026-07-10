@@ -12,6 +12,7 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[work-items/trading-analysis-profile]] - captured default trading-analysis assumptions and reasoning rules.
 - [[work-items/strategy-research-pipeline]] - captured the two-stage candidate generation and build/test workflow.
 - [[work-items/research-ops-infrastructure]] - first operating layer for strategy queue, filters, and testing gates.
+- [[work-items/data-ingestion-layer]] - reusable CSV ingestor and DATA-001 canonical profile.
 - [[concepts/README]] - router for shared vocabulary.
 - [[concepts/trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
 - [[concepts/strategy-research-pipeline]] - durable strategy research pipeline, AI boundaries, and trust gates.

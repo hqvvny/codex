@@ -13,7 +13,7 @@ This page registers local datasets. It links to raw sources and records provenan
 
 | ID | Path | Instrument Label | Timeframe | Session Label | Rows | First Timestamp | Last Timestamp | Status | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DATA-001 | `/Users/farell.trades/NQU6 - 1 min - RTH.csv` | NQU6 / likely NQ continuous or current-contract export label | 1 minute | RTH | 1,006,460 | 2017-04-17 17:55 | 2026-07-10 20:17 | usable-for-research | No header. Format appears `YYYYMMDD HHMMSS,open,high,low,close,volume`. No parse errors, duplicate timestamps, negative volume, or OHLC sanity violations found in first registration pass. |
+| DATA-001 | `/Users/farell.trades/NQU6 - 1 min - RTH.csv` | NQU6 / likely NQ continuous or current-contract export label | 1 minute | RTH | 1,006,460 | 2017-04-17 17:55 | 2026-07-10 20:17 | usable-for-research | No header. Format appears `YYYYMMDD HHMMSS,open,high,low,close,volume`. Ingestor profile found no parse errors, duplicate timestamps, negative volume, or OHLC sanity violations. |
 
 ## DATA-001 Notes
 
@@ -23,6 +23,10 @@ This page registers local datasets. It links to raw sources and records provenan
 - Contract handling: file name says `NQU6`; however the date range spans 2017-2026, so this is probably a continuous series or platform-adjusted symbol export rather than a single September 2026 contract. Confirm before contract-roll-sensitive research.
 - Session treatment: labelled RTH in filename. Row counts commonly show 450 or 435 minutes per day, with some holiday/partial days. Confirm session template.
 - Known limitations: no header, no cost/slippage assumptions, no explicit timezone metadata, no explicit roll metadata.
+- Dataset config: `config/datasets/DATA-001.json`.
+- Ingestor: `scripts/ingest_ohlcv_csv.py`.
+- Profile artifact: `outputs/DATA-001-profile.json`.
+- Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## Required Before Backtests
 
@@ -31,6 +35,7 @@ This page registers local datasets. It links to raw sources and records provenan
 - Confirm whether prices are back-adjusted, merged continuous, or raw contract data.
 - Confirm RTH definition and whether holidays/half-days are included.
 - Define canonical imported copy path if this dataset becomes the project baseline.
+- Confirm whether the normalized output should use local platform time or converted exchange time before time-of-day strategies.
 
 ## Related
 

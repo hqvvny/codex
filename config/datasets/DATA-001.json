@@ -1,0 +1,27 @@
+{
+  "dataset_id": "DATA-001",
+  "raw_path": "/Users/farell.trades/NQU6 - 1 min - RTH.csv",
+  "instrument_label": "NQU6",
+  "instrument_family": "NQ",
+  "timeframe": "1m",
+  "session_label": "RTH",
+  "timestamp_format": "%Y%m%d %H%M%S",
+  "timezone": "Europe/Berlin",
+  "timezone_status": "inferred_needs_confirmation",
+  "source_platform": "unknown_needs_confirmation",
+  "export_method": "unknown_needs_confirmation",
+  "contract_handling": "unknown_probably_continuous_or_platform_merged",
+  "columns": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "notes": [
+    "No header in raw CSV.",
+    "Filename says NQU6 but date range spans 2017-2026; confirm continuous/roll handling before contract-sensitive tests.",
+    "RTH label comes from filename; confirm platform session template."
+  ]
+}
