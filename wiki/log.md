@@ -19,3 +19,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-10] constraint | Added MotiveWave to the zero-budget data/execution stack | MotiveWave export and Data Export Groups should be tested as high-priority data path
 ## [2026-07-10] data | Registered local NQU6 1m RTH CSV as DATA-001 | Dataset spans 2017-04-17 to 2026-07-10 with 1,006,460 valid rows; timezone, source platform, and contract-roll handling still need confirmation
 ## [2026-07-10] infrastructure | Built stdlib OHLCV CSV ingestor and ran it on DATA-001 | Normalized local CSV was generated under ignored data/processed and profile metadata was written to outputs/DATA-001-profile.json
+## [2026-07-10] infrastructure | Built session-aware DATA-001 loader and summary script | Unit tests pass and outputs/DATA-001-session-summary.csv records descriptive session stats

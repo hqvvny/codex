@@ -7,10 +7,10 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-10
-- Indexed wiki pages: 24
+- Indexed wiki pages: 25
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
-- `work-items/`: 5
+- `work-items/`: 6
 - `concepts/`: 2
 - `research/`: 2
 - `reference/`: 5
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-10] infrastructure | Built session-aware DATA-001 loader and summary script | Unit tests pass and outputs/DATA-001-session-summary.csv records descriptive session stats
 - [2026-07-10] infrastructure | Built stdlib OHLCV CSV ingestor and ran it on DATA-001 | Normalized local CSV was generated under ignored data/processed and profile metadata was written to outputs/DATA-001-profile.json
 - [2026-07-10] data | Registered local NQU6 1m RTH CSV as DATA-001 | Dataset spans 2017-04-17 to 2026-07-10 with 1,006,460 valid rows; timezone, source platform, and contract-roll handling still need confirmation
 - [2026-07-10] constraint | Added MotiveWave to the zero-budget data/execution stack | MotiveWave export and Data Export Groups should be tested as high-priority data path
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] abandonment | Moved MNQ-001 opening range liquidity sweep to Failed Ideas | User rejected it as low-quality/not worth pursuing; do not build this generic setup
 - [2026-07-10] artifact | Created MNQ-001 definition worksheet for user input | Next step is filling rule, data, cost, and invalidation fields before build/test
 - [2026-07-10] filter | Ran first filter on MNQ-001 opening range liquidity sweep hypothesis | Verdict is needs-definition before build/test because data source, R:R, and exact rules are not final
-- [2026-07-10] infrastructure | Created strategy queue, candidate workflow, hypothesis template, first filter, and backtest battery | Research pipeline now has an operating layer for Stage 1 and Stage 2 handoff
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

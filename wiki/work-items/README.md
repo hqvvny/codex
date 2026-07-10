@@ -16,3 +16,4 @@ This folder holds one page per substantive unit of work.
 - [[strategy-research-pipeline]] - captured the two-stage candidate generation and build/test workflow.
 - [[research-ops-infrastructure]] - first operating layer for strategy queue, filters, and testing gates.
 - [[data-ingestion-layer]] - reusable CSV ingestor and DATA-001 canonical profile.
+- [[data-loader-layer]] - session-aware DATA-001 loader and summary artifact.

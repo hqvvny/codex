@@ -25,7 +25,10 @@ This page registers local datasets. It links to raw sources and records provenan
 - Known limitations: no header, no cost/slippage assumptions, no explicit timezone metadata, no explicit roll metadata.
 - Dataset config: `config/datasets/DATA-001.json`.
 - Ingestor: `scripts/ingest_ohlcv_csv.py`.
+- Loader: `lib/market_data.py`.
+- Session summarizer: `scripts/summarize_dataset.py`.
 - Profile artifact: `outputs/DATA-001-profile.json`.
+- Session summary artifact: `outputs/DATA-001-session-summary.csv`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## Required Before Backtests
@@ -36,6 +39,28 @@ This page registers local datasets. It links to raw sources and records provenan
 - Confirm RTH definition and whether holidays/half-days are included.
 - Define canonical imported copy path if this dataset becomes the project baseline.
 - Confirm whether the normalized output should use local platform time or converted exchange time before time-of-day strategies.
+
+## DATA-001 Descriptive Session Summary
+
+Generated with:
+
+```bash
+python3 scripts/summarize_dataset.py --input data/processed/DATA-001/ohlcv_1m.csv --output outputs/DATA-001-session-summary.csv --min-bars 300
+```
+
+Summary:
+
+- Sessions: 2,379.
+- Sessions with at least 300 bars: 2,185.
+- First session: 2017-04-17.
+- Last session: 2026-07-10.
+- Average full-session range: 224.34 points.
+- Median full-session range: 193.25 points.
+- P10/P90 full-session range: 62.5 / 413.5 points.
+- Average close-to-open move: 4.45 points.
+- Median close-to-open move: 13.0 points.
+
+These numbers describe the dataset only. They are not strategy performance and still inherit DATA-001 provenance limitations.
 
 ## Related
 
