@@ -59,3 +59,14 @@ Operational defaults:
 - Use `wiki/reference/first-filter.md` before build/test work.
 - Use `wiki/reference/backtest-battery.md` before treating any result as promotable.
 - Use `wiki/research/candidate-generation-workflow.md` for scheduled Stage 1 scans.
+
+## Data And Execution Constraints
+
+Assume no budget for paid market data unless the user says otherwise. Prefer a data-available-first workflow:
+
+- Use the user's Apex Tradovate-funded environment and NinjaTrader/Tradovate access where available.
+- Treat Tradovate/NinjaTrader as the practical execution and observation stack for MNQ work.
+- For backtests, prefer locally exported or otherwise available futures data before paid vendors.
+- Label any result from limited/free/exported data with its exact data source, export method, date range, costs, and limitations.
+- Do not recommend paid data as the default next step; mention it only as an upgrade path or caveat.
+- Never let weak data provenance become a fake-precision backtest claim.
