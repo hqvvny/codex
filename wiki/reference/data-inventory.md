@@ -22,6 +22,7 @@ This page registers local datasets. It links to raw sources and records provenan
 - Timezone: likely Europe/Berlin platform time, inferred from common session starts at 15:30/14:30 and ends at 22:59/21:59. Confirm manually before time-of-day research.
 - Contract handling: file name says `NQU6`; however the date range spans 2017-2026, so this is probably a continuous series or platform-adjusted symbol export rather than a single September 2026 contract. Confirm before contract-roll-sensitive research.
 - Session treatment: MotiveWave RTH export checkbox was enabled. Row counts commonly show 450 or 435 minutes per day, with some holiday/partial days. Confirm exact session template.
+- ETH coverage: not present in DATA-001 as a full overnight session. The export used the RTH checkbox, and common starts/ends are RTH-like platform times such as 15:30/22:59 or 14:30/21:59. A separate ETH/all-sessions export is required for overnight, premarket, Asia/London, gap, or prior-overnight-high/low research.
 - Known limitations: no header, no cost/slippage assumptions, no explicit timezone metadata, no explicit roll metadata.
 - Export settings shown: Symbol `NQU6`, Bar Size `1 min`, `All Local` enabled, `Regular Trading Hours (RTH) Data` enabled, `Export Chart Data Including Study Values` disabled, format `CSV - yyyyMMdd HHmmss,O,H,L,C,V`.
 - Study export caveat: if `Export Chart Data Including Study Values` is enabled, expect additional per-bar study values only if the study exposes exportable values. Do not assume raw Big Trades/time-and-sales events are exported unless verified by comparing a small test export with and without the checkbox.
@@ -43,6 +44,7 @@ This page registers local datasets. It links to raw sources and records provenan
 - Confirm timezone.
 - Confirm whether prices are back-adjusted, merged continuous, or raw contract data.
 - Confirm RTH definition and whether holidays/half-days are included.
+- Export separate ETH/all-sessions data if overnight context is needed.
 - Define canonical imported copy path if this dataset becomes the project baseline.
 - Confirm whether the normalized output should use local platform time or converted exchange time before time-of-day strategies.
 - Test whether MotiveWave Big Trades study values appear as extra columns when `Export Chart Data Including Study Values` is enabled.
@@ -110,6 +112,10 @@ Summary over 2,185 sessions:
 - First 60 minutes contain one eventual session extreme on 75.93% of usable sessions.
 
 These numbers describe range development only. They are not entry rules, R:R, or strategy performance.
+
+## ETH Data Status
+
+DATA-001 is not suitable for ETH/overnight research. It can support RTH-only profiling and RTH session behavior. For any setup involving overnight high/low, premarket behavior, London session, Asia session, gaps, or ETH VWAP/context, create a separate export without the RTH-only filter and register it as a new dataset.
 
 ## Related
 

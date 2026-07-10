@@ -1,4 +1,7 @@
 # Local market data can be large and machine-specific.
+.DS_Store
+wiki/.DS_Store
+
 data/raw/**
 data/processed/**
 
