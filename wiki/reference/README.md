@@ -11,4 +11,6 @@ Reference pages are routers. They only link to authoritative pages, code, data, 
 
 ## Current Pages
 
-- No reference router pages yet.
+- [[hypothesis-template]] - canonical template for strategy hypothesis pages.
+- [[first-filter]] - first-pass acceptance criteria for raw strategy ideas.
+- [[backtest-battery]] - minimum robustness tests before strategy promotion.

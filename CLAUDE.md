@@ -51,3 +51,11 @@ Before any AI-generated strategy touches real capital, require all three gates i
 3. Observation on a secondary account, demo or small live, with the same broker and data feed long enough to confirm real fills track backtest assumptions.
 
 The model generates candidates. The operator decides which ones are real.
+
+Operational defaults:
+
+- Put raw and filtered hypotheses in `wiki/research/strategy-queue.md`.
+- Use `wiki/reference/hypothesis-template.md` for strategy pages.
+- Use `wiki/reference/first-filter.md` before build/test work.
+- Use `wiki/reference/backtest-battery.md` before treating any result as promotable.
+- Use `wiki/research/candidate-generation-workflow.md` for scheduled Stage 1 scans.

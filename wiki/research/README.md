@@ -11,4 +11,5 @@ This folder holds external research and reference summaries. Link to raw sources
 
 ## Current Pages
 
-- No research pages yet.
+- [[strategy-queue]] - ranked queue of raw and filtered strategy hypotheses.
+- [[candidate-generation-workflow]] - scheduled Stage 1 research scan procedure and output format.

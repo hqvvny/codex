@@ -11,8 +11,14 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[work-items/wiki-setup]] - initial setup of the LLM-maintained wiki system.
 - [[work-items/trading-analysis-profile]] - captured default trading-analysis assumptions and reasoning rules.
 - [[work-items/strategy-research-pipeline]] - captured the two-stage candidate generation and build/test workflow.
+- [[work-items/research-ops-infrastructure]] - first operating layer for strategy queue, filters, and testing gates.
 - [[concepts/README]] - router for shared vocabulary.
 - [[concepts/trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
 - [[concepts/strategy-research-pipeline]] - durable strategy research pipeline, AI boundaries, and trust gates.
 - [[research/README]] - router for external references.
+- [[research/strategy-queue]] - ranked queue of raw and filtered strategy hypotheses.
+- [[research/candidate-generation-workflow]] - scheduled Stage 1 research scan procedure and output format.
 - [[reference/README]] - router pages that point to authoritative sources.
+- [[reference/hypothesis-template]] - canonical template for strategy hypothesis pages.
+- [[reference/first-filter]] - first-pass acceptance criteria for raw strategy ideas.
+- [[reference/backtest-battery]] - minimum robustness tests before strategy promotion.

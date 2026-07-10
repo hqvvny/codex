@@ -14,3 +14,4 @@ This folder holds one page per substantive unit of work.
 - [[wiki-setup]] - initial setup of the LLM-maintained wiki system.
 - [[trading-analysis-profile]] - captured default trading-analysis assumptions and reasoning rules.
 - [[strategy-research-pipeline]] - captured the two-stage candidate generation and build/test workflow.
+- [[research-ops-infrastructure]] - first operating layer for strategy queue, filters, and testing gates.
