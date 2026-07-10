@@ -18,7 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
-- [2026-07-10] constraint | Recorded no paid data budget and Apex Tradovate/NinjaTrader as available MNQ stack | Future research must use available/exported data first and label data limitations clearly
+- [2026-07-10] constraint | Recorded no paid data budget and zero-budget data ladder | Future research must use free/account-included/exported data first and label data limitations clearly
 - [2026-07-10] abandonment | Moved MNQ-001 opening range liquidity sweep to Failed Ideas | User rejected it as low-quality/not worth pursuing; do not build this generic setup
 - [2026-07-10] artifact | Created MNQ-001 definition worksheet for user input | Next step is filling rule, data, cost, and invalidation fields before build/test
 - [2026-07-10] filter | Ran first filter on MNQ-001 opening range liquidity sweep hypothesis | Verdict is needs-definition before build/test because data source, R:R, and exact rules are not final

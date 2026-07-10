@@ -62,11 +62,12 @@ Operational defaults:
 
 ## Data And Execution Constraints
 
-Assume no budget for paid market data unless the user says otherwise. Prefer a data-available-first workflow:
+Assume no budget for paid market data unless the user says otherwise. Prefer a zero-budget, data-available-first workflow:
 
-- Use the user's Apex Tradovate-funded environment and NinjaTrader/Tradovate access where available.
-- Treat Tradovate/NinjaTrader as the practical execution and observation stack for MNQ work.
-- For backtests, prefer locally exported or otherwise available futures data before paid vendors.
+- Use any available free, exportable, or account-included data source before paid vendors.
+- Treat the user's Apex Tradovate-funded environment and NinjaTrader/Tradovate access as one available path, not the only path.
+- For execution/observation, prefer the user's real available stack, currently Apex/Tradovate/NinjaTrader if workable.
+- For backtests, prefer locally exported, free, or otherwise available futures data before paid vendors.
 - Label any result from limited/free/exported data with its exact data source, export method, date range, costs, and limitations.
 - Do not recommend paid data as the default next step; mention it only as an upgrade path or caveat.
 - Never let weak data provenance become a fake-precision backtest claim.
