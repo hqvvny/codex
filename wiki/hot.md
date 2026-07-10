@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-10] abandonment | Moved MNQ-001 opening range liquidity sweep to Failed Ideas | User rejected it as low-quality/not worth pursuing; do not build this generic setup
 - [2026-07-10] artifact | Created MNQ-001 definition worksheet for user input | Next step is filling rule, data, cost, and invalidation fields before build/test
 - [2026-07-10] filter | Ran first filter on MNQ-001 opening range liquidity sweep hypothesis | Verdict is needs-definition before build/test because data source, R:R, and exact rules are not final
 - [2026-07-10] infrastructure | Created strategy queue, candidate workflow, hypothesis template, first filter, and backtest battery | Research pipeline now has an operating layer for Stage 1 and Stage 2 handoff
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-09] preference | Captured trading-analysis defaults and reasoning rules | Future market work should lead with structure, sessions, liquidity, edge, R:R, invalidation, and provenance
 - [2026-07-09] setup | Moved GitHub SSH key to ~/.ssh/id_ed25519 and verified authentication | Normal git push can now work from hooks
 - [2026-07-09] setup | Pushed main branch to GitHub remote hqvvny/codex | Repository now tracks origin/main
-- [2026-07-09] setup | Configured GitHub remote git@github.com:hqvvny/codex.git | Push is blocked until this machine has a GitHub-authenticated SSH key
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

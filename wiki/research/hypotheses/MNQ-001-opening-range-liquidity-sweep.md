@@ -1,21 +1,21 @@
 ---
 type: strategy-hypothesis
 updated: 2026-07-10
-status: needs-definition
-verdict: untested
+status: abandoned
+verdict: failed
 ---
 
 # MNQ-001 Opening Range Liquidity Sweep
 
 ## One-Line Thesis
 
-After the NY open, MNQ may create a tradeable setup when price sweeps opening-range liquidity and then either reclaims the range for reversal or accepts beyond it for continuation.
+Abandoned idea: after the NY open, MNQ may create a tradeable setup when price sweeps opening-range liquidity and then either reclaims the range for reversal or accepts beyond it for continuation.
 
 ## Market Structure Context
 
 - Instrument: MNQ, Micro Nasdaq futures.
 - Session: NY open, centered on 9:30 ET.
-- Trend/bias context: requires 15m/1H bias before testing; not defined yet.
+- Trend/bias context: requires 15m/1H bias before testing
 - Key liquidity levels: opening range high/low, premarket high/low, prior day high/low, overnight high/low.
 - Price relative to key levels: must be evaluated at setup time; no historical sample has been reviewed yet.
 
@@ -62,7 +62,9 @@ If 1-2 years of clean 1m MNQ data are available, NY open provides hundreds of se
 
 Total score: 5/12.
 
-Verdict: `needs-definition`, not ready for build/test.
+Original first-filter verdict: `needs-definition`, not ready for build/test.
+
+Final verdict: `abandoned`. User rejected the idea as low-quality and not worth spending definition/build/test time on.
 
 ## Build/Test Notes
 
@@ -108,7 +110,7 @@ Required if promoted to build/test:
 
 ## Outcome
 
-Promising raw hypothesis, but not test-ready. The next move is definition and data registration, not code.
+Abandoned before definition/build/test. Do not revive this as a generic NY open opening-range sweep idea unless a materially different structural angle, rule definition, or data-backed reason is supplied.
 
 ## Links
 
@@ -116,3 +118,4 @@ Promising raw hypothesis, but not test-ready. The next move is definition and da
 - [[../../reference/first-filter]]
 - [[../../reference/backtest-battery]]
 - [[../../concepts/trading-analysis-profile]]
+- [[../../Failed Ideas/ledger]]
