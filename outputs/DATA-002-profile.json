@@ -1,0 +1,242 @@
+{
+  "dataset_id": "DATA-002",
+  "raw_path": "/Users/farell.trades/NQU6 - 1 min - ETH.csv",
+  "normalized_output": "data/processed/DATA-002/ohlcv_1m.csv",
+  "instrument_label": "NQU6",
+  "instrument_family": "NQ",
+  "timeframe": "1m",
+  "session_label": "ETH/all-sessions",
+  "timezone": "Europe/Berlin",
+  "timezone_status": "inferred_needs_confirmation",
+  "source_platform": "MotiveWave",
+  "export_method": "Export Data dialog, RTH-only disabled / ETH all-sessions export",
+  "contract_handling": "unknown_probably_continuous_or_platform_merged",
+  "notes": [
+    "No header in raw CSV.",
+    "Filename says NQU6 but date range spans 2017-2026; confirm continuous/roll handling before contract-sensitive tests.",
+    "ETH/all-sessions inferred from filename and 24h clock-time coverage; confirm MotiveWave session template."
+  ],
+  "rows": 3106544,
+  "parse_errors": 0,
+  "first_timestamp": "2017-04-17 17:55:00",
+  "last_timestamp": "2026-07-10 22:59:00",
+  "unique_dates": 2418,
+  "rows_per_day_min": 2,
+  "rows_per_day_max": 1380,
+  "rows_per_day_avg": 1284.76,
+  "top_rows_per_day_counts": [
+    [
+      1380,
+      1127
+    ],
+    [
+      1365,
+      604
+    ],
+    [
+      1364,
+      89
+    ],
+    [
+      1379,
+      85
+    ],
+    [
+      1140,
+      37
+    ],
+    [
+      1363,
+      32
+    ],
+    [
+      1362,
+      27
+    ],
+    [
+      60,
+      27
+    ],
+    [
+      1320,
+      19
+    ],
+    [
+      1378,
+      16
+    ]
+  ],
+  "common_session_starts": [
+    [
+      "00:00",
+      2282
+    ],
+    [
+      "23:00",
+      31
+    ],
+    [
+      "00:01",
+      13
+    ],
+    [
+      "00:02",
+      10
+    ],
+    [
+      "00:03",
+      9
+    ],
+    [
+      "00:04",
+      5
+    ],
+    [
+      "00:05",
+      5
+    ],
+    [
+      "00:06",
+      3
+    ],
+    [
+      "00:07",
+      3
+    ],
+    [
+      "00:25",
+      2
+    ]
+  ],
+  "common_session_ends": [
+    [
+      "22:59",
+      2051
+    ],
+    [
+      "23:59",
+      143
+    ],
+    [
+      "18:59",
+      60
+    ],
+    [
+      "21:59",
+      30
+    ],
+    [
+      "19:14",
+      20
+    ],
+    [
+      "22:14",
+      14
+    ],
+    [
+      "22:58",
+      12
+    ],
+    [
+      "22:50",
+      6
+    ],
+    [
+      "22:55",
+      5
+    ],
+    [
+      "22:47",
+      5
+    ]
+  ],
+  "top_gap_minutes": [
+    [
+      "2",
+      7666
+    ],
+    [
+      "3",
+      2836
+    ],
+    [
+      "61",
+      1743
+    ],
+    [
+      "4",
+      1637
+    ],
+    [
+      "5",
+      1110
+    ],
+    [
+      "16",
+      1105
+    ],
+    [
+      "6",
+      818
+    ],
+    [
+      "7",
+      626
+    ],
+    [
+      "8",
+      468
+    ],
+    [
+      "9",
+      408
+    ],
+    [
+      "2941",
+      395
+    ],
+    [
+      "10",
+      351
+    ],
+    [
+      "11",
+      285
+    ],
+    [
+      "12",
+      234
+    ],
+    [
+      "13",
+      205
+    ],
+    [
+      "14",
+      198
+    ],
+    [
+      "15",
+      170
+    ],
+    [
+      "17",
+      132
+    ],
+    [
+      "18",
+      120
+    ],
+    [
+      "19",
+      111
+    ]
+  ],
+  "sanity": {
+    "duplicate_timestamps": 0,
+    "high_below_low": 0,
+    "open_outside_range": 0,
+    "close_outside_range": 0,
+    "negative_volume": 0
+  }
+}

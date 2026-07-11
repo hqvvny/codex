@@ -16,6 +16,7 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[work-items/data-loader-layer]] - session-aware DATA-001 loader and summary artifact.
 - [[work-items/time-of-day-profile]] - DATA-001 session-minute and local-time movement profile.
 - [[work-items/range-build-profile]] - DATA-001 early-session cumulative range profile.
+- [[work-items/data-002-eth-registration]] - DATA-002 ETH/all-sessions export registration and normalization.
 - [[concepts/README]] - router for shared vocabulary.
 - [[concepts/trading-analysis-profile]] - market-analysis lens, defaults, and review standards.
 - [[concepts/strategy-research-pipeline]] - durable strategy research pipeline, AI boundaries, and trust gates.

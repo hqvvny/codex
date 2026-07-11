@@ -19,3 +19,4 @@ This folder holds one page per substantive unit of work.
 - [[data-loader-layer]] - session-aware DATA-001 loader and summary artifact.
 - [[time-of-day-profile]] - DATA-001 session-minute and local-time movement profile.
 - [[range-build-profile]] - DATA-001 early-session cumulative range profile.
+- [[data-002-eth-registration]] - DATA-002 ETH/all-sessions export registration and normalization.

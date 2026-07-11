@@ -9,3 +9,5 @@ data/processed/**
 !data/processed/.gitkeep
 !data/processed/DATA-001/
 !data/processed/DATA-001/.gitkeep
+!data/processed/DATA-002/
+!data/processed/DATA-002/.gitkeep

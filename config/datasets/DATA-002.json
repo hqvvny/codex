@@ -1,0 +1,27 @@
+{
+  "dataset_id": "DATA-002",
+  "raw_path": "/Users/farell.trades/NQU6 - 1 min - ETH.csv",
+  "instrument_label": "NQU6",
+  "instrument_family": "NQ",
+  "timeframe": "1m",
+  "session_label": "ETH/all-sessions",
+  "timestamp_format": "%Y%m%d %H%M%S",
+  "timezone": "Europe/Berlin",
+  "timezone_status": "inferred_needs_confirmation",
+  "source_platform": "MotiveWave",
+  "export_method": "Export Data dialog, RTH-only disabled / ETH all-sessions export",
+  "contract_handling": "unknown_probably_continuous_or_platform_merged",
+  "columns": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "notes": [
+    "No header in raw CSV.",
+    "Filename says NQU6 but date range spans 2017-2026; confirm continuous/roll handling before contract-sensitive tests.",
+    "ETH/all-sessions inferred from filename and 24h clock-time coverage; confirm MotiveWave session template."
+  ]
+}

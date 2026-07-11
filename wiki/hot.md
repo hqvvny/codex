@@ -7,10 +7,10 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-11
-- Indexed wiki pages: 28
+- Indexed wiki pages: 29
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
-- `work-items/`: 8
+- `work-items/`: 9
 - `concepts/`: 2
 - `research/`: 2
 - `reference/`: 5
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-11] data | Registered and normalized DATA-002 NQU6 1m ETH/all-sessions export | Dataset spans 2017-04-17 to 2026-07-10 with 3,106,544 valid rows and no OHLCV sanity errors
 - [2026-07-11] reminder | Added MNQ-002 filter follow-up reminder | Reminder suggested for 2026-07-11 16:00 Europe/Berlin; next work should test structural filters, not optimize raw time entry
 - [2026-07-10] baseline | Tested MNQ-002 open-long 15:30 to 16:00 thesis on DATA-001 | Gross positive but weak: PF 1.065 exact local-clock, poor year consistency, no R:R because no stop/target
 - [2026-07-10] reminder | Added second reminder for MotiveWave ETH/all-sessions export | Reminder suggested for 2026-07-11 10:15 Europe/Berlin so DATA-002 can cover overnight context
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] analysis | Built DATA-001 range-build profile | First 30/60/120 session minutes average 46.35%/59.10%/71.80% of full RTH range, descriptive only
 - [2026-07-10] analysis | Built DATA-001 time-of-day profile | First RTH/session hour dominates average 1m range; artifacts are descriptive only, not strategy results
 - [2026-07-10] reminder | Deferred MotiveWave Big Trades study export comparison | Reminder suggested for 2026-07-11 10:00 Europe/Berlin; continue simple data work for now
-- [2026-07-10] data | Confirmed DATA-001 MotiveWave export settings from screenshot | Study export checkbox was off; Big Trades study export requires a small comparison export before assuming availability
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

@@ -14,6 +14,7 @@ This page registers local datasets. It links to raw sources and records provenan
 | ID | Path | Instrument Label | Timeframe | Session Label | Rows | First Timestamp | Last Timestamp | Status | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | DATA-001 | `/Users/farell.trades/NQU6 - 1 min - RTH.csv` | NQU6 / likely NQ continuous or current-contract export label | 1 minute | RTH | 1,006,460 | 2017-04-17 17:55 | 2026-07-10 20:17 | usable-for-research | No header. Format appears `YYYYMMDD HHMMSS,open,high,low,close,volume`. Ingestor profile found no parse errors, duplicate timestamps, negative volume, or OHLC sanity violations. |
+| DATA-002 | `/Users/farell.trades/NQU6 - 1 min - ETH.csv` | NQU6 / likely NQ continuous or current-contract export label | 1 minute | ETH/all-sessions | 3,106,544 | 2017-04-17 17:55 | 2026-07-10 22:59 | usable-for-research | No header. Format appears `YYYYMMDD HHMMSS,open,high,low,close,volume`. Ingestor profile found no parse errors, duplicate timestamps, negative volume, or OHLC sanity violations. |
 
 ## DATA-001 Notes
 
@@ -40,13 +41,27 @@ This page registers local datasets. It links to raw sources and records provenan
 - MNQ-002 baseline artifacts: `outputs/MNQ-002-open-long-baseline-summary.json`, `outputs/MNQ-002-local-clock-trades.csv`, and `outputs/MNQ-002-session-aligned-trades.csv`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
+## DATA-002 Notes
+
+- Source platform: MotiveWave, inferred from user's export workflow.
+- Export method: MotiveWave `Export Data` dialog, RTH-only disabled / ETH all-sessions export.
+- Timezone: likely Europe/Berlin platform time. Confirm manually before time-of-day research.
+- Contract handling: file name says `NQU6`; however the date range spans 2017-2026, so this is probably a continuous series or platform-adjusted symbol export rather than a single September 2026 contract. Confirm before contract-roll-sensitive research.
+- Session treatment: ETH/all-sessions inferred from filename and full 1,440 local clock-minute coverage. Confirm exact MotiveWave session template.
+- Known limitations: no header, no cost/slippage assumptions, no explicit timezone metadata, no explicit roll metadata.
+- Dataset config: `config/datasets/DATA-002.json`.
+- Profile artifact: `outputs/DATA-002-profile.json`.
+- Normalized local output: `data/processed/DATA-002/ohlcv_1m.csv` (ignored by git).
+- Common starts/ends: starts mostly at `00:00`; ends mostly at `22:59`, consistent with futures maintenance break behavior in platform time.
+- Rows per day commonly show 1,380 and 1,365 bars, consistent with near-24h coverage minus maintenance breaks and DST/session effects.
+
 ## Required Before Backtests
 
 - Confirm source platform and feed.
 - Confirm timezone.
 - Confirm whether prices are back-adjusted, merged continuous, or raw contract data.
 - Confirm RTH definition and whether holidays/half-days are included.
-- Export separate ETH/all-sessions data if overnight context is needed.
+- DATA-002 now provides ETH/all-sessions data for overnight context, but timezone/session-template confirmation is still required before final time-of-day claims.
 - Define canonical imported copy path if this dataset becomes the project baseline.
 - Confirm whether the normalized output should use local platform time or converted exchange time before time-of-day strategies.
 - Test whether MotiveWave Big Trades study values appear as extra columns when `Export Chart Data Including Study Values` is enabled.
@@ -54,7 +69,7 @@ This page registers local datasets. It links to raw sources and records provenan
 ## Deferred Checks
 
 - MotiveWave Big Trades study export comparison: deferred by user on 2026-07-10, maybe later or tomorrow. Reminder suggestion was created for 2026-07-11 10:00 Europe/Berlin. When ready, export a small sample once without `Export Chart Data Including Study Values` and once with it enabled, then compare columns and rows.
-- MotiveWave ETH/all-sessions export for DATA-002: reminder suggestion created for 2026-07-11 10:15 Europe/Berlin. Export the same NQ/MNQ 1m data with RTH-only disabled / all sessions enabled, then register it as DATA-002 for overnight, premarket, Asia/London, gap, and prior overnight high/low research.
+- MotiveWave ETH/all-sessions export for DATA-002: completed on 2026-07-11. DATA-002 is registered and normalized locally.
 - MNQ-002 filter follow-up: reminder suggestion created for 2026-07-11 16:00 Europe/Berlin. After DATA-002, use MNQ-002 as a weak benchmark and test structural filters instead of optimizing the naked time-entry baseline.
 
 ## DATA-001 Descriptive Session Summary
@@ -135,7 +150,7 @@ This is a weak gross baseline, not a promotable strategy. It has no stop/target,
 
 ## ETH Data Status
 
-DATA-001 is not suitable for ETH/overnight research. It can support RTH-only profiling and RTH session behavior. For any setup involving overnight high/low, premarket behavior, London session, Asia session, gaps, or ETH VWAP/context, create a separate export without the RTH-only filter and register it as a new dataset.
+DATA-001 is not suitable for ETH/overnight research. DATA-002 is the registered ETH/all-sessions dataset and should be used for overnight high/low, premarket behavior, London session, Asia session, gaps, and ETH VWAP/context once timezone/session-template details are confirmed.
 
 ## Related
 
