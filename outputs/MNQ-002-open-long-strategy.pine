@@ -1,0 +1,69 @@
+//@version=5
+strategy("MNQ-002 Open Long Strategy Tester", overlay=true, pyramiding=0, initial_capital=50000, commission_type=strategy.commission.cash_per_contract, commission_value=0.0, slippage=0, process_orders_on_close=false)
+
+// MNQ-002 baseline for TradingView Strategy Tester.
+//
+// Thesis:
+// - Go long at the first RTH bar signal.
+// - Exit after N bars, intended for a 1 minute chart.
+// - Optional filter: only trade when current RTH open is below previous RTH close.
+//
+// Best use:
+// - 1 minute chart.
+// - ETH/all-session chart data visible.
+// - Session timezone set to America/New_York for CME index futures RTH.
+//
+// Caveat:
+// The local Python baseline entered at the first RTH bar open.
+// TradingView strategy orders placed on that first RTH bar normally fill on
+// the next bar open unless you change Strategy Tester properties. Use this
+// as a visual tester and sanity check, not as an exact duplicate of the local
+// CSV backtest or as live execution logic.
+
+rthSession = input.session("0930-1600", "RTH Session")
+sessionTimezone = input.string("America/New_York", "Session Timezone")
+holdBars = input.int(30, "Exit After N 1m Bars", minval=1)
+filterMode = input.string("Overnight Negative Only", "Trade Filter", options=["All", "Overnight Negative Only", "Overnight Non-Negative Only"])
+showMarks = input.bool(true, "Show Entry/Exit Marks")
+showInfoTable = input.bool(true, "Show Info Table")
+
+inRth = not na(time(timeframe.period, rthSession, sessionTimezone))
+wasInRth = not na(time(timeframe.period, rthSession, sessionTimezone)[1])
+isRthStart = inRth and not wasInRth
+isRthEnd = not inRth and wasInRth
+
+// Previous completed RTH close. Updated on the first non-RTH bar after RTH ends.
+var float previousRthClose = na
+if isRthEnd
+    previousRthClose := close[1]
+
+var int entryBarIndex = na
+var bool activeTimedTrade = false
+
+// RTH-start filter can be evaluated exactly on first RTH bar.
+overnightNegativeAtOpen = not na(previousRthClose) and open < previousRthClose
+allowedAtRthStart = filterMode == "All" or (filterMode == "Overnight Negative Only" and overnightNegativeAtOpen) or (filterMode == "Overnight Non-Negative Only" and not overnightNegativeAtOpen and not na(previousRthClose))
+
+if isRthStart and allowedAtRthStart and strategy.position_size == 0
+    strategy.entry("MNQ-002 Long", strategy.long)
+    activeTimedTrade := true
+
+if strategy.position_size > 0 and strategy.position_size[1] == 0
+    entryBarIndex := bar_index
+
+exitNow = activeTimedTrade and strategy.position_size > 0 and not na(entryBarIndex) and bar_index >= entryBarIndex + holdBars
+if exitNow
+    strategy.close("MNQ-002 Long")
+    activeTimedTrade := false
+    entryBarIndex := na
+
+plotshape(showMarks and strategy.position_size > 0 and strategy.position_size[1] == 0, title="Entry", style=shape.triangleup, location=location.belowbar, color=color.lime, size=size.tiny, text="L")
+plotshape(showMarks and strategy.position_size == 0 and strategy.position_size[1] > 0, title="Exit", style=shape.triangledown, location=location.abovebar, color=color.orange, size=size.tiny, text="X")
+plot(previousRthClose, "Previous RTH Close", color=color.new(color.gray, 50), style=plot.style_linebr)
+
+var table info = table.new(position.top_right, 1, 4, border_width=1)
+if showInfoTable and barstate.islast
+    table.cell(info, 0, 0, "MNQ-002 Open Long", text_color=color.white, bgcolor=color.new(color.black, 0))
+    table.cell(info, 0, 1, "Session: " + rthSession + " " + sessionTimezone, text_color=color.white, bgcolor=color.new(color.black, 35))
+    table.cell(info, 0, 2, "Filter: " + filterMode, text_color=color.white, bgcolor=color.new(color.black, 35))
+    table.cell(info, 0, 3, "Hold bars: " + str.tostring(holdBars), text_color=color.white, bgcolor=color.new(color.black, 35))

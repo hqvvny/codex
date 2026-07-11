@@ -69,6 +69,7 @@ Artifacts:
 - `outputs/MNQ-002-open-long-baseline-summary.json`
 - `outputs/MNQ-002-local-clock-trades.csv`
 - `outputs/MNQ-002-session-aligned-trades.csv`
+- `outputs/MNQ-002-open-long-strategy.pine`
 
 ## Backtest Provenance
 
@@ -144,6 +145,14 @@ Gross zero-cost result:
 | Overnight non-negative | 1,221 | 0.05 | 51.35% | 1.002 | -2,227.5 pts |
 
 Interpretation: overnight negative improves the benchmark and appears directionally useful. It is still weak before costs/slippage, has poor years such as 2022 and 2024, and still has no stop/target R:R. Treat as a candidate filter family, not a strategy.
+
+## TradingView Strategy Tester
+
+Artifact: `outputs/MNQ-002-open-long-strategy.pine`.
+
+Purpose: visual Strategy Tester review of the MNQ-002 baseline and overnight-negative filter directly on a TradingView 1m NQ/MNQ chart.
+
+Important caveat: the local Python baseline enters at the first RTH bar open. Pine strategy orders signaled on the first RTH bar generally fill according to TradingView's strategy fill model, often next bar open unless Strategy Tester properties are changed. Treat this Pine script as a visual sanity-check layer, not as a perfect duplicate of the CSV backtest.
 
 ## Review Gates
 

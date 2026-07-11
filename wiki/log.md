@@ -30,3 +30,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-11] reminder | Added MNQ-002 filter follow-up reminder | Reminder suggested for 2026-07-11 16:00 Europe/Berlin; next work should test structural filters, not optimize raw time entry
 ## [2026-07-11] data | Registered and normalized DATA-002 NQU6 1m ETH/all-sessions export | Dataset spans 2017-04-17 to 2026-07-10 with 3,106,544 valid rows and no OHLCV sanity errors
 ## [2026-07-11] filter | Tested MNQ-002 with overnight-negative filter | Overnight-negative improves gross avg/PF versus non-negative but remains weak before costs and not strategy-grade
+## [2026-07-11] artifact | Created TradingView Strategy Tester script for MNQ-002 | Pine strategy supports all/overnight-negative/overnight-non-negative filters for visual review, with TradingView fill-model caveat
