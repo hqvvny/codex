@@ -165,6 +165,8 @@ Important caveat: as with TradingView, a 1m OHLC Strategy Analyzer run may not r
 
 Install note: this artifact is NinjaScript/C# and must be compiled as a NinjaTrader 8 Strategy `.cs` file. It is not JavaScript; pasting it into a `.js` editor will fail on C# syntax.
 
+Current platform note: user screenshot shows a NinjaTrader Web / Tradovate-style Code Editor using `.js`, and no visible Strategy Analyzer. For that environment, use the Python backtest as the statistical source of truth and build a JavaScript visual indicator/marker script rather than a C# Strategy Analyzer script.
+
 ## Review Gates
 
 - Independent review: not started.
