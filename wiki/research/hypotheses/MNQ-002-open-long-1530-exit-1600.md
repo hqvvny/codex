@@ -71,6 +71,9 @@ Artifacts:
 - `outputs/MNQ-002-session-aligned-trades.csv`
 - `outputs/MNQ-002-open-long-strategy.pine`
 - `outputs/MNQ002OpenLongStrategy.cs`
+- `outputs/MNQ-002-ninjatrader-export-comparison.md`
+- `outputs/MNQ-002-ninjatrader-export-comparison.csv`
+- `outputs/MNQ-002-ninjatrader-export-comparison.json`
 
 ## Backtest Provenance
 
@@ -166,6 +169,14 @@ Important caveat: as with TradingView, a 1m OHLC Strategy Analyzer run may not r
 Install note: this artifact is NinjaScript/C# and must be compiled as a NinjaTrader 8 Strategy `.cs` file. It is not JavaScript; pasting it into a `.js` editor will fail on C# syntax.
 
 Current platform note: user screenshot shows a NinjaTrader Web / Tradovate-style Code Editor using `.js`, and no visible Strategy Analyzer. For that environment, use the Python backtest as the statistical source of truth and build a JavaScript visual indicator/marker script rather than a C# Strategy Analyzer script.
+
+First NT8 export comparison:
+
+- Source files: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-53.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-54.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-55.csv`.
+- `12-53.csv` and `12-54.csv` are byte-for-byte identical, so the three-filter comparison is incomplete or one run was exported twice.
+- The all-style run reports 2,454 trades, $72,725 gross net profit, 52.49% win rate, $29.64 average trade, PF 1.07, and max drawdown -$43,340 with 0 fees/slippage. Using NQ $20/point, this equals about +1.482 points/trade and -2,167 points max drawdown, matching the local Python baseline closely.
+- The filtered run `12-55.csv` reports 1,367 trades, $15,100 gross net profit, 51.06% win rate, $11.05 average trade, PF 1.03, and max drawdown -$34,460 with 0 fees/slippage. Using NQ $20/point, this equals about +0.553 points/trade and -1,723 points max drawdown.
+- Interpretation: the NT8 all-style run confirms the weak positive baseline, but the available filtered run is worse than all-trades. Do not optimize from these three exports until the missing/duplicated filter run is resolved and run labels are confirmed.
 
 ## Review Gates
 
