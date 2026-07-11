@@ -1,4 +1,5 @@
-file,Gesamter Nettogewinn,Profitfaktor,Max Drawdown,Sharpe Ratio,Gesamt # Trades,Prozent profitabel,Ø Trade,avg_points_at_NQ_20,Ratio Ø Gewinn / Ø Verlust,Max Erholungszeit,Ø MAE,Ø MFE,Ø ETD
-NinjaTrader Grid 2026-07-11 12-53.csv,72725.0,1.07,-43340.0,0.15,2454.0,52.49,29.64,1.482,0.96,789.0,887.28,865.7,836.07
-NinjaTrader Grid 2026-07-11 12-54.csv,72725.0,1.07,-43340.0,0.15,2454.0,52.49,29.64,1.482,0.96,789.0,887.28,865.7,836.07
-NinjaTrader Grid 2026-07-11 12-55.csv,15100.0,1.03,-34460.0,0.07,1367.0,51.06,11.05,0.5525,0.98,678.0,852.88,774.83,763.79
+run,file,Gesamter Nettogewinn,Profitfaktor,Max Drawdown,Sharpe Ratio,Gesamt # Trades,Prozent profitabel,Ø Trade,avg_points_at_NQ_20,Ratio Ø Gewinn / Ø Verlust,Max Erholungszeit,Ø MAE,Ø MFE,Ø ETD
+All,NinjaTrader Grid 2026-07-11 12-53.csv,72725.0,1.07,-43340.0,0.15,2454.0,52.49,29.64,1.482,0.96,789.0,887.28,865.7,836.07
+All duplicate export,NinjaTrader Grid 2026-07-11 12-54.csv,72725.0,1.07,-43340.0,0.15,2454.0,52.49,29.64,1.482,0.96,789.0,887.28,865.7,836.07
+OvernightNonNegativeOnly,NinjaTrader Grid 2026-07-11 12-55.csv,15100.0,1.03,-34460.0,0.07,1367.0,51.06,11.05,0.5525,0.98,678.0,852.88,774.83,763.79
+OvernightNegativeOnly,NinjaTrader Grid 2026-07-11 01-00.csv,57565.0,1.12,-22085.0,0.12,1086.0,54.24,53.01,2.6505,0.94,856.0,931.17,980.7,927.69

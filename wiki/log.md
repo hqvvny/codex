@@ -35,3 +35,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-11] fix | Clarified MNQ-002 NinjaTrader script must be used as C# NinjaScript | Removed C# region directives and documented that `.js` editors will reject the NT8 strategy code
 ## [2026-07-11] platform | Identified user's NinjaTrader environment as Web/JavaScript rather than NT8 Strategy Analyzer | Next Ninja-side artifact should be a JavaScript visual marker indicator, while Python remains the backtest source of truth
 ## [2026-07-11] analysis | Parsed first MNQ-002 NinjaTrader Strategy Analyzer exports | All-style run matches Python baseline, but two exports are identical and the available filtered run is worse, so the three-filter comparison is incomplete
+## [2026-07-11] analysis | Added confirmed MNQ-002 NT8 overnight-negative export | Negative overnight filter carries most of the edge with PF 1.12 and +2.65 NQ points/trade, while non-negative remains weak

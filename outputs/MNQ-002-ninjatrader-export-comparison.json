@@ -1,5 +1,6 @@
 [
   {
+    "run": "All",
     "file": "NinjaTrader Grid 2026-07-11 12-53.csv",
     "Gesamter Nettogewinn": 72725.0,
     "Bruttogewinn": 1139045.0,
@@ -39,6 +40,7 @@
     "dd_points_at_MNQ_2": -21670.0
   },
   {
+    "run": "All duplicate export",
     "file": "NinjaTrader Grid 2026-07-11 12-54.csv",
     "Gesamter Nettogewinn": 72725.0,
     "Bruttogewinn": 1139045.0,
@@ -78,6 +80,7 @@
     "dd_points_at_MNQ_2": -21670.0
   },
   {
+    "run": "OvernightNonNegativeOnly",
     "file": "NinjaTrader Grid 2026-07-11 12-55.csv",
     "Gesamter Nettogewinn": 15100.0,
     "Bruttogewinn": 591285.0,
@@ -115,5 +118,45 @@
     "avg_points_at_MNQ_2": 5.525,
     "dd_points_at_NQ_20": -1723.0,
     "dd_points_at_MNQ_2": -17230.0
+  },
+  {
+    "run": "OvernightNegativeOnly",
+    "file": "NinjaTrader Grid 2026-07-11 01-00.csv",
+    "Gesamter Nettogewinn": 57565.0,
+    "Bruttogewinn": 547700.0,
+    "Bruttoverlust": -490135.0,
+    "Gebühren": 0.0,
+    "Profitfaktor": 1.12,
+    "Max Drawdown": -22085.0,
+    "Sharpe Ratio": 0.12,
+    "Sortino Ratio": 0.19,
+    "Wahrscheinlichkeit": 9.77,
+    "Gesamt # Trades": 1086.0,
+    "Prozent profitabel": 54.24,
+    "# Gewinntrades": 589.0,
+    "# Verlusttrades": 496.0,
+    "# Breakeven-Trades": 1.0,
+    "Gesamt Slippage": 0.0,
+    "Ø Trade": 53.01,
+    "Ø Gewinntrade": 929.88,
+    "Ø Verlusttrade": -988.18,
+    "Ratio Ø Gewinn / Ø Verlust": 0.94,
+    "Max Gewinnserie": 8.0,
+    "Max Verlustserie": 8.0,
+    "Größter Gewinntrade": 9630.0,
+    "Größter Verlusttrade": -6490.0,
+    "Ø Anzahl der Trades pro Tag": 0.45,
+    "Ø Zeit im Markt": 31.01,
+    "Ø Kerzen in Trade": 31.0,
+    "Gewinn pro Monat": 505.39,
+    "Max Erholungszeit": 856.0,
+    "Längste Stagnationsphase": 19.98,
+    "Ø MAE": 931.17,
+    "Ø MFE": 980.7,
+    "Ø ETD": 927.69,
+    "avg_points_at_NQ_20": 2.6505,
+    "avg_points_at_MNQ_2": 26.505,
+    "dd_points_at_NQ_20": -1104.25,
+    "dd_points_at_MNQ_2": -11042.5
   }
 ]

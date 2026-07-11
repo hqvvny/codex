@@ -172,11 +172,12 @@ Current platform note: user screenshot shows a NinjaTrader Web / Tradovate-style
 
 First NT8 export comparison:
 
-- Source files: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-53.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-54.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-55.csv`.
-- `12-53.csv` and `12-54.csv` are byte-for-byte identical, so the three-filter comparison is incomplete or one run was exported twice.
+- Source files: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-53.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-54.csv`, `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 12-55.csv`, and `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-11 01-00.csv`.
+- User confirmed `12-53.csv` is `All`, `12-55.csv` is `OvernightNonNegativeOnly`, and `01-00.csv` is `OvernightNegativeOnly`. `12-54.csv` is a duplicate export of `All`.
 - The all-style run reports 2,454 trades, $72,725 gross net profit, 52.49% win rate, $29.64 average trade, PF 1.07, and max drawdown -$43,340 with 0 fees/slippage. Using NQ $20/point, this equals about +1.482 points/trade and -2,167 points max drawdown, matching the local Python baseline closely.
-- The filtered run `12-55.csv` reports 1,367 trades, $15,100 gross net profit, 51.06% win rate, $11.05 average trade, PF 1.03, and max drawdown -$34,460 with 0 fees/slippage. Using NQ $20/point, this equals about +0.553 points/trade and -1,723 points max drawdown.
-- Interpretation: the NT8 all-style run confirms the weak positive baseline, but the available filtered run is worse than all-trades. Do not optimize from these three exports until the missing/duplicated filter run is resolved and run labels are confirmed.
+- `OvernightNonNegativeOnly` reports 1,367 trades, $15,100 gross net profit, 51.06% win rate, $11.05 average trade, PF 1.03, and max drawdown -$34,460 with 0 fees/slippage. Using NQ $20/point, this equals about +0.553 points/trade and -1,723 points max drawdown.
+- `OvernightNegativeOnly` reports 1,086 trades, $57,565 gross net profit, 54.24% win rate, $53.01 average trade, PF 1.12, and max drawdown -$22,085 with 0 fees/slippage. Using NQ $20/point, this equals about +2.651 points/trade and -1,104.25 points max drawdown.
+- Interpretation: the NT8 split confirms that overnight-negative carries most of the observed edge, while non-negative is weak. Still not strategy-grade: PF 1.12 is modest, max recovery is 856 days, and there is still no stop/target R:R.
 
 ## Review Gates
 
