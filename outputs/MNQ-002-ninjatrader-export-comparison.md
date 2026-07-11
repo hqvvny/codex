@@ -94,3 +94,10 @@ Evaluation rules:
 - Prefer lower max recovery and smoother drawdown over raw net profit.
 - Compare results year-by-year before promoting any setting.
 - Keep costs/slippage provenance explicit; current screenshots used 0 fees and 0 slippage.
+
+Compile fallback:
+
+- If the enum-based `MNQ002OpenLongStrategy.cs` creates NT8 compile errors, use `MNQ002OpenLongRRStrategy.cs`.
+- `MNQ002OpenLongRRStrategy.cs` has a fresh class name and numeric mode parameters to avoid duplicate enum, attribute, and overload issues.
+- `FilterMode`: `0=All`, `1=OvernightNegativeOnly`, `2=OvernightNonNegativeOnly`.
+- `ExitMode`: `0=TimedOnly`, `1=BracketOnly`, `2=BracketWithTimeStop`.

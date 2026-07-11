@@ -71,6 +71,7 @@ Artifacts:
 - `outputs/MNQ-002-session-aligned-trades.csv`
 - `outputs/MNQ-002-open-long-strategy.pine`
 - `outputs/MNQ002OpenLongStrategy.cs`
+- `outputs/MNQ002OpenLongRRStrategy.cs`
 - `outputs/MNQ-002-ninjatrader-export-comparison.md`
 - `outputs/MNQ-002-ninjatrader-export-comparison.csv`
 - `outputs/MNQ-002-ninjatrader-export-comparison.json`
@@ -173,6 +174,8 @@ Current NT8 script version supports three exit modes:
 - `BracketWithTimeStop`: fixed stop/target plus `HoldBars` as a max-hold timeout.
 
 R:R test plan: start with `OvernightNegativeOnly`, compare 15-bar and 60-bar time-stop branches, and test stop distances 10/15/20/25/30 points with R multiples 1.5/2.0/2.5. Any result with R:R below 1.5 remains below the normal research standard.
+
+Compile fallback: `outputs/MNQ002OpenLongRRStrategy.cs` is a simplified NT8 strategy with a new class name and numeric mode parameters to avoid NT8 compiler issues around custom enums, attributes, or overloaded methods. Use `FilterMode` values `0=All`, `1=OvernightNegativeOnly`, `2=OvernightNonNegativeOnly`; use `ExitMode` values `0=TimedOnly`, `1=BracketOnly`, `2=BracketWithTimeStop`.
 
 Install note: this artifact is NinjaScript/C# and must be compiled as a NinjaTrader 8 Strategy `.cs` file. It is not JavaScript; pasting it into a `.js` editor will fail on C# syntax.
 
