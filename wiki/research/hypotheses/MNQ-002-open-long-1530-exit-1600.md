@@ -75,6 +75,11 @@ Artifacts:
 - `outputs/MNQ-002-ninjatrader-export-comparison.md`
 - `outputs/MNQ-002-ninjatrader-export-comparison.csv`
 - `outputs/MNQ-002-ninjatrader-export-comparison.json`
+- `scripts/mnq002_rr_grid.py`
+- `outputs/MNQ-002-rr-grid-report.md`
+- `outputs/MNQ-002-rr-grid-summary.csv`
+- `outputs/MNQ-002-rr-grid-summary.json`
+- `outputs/MNQ-002-rr-grid-best-trades.csv`
 
 ## Backtest Provenance
 
@@ -200,6 +205,36 @@ Hold-time sensitivity on `OvernightNegativeOnly`:
 | 60 | $82,315 | 1,086 | 53.59% | 3.790 | 1.13 | -1,165.00 | 571 days |
 
 Interpretation: 15 bars has the best risk-adjusted profile and shortest recovery, while 60 bars has the highest net/average trade with still-manageable drawdown in this summary. 45 bars is unattractive because recovery expands to 1,574 days. Next tests should use 15 bars as the clean benchmark and 60 bars as a separate profit branch, then validate year-by-year and test bracket exits with explicit R:R.
+
+## Python R:R Grid
+
+Generated with:
+
+```bash
+python3 scripts/mnq002_rr_grid.py --rth-input data/processed/DATA-001/ohlcv_1m.csv --output-dir outputs --hold-bars 15,60 --stop-points 10,15,20,25,30 --risk-rewards 1.5,2.0,2.5 --exit-modes bracket_only,bracket_with_time_stop --filter-mode negative --same-bar-policy stop_first --point-value 20 --round-turn-cost-points 0
+```
+
+Provenance: DATA-001 RTH 1m export, 2017-04-17 to 2026-07-10, 963 overnight-negative sessions, 0 costs/slippage, NQ $20/point.
+
+Conservative same-bar policy: if stop and target are both touched in the same 1m candle, stop fills first.
+
+Top conservative variant:
+
+- Exit: `bracket_only`.
+- Hold parameter: 15, not active as a time stop.
+- Stop: 30 points.
+- Target: 75 points, 2.5R.
+- Trades: 963.
+- Avg: +2.8406 points.
+- PF: 1.1073.
+- Max DD: -2,012.25 points.
+- Median trade: -30 points.
+
+Year split for top conservative variant is unstable: 2017, 2019, 2022, and 2026 are negative, while 2020 and 2021 carry much of the edge.
+
+Target-first sensitivity run: a 10-point stop and 1.5R bracket-with-time-stop produces PF 1.445 and -155 points max drawdown under optimistic same-bar assumptions, but this is not trustworthy on 1m OHLC data without tick/second-level confirmation.
+
+Interpretation: fixed R:R alone does not improve the strategy under conservative fills. The timed-exit version remains the stronger baseline. Next improvement should focus on filtering bad regimes or conditioning exits on opening volatility, not blindly optimizing stop/target.
 
 ## Review Gates
 
