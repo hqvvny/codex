@@ -179,6 +179,17 @@ First NT8 export comparison:
 - `OvernightNegativeOnly` reports 1,086 trades, $57,565 gross net profit, 54.24% win rate, $53.01 average trade, PF 1.12, and max drawdown -$22,085 with 0 fees/slippage. Using NQ $20/point, this equals about +2.651 points/trade and -1,104.25 points max drawdown.
 - Interpretation: the NT8 split confirms that overnight-negative carries most of the observed edge, while non-negative is weak. Still not strategy-grade: PF 1.12 is modest, max recovery is 856 days, and there is still no stop/target R:R.
 
+Hold-time sensitivity on `OvernightNegativeOnly`:
+
+| Hold Bars | Net Profit | Trades | Win Rate | Avg NQ Points | PF | Max DD Points | Max Recovery |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 15 | $57,760 | 1,086 | 54.14% | 2.660 | 1.15 | -1,317.25 | 449 days |
+| 30 | $57,565 | 1,086 | 54.24% | 2.651 | 1.12 | -1,104.25 | 856 days |
+| 45 | $71,015 | 1,086 | 53.31% | 3.270 | 1.12 | -1,946.75 | 1,574 days |
+| 60 | $82,315 | 1,086 | 53.59% | 3.790 | 1.13 | -1,165.00 | 571 days |
+
+Interpretation: 15 bars has the best risk-adjusted profile and shortest recovery, while 60 bars has the highest net/average trade with still-manageable drawdown in this summary. 45 bars is unattractive because recovery expands to 1,574 days. Next tests should use 15 bars as the clean benchmark and 60 bars as a separate profit branch, then validate year-by-year and add stop/target logic.
+
 ## Review Gates
 
 - Independent review: not started.

@@ -34,3 +34,38 @@ Next action:
 - Do not optimize raw entry time yet. First add a risk model and robustness checks around the confirmed `OvernightNegativeOnly` filter.
 - Next candidates: hold-time sensitivity around 15/20/30/45/60 minutes, stop/target brackets using RTH opening volatility, and year-by-year degradation check.
 - Keep Strategy Analyzer settings identical across all future runs: instrument, date range, trading hours, commissions, slippage, fill resolution, and data series.
+
+## Overnight Negative Hold-Time Sensitivity
+
+Source: user-provided NinjaTrader screenshots for 15, 45, and 60 hold bars plus prior 30-bar export.
+
+Settings visible in screenshots:
+
+- Strategy: `MNQ002OpenLongStrategy`
+- Instrument: `NQ 09-26`
+- Data series: 1 minute, last price
+- Date range: 2017-02-01 to 2026-07-10
+- Filter: `OvernightNegativeOnly`
+- RTH start/end: `153000` to `230000`
+- Fees and slippage: 0
+- Historical fill resolution: standard/fastest
+
+| Hold Bars | Net Profit | Trades | Win Rate | Avg Trade | Avg NQ Points | Profit Factor | Max DD | Max DD Points | Max Recovery | Avg Time |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 15 | $57,760 | 1,086 | 54.14% | $53.19 | 2.660 | 1.15 | -$26,345 | -1,317.25 | 449 days | 16.00 min |
+| 30 | $57,565 | 1,086 | 54.24% | $53.01 | 2.651 | 1.12 | -$22,085 | -1,104.25 | 856 days | 31.01 min |
+| 45 | $71,015 | 1,086 | 53.31% | $65.39 | 3.270 | 1.12 | -$38,935 | -1,946.75 | 1,574 days | 46.01 min |
+| 60 | $82,315 | 1,086 | 53.59% | $75.80 | 3.790 | 1.13 | -$23,300 | -1,165.00 | 571 days | 61.01 min |
+
+Interpretation:
+
+- The edge is stable across hold times because all four runs stay positive with the same 1,086-trade sample.
+- 15 bars has the cleanest quality profile: best PF, best Sharpe, best Sortino, and shortest max recovery.
+- 60 bars has the highest net profit and average trade while keeping max drawdown close to the 30-bar version, but it doubles market exposure versus 30 bars and quadruples it versus 15 bars.
+- 45 bars is unattractive despite higher net profit because max drawdown and max recovery deteriorate sharply.
+- This does not yet solve R:R. There is still no stop/target, so this remains a timed-exit benchmark, not a tradeable strategy.
+
+Current hold-time preference:
+
+- Research benchmark: 15 bars, because it has the cleanest recovery and risk-adjusted profile.
+- Alternative branch: 60 bars, but only if year-by-year results and drawdown duration do not reveal concentration.
