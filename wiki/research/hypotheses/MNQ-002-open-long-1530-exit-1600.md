@@ -120,6 +120,31 @@ Candidate filter families to evaluate later:
 - Higher-timeframe trend/bias.
 - News/no-news split if a zero-budget calendar source becomes available.
 
+## Overnight Negative Filter Diagnostic
+
+Definition: overnight negative means current RTH entry open is below the previous RTH session close.
+
+Generated with:
+
+```bash
+python3 scripts/mnq002_overnight_filter.py --rth-input data/processed/DATA-001/ohlcv_1m.csv --eth-input data/processed/DATA-002/ohlcv_1m.csv --output-dir outputs --hold-minutes 30 --min-bars 300 --point-value 20 --round-turn-cost-points 0
+```
+
+Artifacts:
+
+- `outputs/MNQ-002-overnight-filter-summary.json`
+- `outputs/MNQ-002-overnight-negative-trades.csv`
+- `outputs/MNQ-002-overnight-non-negative-trades.csv`
+
+Gross zero-cost result:
+
+| Filter | Trades | Avg Points | Win Rate | Profit Factor | Max DD |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Overnight negative | 963 | 2.14 | 53.17% | 1.0843 | -1,367.25 pts |
+| Overnight non-negative | 1,221 | 0.05 | 51.35% | 1.002 | -2,227.5 pts |
+
+Interpretation: overnight negative improves the benchmark and appears directionally useful. It is still weak before costs/slippage, has poor years such as 2022 and 2024, and still has no stop/target R:R. Treat as a candidate filter family, not a strategy.
+
 ## Review Gates
 
 - Independent review: not started.

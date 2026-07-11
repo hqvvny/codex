@@ -1,0 +1,174 @@
+{
+  "definition": "Overnight negative means current RTH entry open is below the previous RTH session close.",
+  "rth_input": "data/processed/DATA-001/ohlcv_1m.csv",
+  "eth_input": "data/processed/DATA-002/ohlcv_1m.csv",
+  "data_sources": [
+    "DATA-001 RTH bars for prior RTH close, current RTH open, and 30m exit",
+    "DATA-002 ETH/all-sessions available for future richer overnight features, not required for this net overnight direction pass"
+  ],
+  "date_range": "2017-04-17 to 2026-07-10",
+  "cost_assumption": "0.0 points round turn",
+  "point_value": 20.0,
+  "variants": {
+    "overnight_negative": {
+      "trades": 963,
+      "gross_total_points": 2063.5,
+      "gross_avg_points": 2.1428,
+      "net_total_points": 2063.5,
+      "net_avg_points": 2.1428,
+      "net_total_dollars": 41270.0,
+      "win_rate": 0.5317,
+      "avg_win_points": 51.8394,
+      "avg_loss_points": -54.639,
+      "median_net_points": 4.75,
+      "profit_factor": 1.0843,
+      "max_drawdown_points": -1367.25,
+      "max_drawdown_dollars": -27345.0,
+      "by_year": {
+        "2017": {
+          "trades": 43,
+          "net_total_points": -56.25,
+          "net_avg_points": -1.3081,
+          "win_rate": 0.5581
+        },
+        "2018": {
+          "trades": 96,
+          "net_total_points": 147.5,
+          "net_avg_points": 1.5365,
+          "win_rate": 0.5104
+        },
+        "2019": {
+          "trades": 100,
+          "net_total_points": -29.75,
+          "net_avg_points": -0.2975,
+          "win_rate": 0.43
+        },
+        "2020": {
+          "trades": 99,
+          "net_total_points": 1176.75,
+          "net_avg_points": 11.8864,
+          "win_rate": 0.596
+        },
+        "2021": {
+          "trades": 103,
+          "net_total_points": 614.5,
+          "net_avg_points": 5.966,
+          "win_rate": 0.5728
+        },
+        "2022": {
+          "trades": 142,
+          "net_total_points": -671.5,
+          "net_avg_points": -4.7289,
+          "win_rate": 0.5
+        },
+        "2023": {
+          "trades": 119,
+          "net_total_points": 899.25,
+          "net_avg_points": 7.5567,
+          "win_rate": 0.5714
+        },
+        "2024": {
+          "trades": 102,
+          "net_total_points": -345.5,
+          "net_avg_points": -3.3873,
+          "win_rate": 0.5
+        },
+        "2025": {
+          "trades": 104,
+          "net_total_points": 342.75,
+          "net_avg_points": 3.2957,
+          "win_rate": 0.5769
+        },
+        "2026": {
+          "trades": 55,
+          "net_total_points": -14.25,
+          "net_avg_points": -0.2591,
+          "win_rate": 0.5091
+        }
+      }
+    },
+    "overnight_non_negative": {
+      "trades": 1221,
+      "gross_total_points": 58.25,
+      "gross_avg_points": 0.0477,
+      "net_total_points": 58.25,
+      "net_avg_points": 0.0477,
+      "net_total_dollars": 1165.0,
+      "win_rate": 0.5135,
+      "avg_win_points": 46.6842,
+      "avg_loss_points": -49.3459,
+      "median_net_points": 1.5,
+      "profit_factor": 1.002,
+      "max_drawdown_points": -2227.5,
+      "max_drawdown_dollars": -44550.0,
+      "by_year": {
+        "2017": {
+          "trades": 80,
+          "net_total_points": -211.75,
+          "net_avg_points": -2.6469,
+          "win_rate": 0.4
+        },
+        "2018": {
+          "trades": 94,
+          "net_total_points": 257.5,
+          "net_avg_points": 2.7394,
+          "win_rate": 0.5851
+        },
+        "2019": {
+          "trades": 149,
+          "net_total_points": 513.25,
+          "net_avg_points": 3.4446,
+          "win_rate": 0.5302
+        },
+        "2020": {
+          "trades": 151,
+          "net_total_points": -106.5,
+          "net_avg_points": -0.7053,
+          "win_rate": 0.5298
+        },
+        "2021": {
+          "trades": 148,
+          "net_total_points": -45.5,
+          "net_avg_points": -0.3074,
+          "win_rate": 0.4932
+        },
+        "2022": {
+          "trades": 106,
+          "net_total_points": 141.75,
+          "net_avg_points": 1.3373,
+          "win_rate": 0.4906
+        },
+        "2023": {
+          "trades": 129,
+          "net_total_points": 491.75,
+          "net_avg_points": 3.812,
+          "win_rate": 0.5504
+        },
+        "2024": {
+          "trades": 147,
+          "net_total_points": -889.0,
+          "net_avg_points": -6.0476,
+          "win_rate": 0.4626
+        },
+        "2025": {
+          "trades": 143,
+          "net_total_points": -316.0,
+          "net_avg_points": -2.2098,
+          "win_rate": 0.5175
+        },
+        "2026": {
+          "trades": 74,
+          "net_total_points": 222.75,
+          "net_avg_points": 3.0101,
+          "win_rate": 0.5811
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Gross/simple baseline unless round_turn_cost_points is set.",
+    "No stop, target, slippage, commissions, news filter, or risk sizing.",
+    "Filter uses net overnight direction only; it does not yet use overnight range, overnight high/low location, or London/Asia structure.",
+    "This is a filter diagnostic, not a capital-ready strategy."
+  ]
+}

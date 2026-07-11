@@ -34,11 +34,13 @@ This page registers local datasets. It links to raw sources and records provenan
 - Time-of-day profiler: `scripts/time_of_day_profile.py`.
 - Range-build profiler: `scripts/range_build_profile.py`.
 - Open-time baseline tester: `scripts/open_time_baseline.py`.
+- MNQ-002 overnight filter tester: `scripts/mnq002_overnight_filter.py`.
 - Profile artifact: `outputs/DATA-001-profile.json`.
 - Session summary artifact: `outputs/DATA-001-session-summary.csv`.
 - Time-of-day artifacts: `outputs/DATA-001-time-of-day-session-minute.csv`, `outputs/DATA-001-time-of-day-session-hour.csv`, `outputs/DATA-001-time-of-day-local-time.csv`, and `outputs/DATA-001-time-of-day-summary.json`.
 - Range-build artifacts: `outputs/DATA-001-range-build-detail.csv`, `outputs/DATA-001-range-build-summary.csv`, and `outputs/DATA-001-range-build-summary.json`.
 - MNQ-002 baseline artifacts: `outputs/MNQ-002-open-long-baseline-summary.json`, `outputs/MNQ-002-local-clock-trades.csv`, and `outputs/MNQ-002-session-aligned-trades.csv`.
+- MNQ-002 overnight filter artifacts: `outputs/MNQ-002-overnight-filter-summary.json`, `outputs/MNQ-002-overnight-negative-trades.csv`, and `outputs/MNQ-002-overnight-non-negative-trades.csv`.
 - Normalized local output: `data/processed/DATA-001/ohlcv_1m.csv` (ignored by git).
 
 ## DATA-002 Notes
@@ -147,6 +149,23 @@ Summary:
 - Costs/slippage: 0.0 points round turn in first pass.
 
 This is a weak gross baseline, not a promotable strategy. It has no stop/target, no R:R, no ETH context, and poor year-to-year consistency.
+
+## MNQ-002 Overnight Negative Filter
+
+Generated with:
+
+```bash
+python3 scripts/mnq002_overnight_filter.py --rth-input data/processed/DATA-001/ohlcv_1m.csv --eth-input data/processed/DATA-002/ohlcv_1m.csv --output-dir outputs --hold-minutes 30 --min-bars 300 --point-value 20 --round-turn-cost-points 0
+```
+
+Definition: overnight negative means current RTH entry open is below previous RTH session close.
+
+Summary:
+
+- Overnight negative: 963 trades, gross average 2.14 points, win rate 53.17%, profit factor 1.0843, max drawdown -1,367.25 points.
+- Overnight non-negative: 1,221 trades, gross average 0.05 points, win rate 51.35%, profit factor 1.002, max drawdown -2,227.5 points.
+
+This filter is directionally useful but still weak before costs/slippage and not strategy-grade.
 
 ## ETH Data Status
 
