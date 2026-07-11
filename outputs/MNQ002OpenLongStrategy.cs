@@ -10,6 +10,8 @@
 // - ETH/all-session data if you want the previous RTH close to be tracked
 //   naturally across the overnight session.
 // - RTH window set to 09:30:00-16:00:00 New York/exchange time.
+// - For R:R tests, use ExitMode = BracketOnly or BracketWithTimeStop,
+//   then optimize StopLossPoints and RiskReward.
 //
 // Caveat:
 // The local Python baseline entered at the first RTH bar open. A NinjaTrader
@@ -34,6 +36,13 @@ namespace NinjaTrader.NinjaScript.Strategies
         OvernightNonNegativeOnly
     }
 
+    public enum MNQ002ExitMode
+    {
+        TimedOnly,
+        BracketOnly,
+        BracketWithTimeStop
+    }
+
     public class MNQ002OpenLongStrategy : Strategy
     {
         private const string LongSignalName = "MNQ-002 Long";
@@ -47,7 +56,7 @@ namespace NinjaTrader.NinjaScript.Strategies
         {
             if (State == State.SetDefaults)
             {
-                Description = "MNQ-002 baseline: long first RTH bar, exit after N bars, optional overnight-negative filter.";
+                Description = "MNQ-002 baseline: long first RTH bar, optional overnight-negative filter, timed or R:R bracket exits.";
                 Name = "MNQ002OpenLongStrategy";
                 Calculate = Calculate.OnBarClose;
                 EntriesPerDirection = 1;
@@ -65,6 +74,9 @@ namespace NinjaTrader.NinjaScript.Strategies
 
                 OrderQuantity = 1;
                 HoldBars = 30;
+                ExitMode = MNQ002ExitMode.BracketWithTimeStop;
+                StopLossPoints = 20.0;
+                RiskReward = 2.0;
                 RthStartTime = 93000;
                 RthEndTime = 160000;
                 FilterMode = MNQ002FilterMode.OvernightNegativeOnly;
@@ -108,6 +120,7 @@ namespace NinjaTrader.NinjaScript.Strategies
 
             if (isRthStart && Position.MarketPosition == MarketPosition.Flat && IsFilterAllowed())
             {
+                ConfigureBracketOrders();
                 EnterLong(OrderQuantity, LongSignalName);
                 activeTimedTrade = true;
             }
@@ -115,7 +128,8 @@ namespace NinjaTrader.NinjaScript.Strategies
             if (Position.MarketPosition == MarketPosition.Long && entryBarNumber < 0)
                 entryBarNumber = CurrentBar;
 
-            if (activeTimedTrade
+            if (UsesTimeExit()
+                && activeTimedTrade
                 && Position.MarketPosition == MarketPosition.Long
                 && entryBarNumber >= 0
                 && CurrentBar >= entryBarNumber + HoldBars)
@@ -125,8 +139,11 @@ namespace NinjaTrader.NinjaScript.Strategies
                 entryBarNumber = -1;
             }
 
-            if (Position.MarketPosition == MarketPosition.Flat && !activeTimedTrade)
+            if (Position.MarketPosition == MarketPosition.Flat && entryBarNumber >= 0)
+            {
+                activeTimedTrade = false;
                 entryBarNumber = -1;
+            }
         }
 
         private bool IsInsideRth(int time)
@@ -150,6 +167,36 @@ namespace NinjaTrader.NinjaScript.Strategies
             return !overnightNegative;
         }
 
+        private void ConfigureBracketOrders()
+        {
+            if (!UsesBracketExit())
+                return;
+
+            int stopTicks = PointsToTicks(StopLossPoints);
+            int targetTicks = PointsToTicks(StopLossPoints * RiskReward);
+
+            if (stopTicks < 1 || targetTicks < 1)
+                return;
+
+            SetStopLoss(LongSignalName, CalculationMode.Ticks, stopTicks, false);
+            SetProfitTarget(LongSignalName, CalculationMode.Ticks, targetTicks);
+        }
+
+        private int PointsToTicks(double points)
+        {
+            return Math.Max(1, (int)Math.Round(points / TickSize, MidpointRounding.AwayFromZero));
+        }
+
+        private bool UsesBracketExit()
+        {
+            return ExitMode == MNQ002ExitMode.BracketOnly || ExitMode == MNQ002ExitMode.BracketWithTimeStop;
+        }
+
+        private bool UsesTimeExit()
+        {
+            return ExitMode == MNQ002ExitMode.TimedOnly || ExitMode == MNQ002ExitMode.BracketWithTimeStop;
+        }
+
         [NinjaScriptProperty]
         [Range(1, int.MaxValue)]
         [Display(Name = "Order Quantity", GroupName = "Parameters", Order = 0)]
@@ -157,21 +204,35 @@ namespace NinjaTrader.NinjaScript.Strategies
 
         [NinjaScriptProperty]
         [Range(1, int.MaxValue)]
-        [Display(Name = "Hold Bars", Description = "Number of bars to hold after the strategy position is detected.", GroupName = "Parameters", Order = 1)]
+        [Display(Name = "Hold Bars", Description = "Number of bars to hold after the strategy position is detected. Used by TimedOnly and BracketWithTimeStop.", GroupName = "Parameters", Order = 1)]
         public int HoldBars { get; set; }
 
         [NinjaScriptProperty]
+        [Display(Name = "Exit Mode", GroupName = "Parameters", Order = 2)]
+        public MNQ002ExitMode ExitMode { get; set; }
+
+        [NinjaScriptProperty]
+        [Range(0.25, double.MaxValue)]
+        [Display(Name = "Stop Loss Points", Description = "Stop distance in index points. Target = Stop Loss Points * Risk Reward.", GroupName = "Parameters", Order = 3)]
+        public double StopLossPoints { get; set; }
+
+        [NinjaScriptProperty]
+        [Range(0.25, double.MaxValue)]
+        [Display(Name = "Risk Reward", Description = "Target multiple of stop distance. Values below 1.5 are below the normal research standard.", GroupName = "Parameters", Order = 4)]
+        public double RiskReward { get; set; }
+
+        [NinjaScriptProperty]
         [Range(0, 235959)]
-        [Display(Name = "RTH Start Time", Description = "HHmmss, normally 093000 for index futures RTH.", GroupName = "Parameters", Order = 2)]
+        [Display(Name = "RTH Start Time", Description = "HHmmss, normally 093000 for index futures RTH.", GroupName = "Parameters", Order = 5)]
         public int RthStartTime { get; set; }
 
         [NinjaScriptProperty]
         [Range(0, 235959)]
-        [Display(Name = "RTH End Time", Description = "HHmmss, normally 160000 for index futures RTH.", GroupName = "Parameters", Order = 3)]
+        [Display(Name = "RTH End Time", Description = "HHmmss, normally 160000 for index futures RTH.", GroupName = "Parameters", Order = 6)]
         public int RthEndTime { get; set; }
 
         [NinjaScriptProperty]
-        [Display(Name = "Filter Mode", GroupName = "Parameters", Order = 4)]
+        [Display(Name = "Filter Mode", GroupName = "Parameters", Order = 7)]
         public MNQ002FilterMode FilterMode { get; set; }
     }
 }

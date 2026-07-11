@@ -37,3 +37,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-11] analysis | Parsed first MNQ-002 NinjaTrader Strategy Analyzer exports | All-style run matches Python baseline, but two exports are identical and the available filtered run is worse, so the three-filter comparison is incomplete
 ## [2026-07-11] analysis | Added confirmed MNQ-002 NT8 overnight-negative export | Negative overnight filter carries most of the edge with PF 1.12 and +2.65 NQ points/trade, while non-negative remains weak
 ## [2026-07-11] analysis | Reviewed MNQ-002 overnight-negative hold-time screenshots | 15 bars has the cleanest risk-adjusted profile, 60 bars has the highest net profit, and 45 bars is unattractive due to long recovery
+## [2026-07-11] implementation | Added R:R bracket exits to MNQ-002 NinjaTrader strategy | Strategy can now test TimedOnly, BracketOnly, or BracketWithTimeStop using StopLossPoints and RiskReward parameters

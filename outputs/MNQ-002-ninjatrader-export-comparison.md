@@ -69,3 +69,28 @@ Current hold-time preference:
 
 - Research benchmark: 15 bars, because it has the cleanest recovery and risk-adjusted profile.
 - Alternative branch: 60 bars, but only if year-by-year results and drawdown duration do not reveal concentration.
+
+## R:R Bracket Exit Plan
+
+The NT8 strategy now supports explicit bracket exits:
+
+- `ExitMode = TimedOnly`: legacy time exit.
+- `ExitMode = BracketOnly`: stop and target only.
+- `ExitMode = BracketWithTimeStop`: stop/target plus `HoldBars` as max-hold timeout.
+
+First test grid:
+
+| Parameter | Values |
+| --- | --- |
+| Filter Mode | `OvernightNegativeOnly` |
+| Exit Mode | `BracketOnly`, `BracketWithTimeStop` |
+| Hold Bars | `15`, `60` for `BracketWithTimeStop` |
+| Stop Loss Points | `10`, `15`, `20`, `25`, `30` |
+| Risk Reward | `1.5`, `2.0`, `2.5` |
+
+Evaluation rules:
+
+- Reject anything with R:R below 1.5.
+- Prefer lower max recovery and smoother drawdown over raw net profit.
+- Compare results year-by-year before promoting any setting.
+- Keep costs/slippage provenance explicit; current screenshots used 0 fees and 0 slippage.

@@ -166,6 +166,14 @@ Purpose: NinjaTrader 8 Strategy Analyzer and chart-strategy version of MNQ-002 w
 
 Important caveat: as with TradingView, a 1m OHLC Strategy Analyzer run may not replicate the local Python first-RTH-open fill exactly unless order timing and fill resolution are configured for that purpose. Use this as a platform-side review tool before considering any execution logic.
 
+Current NT8 script version supports three exit modes:
+
+- `TimedOnly`: original time-based exit after `HoldBars`.
+- `BracketOnly`: fixed stop in points and target calculated as `StopLossPoints * RiskReward`.
+- `BracketWithTimeStop`: fixed stop/target plus `HoldBars` as a max-hold timeout.
+
+R:R test plan: start with `OvernightNegativeOnly`, compare 15-bar and 60-bar time-stop branches, and test stop distances 10/15/20/25/30 points with R multiples 1.5/2.0/2.5. Any result with R:R below 1.5 remains below the normal research standard.
+
 Install note: this artifact is NinjaScript/C# and must be compiled as a NinjaTrader 8 Strategy `.cs` file. It is not JavaScript; pasting it into a `.js` editor will fail on C# syntax.
 
 Current platform note: user screenshot shows a NinjaTrader Web / Tradovate-style Code Editor using `.js`, and no visible Strategy Analyzer. For that environment, use the Python backtest as the statistical source of truth and build a JavaScript visual indicator/marker script rather than a C# Strategy Analyzer script.
@@ -188,7 +196,7 @@ Hold-time sensitivity on `OvernightNegativeOnly`:
 | 45 | $71,015 | 1,086 | 53.31% | 3.270 | 1.12 | -1,946.75 | 1,574 days |
 | 60 | $82,315 | 1,086 | 53.59% | 3.790 | 1.13 | -1,165.00 | 571 days |
 
-Interpretation: 15 bars has the best risk-adjusted profile and shortest recovery, while 60 bars has the highest net/average trade with still-manageable drawdown in this summary. 45 bars is unattractive because recovery expands to 1,574 days. Next tests should use 15 bars as the clean benchmark and 60 bars as a separate profit branch, then validate year-by-year and add stop/target logic.
+Interpretation: 15 bars has the best risk-adjusted profile and shortest recovery, while 60 bars has the highest net/average trade with still-manageable drawdown in this summary. 45 bars is unattractive because recovery expands to 1,574 days. Next tests should use 15 bars as the clean benchmark and 60 bars as a separate profit branch, then validate year-by-year and test bracket exits with explicit R:R.
 
 ## Review Gates
 

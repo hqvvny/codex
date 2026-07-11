@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-11] implementation | Added R:R bracket exits to MNQ-002 NinjaTrader strategy | Strategy can now test TimedOnly, BracketOnly, or BracketWithTimeStop using StopLossPoints and RiskReward parameters
 - [2026-07-11] analysis | Reviewed MNQ-002 overnight-negative hold-time screenshots | 15 bars has the cleanest risk-adjusted profile, 60 bars has the highest net profit, and 45 bars is unattractive due to long recovery
 - [2026-07-11] analysis | Added confirmed MNQ-002 NT8 overnight-negative export | Negative overnight filter carries most of the edge with PF 1.12 and +2.65 NQ points/trade, while non-negative remains weak
 - [2026-07-11] analysis | Parsed first MNQ-002 NinjaTrader Strategy Analyzer exports | All-style run matches Python baseline, but two exports are identical and the available filtered run is worse, so the three-filter comparison is incomplete
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-11] fix | Clarified MNQ-002 NinjaTrader script must be used as C# NinjaScript | Removed C# region directives and documented that `.js` editors will reject the NT8 strategy code
 - [2026-07-11] artifact | Created NinjaTrader 8 Strategy Analyzer script for MNQ-002 | NT8 strategy supports timed RTH-open long testing with all/overnight-negative/overnight-non-negative filters
 - [2026-07-11] artifact | Created TradingView Strategy Tester script for MNQ-002 | Pine strategy supports all/overnight-negative/overnight-non-negative filters for visual review, with TradingView fill-model caveat
-- [2026-07-11] filter | Tested MNQ-002 with overnight-negative filter | Overnight-negative improves gross avg/PF versus non-negative but remains weak before costs and not strategy-grade
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
