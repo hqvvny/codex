@@ -18,14 +18,12 @@
 // more granular fill data. Use this as a Strategy Analyzer and chart-review
 // version of the idea, not as live execution logic.
 
-#region Using declarations
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using NinjaTrader.Cbi;
 using NinjaTrader.Data;
 using NinjaTrader.NinjaScript;
-#endregion
 
 namespace NinjaTrader.NinjaScript.Strategies
 {
@@ -152,7 +150,6 @@ namespace NinjaTrader.NinjaScript.Strategies
             return !overnightNegative;
         }
 
-        #region Properties
         [NinjaScriptProperty]
         [Range(1, int.MaxValue)]
         [Display(Name = "Order Quantity", GroupName = "Parameters", Order = 0)]
@@ -176,6 +173,5 @@ namespace NinjaTrader.NinjaScript.Strategies
         [NinjaScriptProperty]
         [Display(Name = "Filter Mode", GroupName = "Parameters", Order = 4)]
         public MNQ002FilterMode FilterMode { get; set; }
-        #endregion
     }
 }

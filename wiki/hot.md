@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-11] fix | Clarified MNQ-002 NinjaTrader script must be used as C# NinjaScript | Removed C# region directives and documented that `.js` editors will reject the NT8 strategy code
 - [2026-07-11] artifact | Created NinjaTrader 8 Strategy Analyzer script for MNQ-002 | NT8 strategy supports timed RTH-open long testing with all/overnight-negative/overnight-non-negative filters
 - [2026-07-11] artifact | Created TradingView Strategy Tester script for MNQ-002 | Pine strategy supports all/overnight-negative/overnight-non-negative filters for visual review, with TradingView fill-model caveat
 - [2026-07-11] filter | Tested MNQ-002 with overnight-negative filter | Overnight-negative improves gross avg/PF versus non-negative but remains weak before costs and not strategy-grade
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-11] reminder | Added MNQ-002 filter follow-up reminder | Reminder suggested for 2026-07-11 16:00 Europe/Berlin; next work should test structural filters, not optimize raw time entry
 - [2026-07-10] baseline | Tested MNQ-002 open-long 15:30 to 16:00 thesis on DATA-001 | Gross positive but weak: PF 1.065 exact local-clock, poor year consistency, no R:R because no stop/target
 - [2026-07-10] reminder | Added second reminder for MotiveWave ETH/all-sessions export | Reminder suggested for 2026-07-11 10:15 Europe/Berlin so DATA-002 can cover overnight context
-- [2026-07-10] data | Clarified DATA-001 does not include full ETH/overnight coverage | Separate all-sessions/ETH export is required for overnight, London, Asia, gap, or prior overnight high/low research
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

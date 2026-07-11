@@ -32,3 +32,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-11] filter | Tested MNQ-002 with overnight-negative filter | Overnight-negative improves gross avg/PF versus non-negative but remains weak before costs and not strategy-grade
 ## [2026-07-11] artifact | Created TradingView Strategy Tester script for MNQ-002 | Pine strategy supports all/overnight-negative/overnight-non-negative filters for visual review, with TradingView fill-model caveat
 ## [2026-07-11] artifact | Created NinjaTrader 8 Strategy Analyzer script for MNQ-002 | NT8 strategy supports timed RTH-open long testing with all/overnight-negative/overnight-non-negative filters
+## [2026-07-11] fix | Clarified MNQ-002 NinjaTrader script must be used as C# NinjaScript | Removed C# region directives and documented that `.js` editors will reject the NT8 strategy code

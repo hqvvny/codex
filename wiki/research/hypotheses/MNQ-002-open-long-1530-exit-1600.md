@@ -163,6 +163,8 @@ Purpose: NinjaTrader 8 Strategy Analyzer and chart-strategy version of MNQ-002 w
 
 Important caveat: as with TradingView, a 1m OHLC Strategy Analyzer run may not replicate the local Python first-RTH-open fill exactly unless order timing and fill resolution are configured for that purpose. Use this as a platform-side review tool before considering any execution logic.
 
+Install note: this artifact is NinjaScript/C# and must be compiled as a NinjaTrader 8 Strategy `.cs` file. It is not JavaScript; pasting it into a `.js` editor will fail on C# syntax.
+
 ## Review Gates
 
 - Independent review: not started.
