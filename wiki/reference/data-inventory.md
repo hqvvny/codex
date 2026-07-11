@@ -55,6 +55,7 @@ This page registers local datasets. It links to raw sources and records provenan
 
 - MotiveWave Big Trades study export comparison: deferred by user on 2026-07-10, maybe later or tomorrow. Reminder suggestion was created for 2026-07-11 10:00 Europe/Berlin. When ready, export a small sample once without `Export Chart Data Including Study Values` and once with it enabled, then compare columns and rows.
 - MotiveWave ETH/all-sessions export for DATA-002: reminder suggestion created for 2026-07-11 10:15 Europe/Berlin. Export the same NQ/MNQ 1m data with RTH-only disabled / all sessions enabled, then register it as DATA-002 for overnight, premarket, Asia/London, gap, and prior overnight high/low research.
+- MNQ-002 filter follow-up: reminder suggestion created for 2026-07-11 16:00 Europe/Berlin. After DATA-002, use MNQ-002 as a weak benchmark and test structural filters instead of optimizing the naked time-entry baseline.
 
 ## DATA-001 Descriptive Session Summary
 

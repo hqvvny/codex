@@ -109,6 +109,16 @@ Not passed. Required before any promotion:
 - Test entry/exit delay.
 - Test with ETH/all-sessions DATA-002 once available.
 - Define risk model or stop/target before R:R can be evaluated.
+- Deferred follow-up: use MNQ-002 as a benchmark and test structural filters rather than optimizing the raw time entry. Reminder suggestion created for 2026-07-11 16:00 Europe/Berlin.
+
+Candidate filter families to evaluate later:
+
+- ETH/overnight context once DATA-002 exists.
+- Previous RTH close/open gap direction.
+- Prior day range location.
+- Opening volatility/range regime.
+- Higher-timeframe trend/bias.
+- News/no-news split if a zero-budget calendar source becomes available.
 
 ## Review Gates
 
