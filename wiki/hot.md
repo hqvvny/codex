@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-11] artifact | Created NinjaTrader 8 Strategy Analyzer script for MNQ-002 | NT8 strategy supports timed RTH-open long testing with all/overnight-negative/overnight-non-negative filters
 - [2026-07-11] artifact | Created TradingView Strategy Tester script for MNQ-002 | Pine strategy supports all/overnight-negative/overnight-non-negative filters for visual review, with TradingView fill-model caveat
 - [2026-07-11] filter | Tested MNQ-002 with overnight-negative filter | Overnight-negative improves gross avg/PF versus non-negative but remains weak before costs and not strategy-grade
 - [2026-07-11] data | Registered and normalized DATA-002 NQU6 1m ETH/all-sessions export | Dataset spans 2017-04-17 to 2026-07-10 with 3,106,544 valid rows and no OHLCV sanity errors
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-10] baseline | Tested MNQ-002 open-long 15:30 to 16:00 thesis on DATA-001 | Gross positive but weak: PF 1.065 exact local-clock, poor year consistency, no R:R because no stop/target
 - [2026-07-10] reminder | Added second reminder for MotiveWave ETH/all-sessions export | Reminder suggested for 2026-07-11 10:15 Europe/Berlin so DATA-002 can cover overnight context
 - [2026-07-10] data | Clarified DATA-001 does not include full ETH/overnight coverage | Separate all-sessions/ETH export is required for overnight, London, Asia, gap, or prior overnight high/low research
-- [2026-07-10] analysis | Built DATA-001 range-build profile | First 30/60/120 session minutes average 46.35%/59.10%/71.80% of full RTH range, descriptive only
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

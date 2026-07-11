@@ -70,6 +70,7 @@ Artifacts:
 - `outputs/MNQ-002-local-clock-trades.csv`
 - `outputs/MNQ-002-session-aligned-trades.csv`
 - `outputs/MNQ-002-open-long-strategy.pine`
+- `outputs/MNQ002OpenLongStrategy.cs`
 
 ## Backtest Provenance
 
@@ -153,6 +154,14 @@ Artifact: `outputs/MNQ-002-open-long-strategy.pine`.
 Purpose: visual Strategy Tester review of the MNQ-002 baseline and overnight-negative filter directly on a TradingView 1m NQ/MNQ chart.
 
 Important caveat: the local Python baseline enters at the first RTH bar open. Pine strategy orders signaled on the first RTH bar generally fill according to TradingView's strategy fill model, often next bar open unless Strategy Tester properties are changed. Treat this Pine script as a visual sanity-check layer, not as a perfect duplicate of the CSV backtest.
+
+## NinjaTrader 8 Strategy Analyzer
+
+Artifact: `outputs/MNQ002OpenLongStrategy.cs`.
+
+Purpose: NinjaTrader 8 Strategy Analyzer and chart-strategy version of MNQ-002 with the same all/overnight-negative/overnight-non-negative filter modes.
+
+Important caveat: as with TradingView, a 1m OHLC Strategy Analyzer run may not replicate the local Python first-RTH-open fill exactly unless order timing and fill resolution are configured for that purpose. Use this as a platform-side review tool before considering any execution logic.
 
 ## Review Gates
 
