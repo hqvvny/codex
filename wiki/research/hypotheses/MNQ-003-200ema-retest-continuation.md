@@ -378,6 +378,20 @@ Recommended first tests:
 - Cooldown only: `CooldownBars = 60`.
 - Max trades only: `MaxTradesPerSession = 1`.
 
+Python/offline filter scout:
+
+- Report: `outputs/MNQ-003-filter-scout-2026-07-21.md`.
+- Source baseline: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 12-23.csv`.
+- Method: fast offline filters applied to the already exported NT trade list, preserving baseline Ninja fills but not changing later signal generation. Treat as scouting, not final Strategy Analyzer proof.
+- Baseline: 5,494 trades, $298,890.96 net, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, about 360.8-day recovery, 2024 net -$27,758.40.
+- Best conservative candidate: skip platform hours 10, 11, and 21. Offline result: 4,948 trades, $338,788.32 net, PF 1.128, 42.06% win rate, -$32,929.92 max drawdown, 350.7-day recovery, 2024 net -$18,078.00.
+- Best aggressive candidate: skip platform hours 10, 11, 21, and 2. Offline result: 4,478 trades, $344,918.52 net, PF 1.146, 42.32% win rate, -$25,512.60 max drawdown, 406.0-day recovery, 2024 net -$4,445.48; drawback is that 2016 turns negative.
+- Cooldown filters were not attractive in the offline scout; they generally reduced net profit and worsened recovery.
+- Max trades per day/session proxies were not attractive as standalone filters.
+- EMA slope checks using DATA-002 were directionally mixed: PF/avg trade improved in stricter variants, but trade count collapsed and recovery became much worse. Do not prioritize EMA slope until weak-hour filters are confirmed in real NT8 runs.
+
+Next NT8 test priority: first run Clean strategy with `UseWeakHourFilter = 1`, `WeakHoursCsv = 10,11,21`; second run `UseWeakHourFilter = 1`, `WeakHoursCsv = 10,11,21,2`.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
