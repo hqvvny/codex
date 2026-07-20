@@ -42,3 +42,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-11] analysis | Built and ran Python MNQ-002 R:R grid | Conservative stop-first bracket tests do not improve the timed-exit baseline; target-first results show high intrabar-fill sensitivity
 ## [2026-07-20] candidate | Captured MNQ-003 1m 200 EMA retest continuation thesis | Hypothesis is raw and needs mechanical retest, stop, target, cooldown, and session rules before build/test
 ## [2026-07-20] analysis | Ran MNQ-003 1m 200 EMA retest first Python backtest | Raw full-RTH 1R version fails under conservative stop-first fills with PF 0.957 and high intrabar-fill sensitivity
+## [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 visual backtest strategy | Strategy mirrors the 200 EMA retest rule with candle-extreme plus 2-point stop buffer and 1R target based on entry fill

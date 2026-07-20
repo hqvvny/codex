@@ -96,3 +96,20 @@ The first mechanical version fails under conservative assumptions. Do not optimi
 - Add EMA slope or higher-timeframe trend filter.
 - Add distance-from-VWAP or prior-day range-location context.
 - Require a displacement away from EMA before retest, not just any touch after 10 closes.
+
+## NinjaTrader 8 Visual Backtest
+
+Artifact: `outputs/MNQ003EmaRetestStrategy.cs`.
+
+Use it as a fresh NinjaScript Strategy named `MNQ003EmaRetestStrategy`.
+
+Default parameters mirror the first Python rule:
+
+- `EmaPeriod = 200`
+- `MaxRetestPoints = 10`
+- `TrendBars = 10`
+- `StopBufferPoints = 2`
+- `RiskReward = 1`
+- `DirectionMode = 0` for both directions, `1` long-only, `2` short-only
+
+The NT8 strategy calculates stop and target after the entry fill. This keeps the visual backtest closer to platform execution because 1R is based on actual fill price, while the stop remains anchored to the signal candle extreme plus/minus buffer.

@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 visual backtest strategy | Strategy mirrors the 200 EMA retest rule with candle-extreme plus 2-point stop buffer and 1R target based on entry fill
 - [2026-07-20] analysis | Ran MNQ-003 1m 200 EMA retest first Python backtest | Raw full-RTH 1R version fails under conservative stop-first fills with PF 0.957 and high intrabar-fill sensitivity
 - [2026-07-20] candidate | Captured MNQ-003 1m 200 EMA retest continuation thesis | Hypothesis is raw and needs mechanical retest, stop, target, cooldown, and session rules before build/test
 - [2026-07-11] analysis | Built and ran Python MNQ-002 R:R grid | Conservative stop-first bracket tests do not improve the timed-exit baseline; target-first results show high intrabar-fill sensitivity
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-11] implementation | Added R:R bracket exits to MNQ-002 NinjaTrader strategy | Strategy can now test TimedOnly, BracketOnly, or BracketWithTimeStop using StopLossPoints and RiskReward parameters
 - [2026-07-11] analysis | Reviewed MNQ-002 overnight-negative hold-time screenshots | 15 bars has the cleanest risk-adjusted profile, 60 bars has the highest net profit, and 45 bars is unattractive due to long recovery
 - [2026-07-11] analysis | Added confirmed MNQ-002 NT8 overnight-negative export | Negative overnight filter carries most of the edge with PF 1.12 and +2.65 NQ points/trade, while non-negative remains weak
-- [2026-07-11] analysis | Parsed first MNQ-002 NinjaTrader Strategy Analyzer exports | All-style run matches Python baseline, but two exports are identical and the available filtered run is worse, so the three-filter comparison is incomplete
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

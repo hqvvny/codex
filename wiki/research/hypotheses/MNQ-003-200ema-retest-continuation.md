@@ -96,6 +96,25 @@ Artifacts:
 - `scripts/mnq003_ema_retest.py`
 - `outputs/MNQ-003-ema-retest-report.md`
 - `outputs/MNQ-003-ema-retest-summary.json`
+- `outputs/MNQ003EmaRetestStrategy.cs`
+
+## NinjaTrader 8 Visual Backtest
+
+Artifact: `outputs/MNQ003EmaRetestStrategy.cs`.
+
+Purpose: visual Strategy Analyzer / chart-strategy version of the first MNQ-003 mechanical rule, so trades can be inspected in NinjaTrader 8.
+
+Default parameters:
+
+- `EmaPeriod = 200`.
+- `MaxRetestPoints = 10`.
+- `TrendBars = 10`.
+- `StopBufferPoints = 2`.
+- `RiskReward = 1`.
+- `DirectionMode = 0`, meaning both long and short. Use `1` for long-only, `2` for short-only.
+- `TradeStartTime = 0`, `TradeEndTime = 235959`, so session scope is controlled mainly by the NinjaTrader data series/trading hours template unless these fields are changed.
+
+Implementation note: entry is signaled on the rejection candle close. Stop is set at the rejection candle extreme plus/minus buffer. Target is calculated after entry fill using actual fill price, so 1R is based on the platform fill rather than the signal candle close.
 
 ## First Python Result
 
