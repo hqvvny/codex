@@ -201,6 +201,26 @@ Interpretation: the 35-bar trend filter slightly improves win rate, Sharpe, and 
 
 User-reported year consistency note for the 2R long-only branch: 2024 was the only negative year; all other years were positive. This improves the interpretation of the long max-recovery statistic: the problem appears concentrated in one weak regime/year rather than broad year-by-year failure. Needs Strategy Analyzer export before verifying exact year split, date range, and whether the 2024 drawdown explains the reported max recovery.
 
+Verified NT8 trade-list review for 2R / 35 trend bars:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-20 07-33.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-tradelist-2026-07-20-0733-report.md`.
+- Platform/instrument: NinjaTrader Strategy Analyzer trade list, `NQ 09-26`, 1 contract.
+- Date range in trade list: 2016-01-04 20:01 to 2026-07-17 20:16.
+- Trades: 5,489.
+- Fees: included, $28,323.24 total, about $5.16 per trade.
+- Net profit: $316,128.76.
+- Profit factor: 1.109.
+- Win rate: 42.03%.
+- Average trade: $57.59.
+- Trade-list max drawdown: -$46,336.40.
+- Longest closed recovery calculated from trade-list equity: about 360.7 days.
+- Year split: 2024 is the only negative year at -$25,974.40; all other calendar years are positive.
+- 2024 weak clusters: March-April and September-November.
+- Exit mix: stop loss 2,764 trades for -$2.78M; profit target 1,307 trades for +$2.61M; session-close exits 1,418 trades for +$489.8k.
+
+Interpretation update: the exported trade list confirms the user-reported 2R / 35-trend-bars headline. The result is promising because it is positive in 10 of 11 calendar years after fees, but profit factor is modest and 2024 shows a real regime failure. Session-close exits contribute materially, so this branch should be treated as "2R bracket plus session-close behavior", not a pure fixed 2R system.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
