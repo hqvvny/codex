@@ -154,6 +154,20 @@ User-reported NT8 result for EMA limit-entry variant:
 
 Interpretation: this is the first promising MNQ-003 branch. A 52.11% win rate at 1:1R after fees is directionally meaningful. However, Sharpe 0.24 and 441-day recovery are still weak from a prop-firm evaluation perspective. This needs exported Strategy Analyzer data before conclusions: trade count, profit factor, max drawdown, year split, exact date range, instrument, trading-hours template, commission template, and slippage/fill settings.
 
+User-reported NT8 1.5R result for same long-only branch:
+
+- Direction: long-only (`DirectionMode = 1`).
+- Entry: buy limit at 200 EMA.
+- Stop: 50 points.
+- Target: 75 points, 1.5:1R.
+- Fees: included in NinjaTrader result.
+- Win rate: 45.60%.
+- Sharpe ratio: 0.31.
+- Sortino ratio: 0.54.
+- Max recovery time: 357 days.
+
+Interpretation: 1.5R improves Sharpe, Sortino, and max recovery versus the 1:1R result, while the win rate falls as expected. This is a healthier risk-adjusted direction than the 1R branch, but R:R only just meets the minimum standard and still needs exported Strategy Analyzer data before comparing net expectancy, drawdown shape, yearly consistency, and profit factor.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
