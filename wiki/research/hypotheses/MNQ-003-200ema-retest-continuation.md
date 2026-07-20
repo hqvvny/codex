@@ -183,6 +183,22 @@ User-reported NT8 2R result for same long-only branch:
 
 Interpretation: 2R is the best user-reported risk-adjusted variant so far among 1R, 1.5R, and 2R. It has the lowest win rate, as expected, but the highest Sharpe and Sortino and the highest reported net profit, while max recovery is slightly better than 1.5R. It still needs exported Strategy Analyzer data before drawing conclusions about profit factor, drawdown shape, outlier dependence, and year-by-year consistency.
 
+User-reported NT8 2R result with stronger trend filter:
+
+- Direction: long-only (`DirectionMode = 1`).
+- Entry: buy limit at 200 EMA.
+- Trend filter: 35 trend bars.
+- Stop: 50 points.
+- Target: 100 points, 2:1R.
+- Fees: included in NinjaTrader result.
+- Net profit: about $316,100.
+- Win rate: 42.00%.
+- Sharpe ratio: 0.37.
+- Sortino ratio: 0.72.
+- Max recovery time: 357 days.
+
+Interpretation: the 35-bar trend filter slightly improves win rate, Sharpe, and Sortino versus the default 10-bar 2R run, but gives up a small amount of net profit and has similar max recovery. This suggests trend-filter strength matters, but the improvement is incremental rather than a decisive breakthrough.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
