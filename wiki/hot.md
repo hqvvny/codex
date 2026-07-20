@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 advanced filter strategy | New strategy keeps the 2R/35 EMA limit-entry core and adds optional session windows, weak-hour exclusion, EMA slope, HTF trend, ATR regime, cooldown, max-trade, and time-exit parameters
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 Asia-to-NY-open summary export | Asia-to-NY-open summary has 3,715 trades, $201,095.60 net profit after fees, PF 1.10, 40.59% win rate, -$40,737.80 max drawdown, Sharpe 0.27, Sortino 0.52, and 531.98-day max recovery
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 NY-session-only summary export | NY-only summary has 2,792 trades, $124,356.28 net profit after fees, PF 1.11, 46.42% win rate, -$20,834.88 max drawdown, Sharpe 0.22, Sortino 0.36, and 489-day max recovery
 - [2026-07-20] analysis | Checked claimed MNQ-003 NY-only export | The provided file still has 5,489 trades across nearly all platform hours, so it appears to be the prior broad-session export rather than a true NY-session-only export
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 year split note | For the 2R long-only branch, user reports 2024 was the only negative year and all other years were positive
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R 35-trend-bars result | Long-only 2:1R with 35 trend bars reportedly has 42.00% win rate after fees, about $316.1k profit, Sharpe 0.37, Sortino 0.72, and 357-day max recovery
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R result | Long-only 2:1R with 50-point stop reportedly has 41.80% win rate after fees, about $318k profit, Sharpe 0.35, Sortino 0.66, and 354-day max recovery
-- [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 1.5R result | Long-only 1.5:1R with 50-point stop reportedly has 45.60% win rate after fees, Sharpe 0.31, Sortino 0.54, and 357-day max recovery
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

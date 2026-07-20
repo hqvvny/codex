@@ -270,6 +270,42 @@ Verified Asia-to-NY-open summary export:
 
 Interpretation update: Asia-to-NY-open keeps more of the broad-session profit than NY-only and has a stronger average trade than NY-only, but drawdown remains close to broad session and recovery is the worst of the tested session slices. This is not a clear improvement; it mainly shows that pre-NY contributes meaningful profit but also long stagnation risk.
 
+## NinjaTrader 8 Advanced Filter Variant
+
+Artifact: `outputs/MNQ003EmaLimitEntryAdvancedStrategy.cs`.
+
+Purpose: keep the 200 EMA limit-entry core but make the next research filters testable from Strategy Analyzer without editing code.
+
+Default core setup:
+
+- `DirectionMode = 1`, long-only.
+- `EmaPeriod = 200`.
+- `TrendBars = 35`.
+- `EntryOffsetPoints = 0`.
+- `StopLossPoints = 50`.
+- `UseProfitTarget = 1`.
+- `TargetPoints = 100`, matching 2:1R.
+- `MaxHoldBars = 0`.
+
+Optional filters and controls:
+
+- Session windows: `UseSessionWindows`, `Session1StartTime`, `Session1EndTime`, plus optional Session 2 and Session 3.
+- Weak-hour exclusion: `UseWeakHourFilter`, `WeakHoursCsv` defaulting to `10,11,21` platform hours from the broad-session trade-list diagnostic.
+- EMA slope filter: `UseEmaSlopeFilter`, `EmaSlopeLookbackBars`, `MinEmaSlopePoints`.
+- Higher-timeframe trend filter: `UseHtfTrendFilter`, `HtfBarsPeriodMinutes`, `HtfEmaPeriod`, `HtfSlopeLookbackBars`, `MinHtfSlopePoints`.
+- ATR regime filter: `UseAtrFilter`, `AtrPeriod`, `MinAtrPoints`, `MaxAtrPoints`.
+- Trade frequency controls: `CooldownBars`, `MaxTradesPerSession`, `MaxTradesPerDay`.
+- Time exit: `UseTimeExitBeforeSessionEnd`, `TimeExitTime`.
+
+Initial suggested tests:
+
+- Baseline compatibility: all optional filters off, core defaults should approximate the prior 2R / 35-trend-bars behavior.
+- EMA slope only: `UseEmaSlopeFilter = 1`, vary `EmaSlopeLookbackBars` 10/20/40 and `MinEmaSlopePoints` 2.5/5/10.
+- Weak hours only: `UseWeakHourFilter = 1` with `WeakHoursCsv = 10,11,21`.
+- HTF trend only: `UseHtfTrendFilter = 1`, test `HtfBarsPeriodMinutes` 15 and 60.
+- Cooldown only: test `CooldownBars` 30/60/120.
+- Max trades: test `MaxTradesPerSession = 1` and `MaxTradesPerDay = 1`.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
