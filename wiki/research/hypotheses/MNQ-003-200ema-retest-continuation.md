@@ -199,6 +199,8 @@ User-reported NT8 2R result with stronger trend filter:
 
 Interpretation: the 35-bar trend filter slightly improves win rate, Sharpe, and Sortino versus the default 10-bar 2R run, but gives up a small amount of net profit and has similar max recovery. This suggests trend-filter strength matters, but the improvement is incremental rather than a decisive breakthrough.
 
+User-reported year consistency note for the 2R long-only branch: 2024 was the only negative year; all other years were positive. This improves the interpretation of the long max-recovery statistic: the problem appears concentrated in one weak regime/year rather than broad year-by-year failure. Needs Strategy Analyzer export before verifying exact year split, date range, and whether the 2024 drawdown explains the reported max recovery.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
