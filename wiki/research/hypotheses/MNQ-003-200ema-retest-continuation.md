@@ -249,6 +249,27 @@ Verified NY-session-only summary export:
 
 Interpretation update: NY-only reduces trade count, net profit, and absolute drawdown, while win rate improves and profit factor is roughly unchanged versus broad session. However, Sharpe, Sortino, average trade, and max recovery are worse. This is not a clear improvement over the broad-session branch unless the user's main objective is lower absolute drawdown. A NY-only trade-list export is needed to check year split and whether 2024 improves.
 
+Verified Asia-to-NY-open summary export:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-20 07-52.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-asia-to-ny-open-summary-2026-07-20-0752-report.md`.
+- Session context from user: same 2R / 35 trend bars branch, Asia through NY open.
+- Export type: Strategy Analyzer summary, not trade list.
+- Date range shown in summary: 2016-01-01 to 2026-07-20.
+- Trades: 3,715.
+- Fees: included; exported fees are $19,169.40.
+- Slippage: 0.
+- Net profit: $201,095.60.
+- Profit factor: 1.10.
+- Win rate: 40.59%.
+- Max drawdown: -$40,737.80.
+- Sharpe ratio: 0.27.
+- Sortino ratio: 0.52.
+- Max recovery time: 531.98 days.
+- Average trade: $54.13.
+
+Interpretation update: Asia-to-NY-open keeps more of the broad-session profit than NY-only and has a stronger average trade than NY-only, but drawdown remains close to broad session and recovery is the worst of the tested session slices. This is not a clear improvement; it mainly shows that pre-NY contributes meaningful profit but also long stagnation risk.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
