@@ -1,0 +1,50 @@
+{
+  "definition": {
+    "long_signed_retest_points": "signal_low - EMA; negative means low went below EMA",
+    "short_signed_retest_points": "signal_high - EMA; positive means high went above EMA",
+    "penetration_points": "only the amount beyond EMA in the wrong direction; 0 means retest stayed on trend side",
+    "abs_distance_to_ema_points": "absolute distance between retest extreme and EMA, whether it crossed or not"
+  },
+  "all": {
+    "count": 26396,
+    "avg_penetration_points": 0.1635,
+    "median_penetration_points": 0.0,
+    "avg_penetration_when_crossed_points": 1.8704,
+    "median_penetration_when_crossed_points": 1.1916,
+    "crossed_ema_rate": 0.0874,
+    "avg_abs_distance_to_ema_points": 5.3614,
+    "median_abs_distance_to_ema_points": 5.526,
+    "p75_abs_distance_to_ema_points": 8.1205,
+    "p90_abs_distance_to_ema_points": 9.3724,
+    "p95_abs_distance_to_ema_points": 9.6999,
+    "avg_signed_retest_points": 0.6087
+  },
+  "long": {
+    "count": 14574,
+    "avg_penetration_points": 0.1609,
+    "median_penetration_points": 0.0,
+    "avg_penetration_when_crossed_points": 1.889,
+    "median_penetration_when_crossed_points": 1.2251,
+    "crossed_ema_rate": 0.0852,
+    "avg_abs_distance_to_ema_points": 5.4321,
+    "median_abs_distance_to_ema_points": 5.6213,
+    "p75_abs_distance_to_ema_points": 8.1739,
+    "p90_abs_distance_to_ema_points": 9.4118,
+    "p95_abs_distance_to_ema_points": 9.7235,
+    "avg_signed_retest_points": 5.1104
+  },
+  "short": {
+    "count": 11822,
+    "avg_penetration_points": 0.1667,
+    "median_penetration_points": 0.0,
+    "avg_penetration_when_crossed_points": 1.8488,
+    "median_penetration_when_crossed_points": 1.1357,
+    "crossed_ema_rate": 0.0902,
+    "avg_abs_distance_to_ema_points": 5.2743,
+    "median_abs_distance_to_ema_points": 5.3898,
+    "p75_abs_distance_to_ema_points": 8.0643,
+    "p90_abs_distance_to_ema_points": 9.3235,
+    "p95_abs_distance_to_ema_points": 9.6546,
+    "avg_signed_retest_points": -4.9409
+  }
+}

@@ -43,3 +43,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-20] candidate | Captured MNQ-003 1m 200 EMA retest continuation thesis | Hypothesis is raw and needs mechanical retest, stop, target, cooldown, and session rules before build/test
 ## [2026-07-20] analysis | Ran MNQ-003 1m 200 EMA retest first Python backtest | Raw full-RTH 1R version fails under conservative stop-first fills with PF 0.957 and high intrabar-fill sensitivity
 ## [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 visual backtest strategy | Strategy mirrors the 200 EMA retest rule with candle-extreme plus 2-point stop buffer and 1R target based on entry fill
+## [2026-07-20] analysis | Measured MNQ-003 EMA retest depth | Selected retests average about 5.36 points from EMA, but true EMA penetration occurs in only 8.74% of signals and averages 1.87 points when it happens

@@ -97,6 +97,9 @@ Artifacts:
 - `outputs/MNQ-003-ema-retest-report.md`
 - `outputs/MNQ-003-ema-retest-summary.json`
 - `outputs/MNQ003EmaRetestStrategy.cs`
+- `outputs/MNQ-003-ema-retest-depth-report.md`
+- `outputs/MNQ-003-ema-retest-depth-summary.csv`
+- `outputs/MNQ-003-ema-retest-depth-summary.json`
 
 ## NinjaTrader 8 Visual Backtest
 
@@ -133,6 +136,24 @@ Sensitivity:
 - Adding max risk cap of 10 points worsens the result: all-trades PF 0.928 and avg -0.159 points.
 - `target_first` same-bar policy flips the result positive with all-trades PF 1.100, but this is not trustworthy on 1m OHLC because it assumes target fills before stop inside ambiguous candles.
 - The gap between stop-first and target-first proves the setup is highly intrabar-fill sensitive.
+
+## Retest Depth Diagnostic
+
+Generated from `outputs/MNQ-003-ema-retest-trades.csv`.
+
+Definitions:
+
+- Long retest depth uses signal candle low relative to EMA.
+- Short retest depth uses signal candle high relative to EMA.
+- Penetration means price actually pushed through the EMA in the wrong direction; trend-side touches count as 0 penetration.
+
+| Side | Signals | Avg Abs Distance | Median Abs Distance | P90 Abs Distance | Crossed EMA | Avg Penetration When Crossed |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| All | 26,396 | 5.36 pts | 5.53 pts | 9.37 pts | 8.74% | 1.87 pts |
+| Long | 14,574 | 5.43 pts | 5.62 pts | 9.41 pts | 8.52% | 1.89 pts |
+| Short | 11,822 | 5.27 pts | 5.39 pts | 9.32 pts | 9.02% | 1.85 pts |
+
+Interpretation: the 10-point tolerance includes many retests that never actually pierce the EMA. Most signals are trend-side touches inside the tolerance band. When price does pierce the EMA, it only goes through by about 1.9 points on average. Next test should compare 2/5/7.5/10 point tolerance and split trend-side touches from pierce-and-reclaim/reject events.
 
 ## Robustness Battery
 
