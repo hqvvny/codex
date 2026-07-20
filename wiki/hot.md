@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-20] analysis | Checked claimed MNQ-003 NY-only export | The provided file still has 5,489 trades across nearly all platform hours, so it appears to be the prior broad-session export rather than a true NY-session-only export
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 2R 35-trend-bars trade-list export | Export has 5,489 trades from 2016-01-04 to 2026-07-17, $316,128.76 net profit after fees, PF 1.109, 42.03% win rate, and confirms 2024 as the only negative year
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 year split note | For the 2R long-only branch, user reports 2024 was the only negative year and all other years were positive
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R 35-trend-bars result | Long-only 2:1R with 35 trend bars reportedly has 42.00% win rate after fees, about $316.1k profit, Sharpe 0.37, Sortino 0.72, and 357-day max recovery
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 1.5R result | Long-only 1.5:1R with 50-point stop reportedly has 45.60% win rate after fees, Sharpe 0.31, Sortino 0.54, and 357-day max recovery
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only EMA limit result | Long-only 1:1R with 50-point stop reportedly has 52.11% win rate after fees, about $167k profit, Sharpe 0.24, Sortino 0.41, and 441-day max recovery
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 EMA limit-entry variant | New strategy enters at the 200 EMA with fixed 50-point stop and optional target/max-hold exits
-- [2026-07-20] analysis | Measured MNQ-003 EMA retest depth | Selected retests average about 5.36 points from EMA, but true EMA penetration occurs in only 8.74% of signals and averages 1.87 points when it happens
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

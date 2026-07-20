@@ -221,6 +221,13 @@ Verified NT8 trade-list review for 2R / 35 trend bars:
 
 Interpretation update: the exported trade list confirms the user-reported 2R / 35-trend-bars headline. The result is promising because it is positive in 10 of 11 calendar years after fees, but profit factor is modest and 2024 shows a real regime failure. Session-close exits contribute materially, so this branch should be treated as "2R bracket plus session-close behavior", not a pure fixed 2R system.
 
+NY-session-only export check:
+
+- User later identified `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-20 07-33.csv` as the same setup but NY-session-only.
+- File check indicates it is not NY-session-only: it still contains 5,489 trades from 2016-01-04 to 2026-07-17, matching the prior full-session trade-list review.
+- Entries appear across almost all platform hours, including 00:00-14:00, with only about 34.5% of entries falling in a broad 15:00-22:00 platform-time bucket.
+- Conclusion: treat this file as the prior broad-session export until a true NY-session-only export is provided. A true NY-only export should have materially fewer trades and entry times constrained to the NY/RTH session.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
