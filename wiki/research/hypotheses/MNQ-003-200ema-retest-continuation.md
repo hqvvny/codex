@@ -323,6 +323,27 @@ Advanced baseline verification:
 
 Interpretation update: the advanced strategy passes compatibility on signal count and broad behavior. The lower net profit versus the simple baseline appears mostly due to a different/higher fee template plus minor fill-price differences. Keep commission template and fill settings identical for all future filter comparisons.
 
+Slippage 1 baseline verification:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 12-23.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-slippage1-tradelist-2026-07-21-1223-report.md`.
+- Strategy: `MNQ003EmaLimitEntryStrategy`.
+- User-stated configuration: long-only, whole day, 200 EMA, entry offset 0 points, 35 trend bars, max hold bars 0, quantity 1, 50-point stop, 100-point target, NinjaTrader monthly fees, slippage 1, since 2016.
+- Date range in trade list: 2016-01-04 20:01 to 2026-07-20 18:42.
+- Trades: 5,494.
+- Net profit: $298,890.96 after fees and slippage.
+- Fees: $28,349.04 total, about $5.16 per trade.
+- Profit factor: 1.103.
+- Win rate: 41.92%.
+- Average trade: $54.40.
+- Trade-list max drawdown: -$47,788.40.
+- Longest closed recovery: about 360.8 days.
+- Year split: 2024 remains the only negative year; 2016 and 2022 remain thin positive.
+- 2024 weak clusters remain March-April and September-November.
+- Weak platform entry hours in this export include 10, 21, 2, and 11.
+
+Interpretation update: this is the most realistic baseline so far because it includes slippage 1 and fees. The strategy remains promising, but the same weaknesses remain: modest PF around 1.10, about one-year recovery, 2024 regime failure, and material dependence on session-close exits.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.

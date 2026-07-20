@@ -6,7 +6,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Summary
 
-- Last regenerated: 2026-07-20
+- Last regenerated: 2026-07-21
 - Indexed wiki pages: 30
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Reviewed MNQ-003 NT8 slippage-1 full-day trade-list export | Full-day 2R/35 baseline with NinjaTrader monthly fees and slippage 1 has 5,494 trades, $298,890.96 net profit, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, and 2024 as the only negative year
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 advanced baseline trade-list export | Advanced strategy with optional filters off has 5,489 trades, $297,643.36 net profit after higher fees, PF 1.102, 41.94% win rate, and confirms baseline-compatible signal count
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 advanced filter strategy | New strategy keeps the 2R/35 EMA limit-entry core and adds optional session windows, weak-hour exclusion, EMA slope, HTF trend, ATR regime, cooldown, max-trade, and time-exit parameters
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 Asia-to-NY-open summary export | Asia-to-NY-open summary has 3,715 trades, $201,095.60 net profit after fees, PF 1.10, 40.59% win rate, -$40,737.80 max drawdown, Sharpe 0.27, Sortino 0.52, and 531.98-day max recovery
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] analysis | Checked claimed MNQ-003 NY-only export | The provided file still has 5,489 trades across nearly all platform hours, so it appears to be the prior broad-session export rather than a true NY-session-only export
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 2R 35-trend-bars trade-list export | Export has 5,489 trades from 2016-01-04 to 2026-07-17, $316,128.76 net profit after fees, PF 1.109, 42.03% win rate, and confirms 2024 as the only negative year
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 year split note | For the 2R long-only branch, user reports 2024 was the only negative year and all other years were positive
-- [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R 35-trend-bars result | Long-only 2:1R with 35 trend bars reportedly has 42.00% win rate after fees, about $316.1k profit, Sharpe 0.37, Sortino 0.72, and 357-day max recovery
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
