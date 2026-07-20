@@ -1,8 +1,8 @@
 ---
 type: strategy-hypothesis
 updated: 2026-07-20
-status: raw
-verdict: untested
+status: testing
+verdict: failed-first-pass
 ---
 
 # MNQ-003 200 EMA Retest Continuation
@@ -34,11 +34,13 @@ Initial mechanical version for first test:
 - Short bias: close is below the 200 EMA.
 - Long retest: price was above the EMA, then the bar low touches or comes within a tolerance of the EMA, and the bar closes back above the EMA.
 - Short retest: price was below the EMA, then the bar high touches or comes within a tolerance of the EMA, and the bar closes back below the EMA.
-- Entry condition: enter on the close of the rejection bar, or next bar open in conservative backtest.
-- Stop condition: not final. Candidate: fixed points, EMA plus/minus buffer, or rejection candle extreme plus buffer.
-- Target condition: not final. Candidate: fixed R multiple, time exit, or opposite EMA recross.
+- Retest tolerance: maximum 10 points over/under the EMA; if price pushes more than 10 points through the EMA, no entry.
+- Entry condition: next bar open after rejection candle.
+- Stop condition: first mechanical version uses rejection candle extreme plus 2 points buffer.
+- Target condition: 1R target per user specification.
+- Trade frequency: multiple trades allowed, but no overlapping positions in the first Python test.
 - Invalidation: price closes decisively on the wrong side of the EMA after entry, or stop is hit.
-- Expected R:R: must be tested at >= 1.5R. Anything below 1.5R should be rejected or labeled as substandard.
+- Expected R:R: first user-specified version uses 1R. This is below the normal >=1.5R research standard and must be labeled as such.
 
 ## Data Requirements
 
@@ -77,11 +79,41 @@ First-pass test grid should avoid overfitting:
 
 ## Backtest Provenance
 
-- Data: not run yet.
-- Date range: not run yet.
-- Costs: not run yet.
-- Slippage: not run yet.
-- Version/commit: pending.
+- Data: DATA-001 MotiveWave NQU6 1m RTH export.
+- Date range: 2017-04-17 to 2026-07-10.
+- Costs: 0.0 points round turn.
+- Slippage: 0.0 points.
+- Version/commit: pending at time of run.
+
+Generated with:
+
+```bash
+python3 scripts/mnq003_ema_retest.py --input data/processed/DATA-001/ohlcv_1m.csv --output-dir outputs --ema-period 200 --tolerance-points 10 --trend-bars 10 --stop-buffer-points 2 --risk-reward 1.0 --same-bar-policy stop_first --point-value 20 --round-turn-cost-points 0
+```
+
+Artifacts:
+
+- `scripts/mnq003_ema_retest.py`
+- `outputs/MNQ-003-ema-retest-report.md`
+- `outputs/MNQ-003-ema-retest-summary.json`
+
+## First Python Result
+
+Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
+
+| Side | Trades | Net Pts | Avg Pts | Win Rate | PF | Max DD Pts |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| All | 26,396 | -2,911.50 | -0.110 | 48.09% | 0.957 | -3,735.00 |
+| Long | 14,574 | -701.50 | -0.048 | 48.44% | 0.981 | -1,704.25 |
+| Short | 11,822 | -2,210.00 | -0.187 | 47.65% | 0.930 | -2,352.75 |
+
+Interpretation: the raw full-RTH 1m EMA retest rule fails before costs under conservative fills. Longs are near breakeven before costs; shorts are clearly weak.
+
+Sensitivity:
+
+- Adding max risk cap of 10 points worsens the result: all-trades PF 0.928 and avg -0.159 points.
+- `target_first` same-bar policy flips the result positive with all-trades PF 1.100, but this is not trustworthy on 1m OHLC because it assumes target fills before stop inside ambiguous candles.
+- The gap between stop-first and target-first proves the setup is highly intrabar-fill sensitive.
 
 ## Robustness Battery
 
@@ -104,7 +136,7 @@ Required before any promotion:
 
 ## Outcome
 
-Captured as a raw hypothesis. Do not build live/execution logic until the retest and risk rules are made mechanical and the first-pass backtest proves the idea survives costs and session splits.
+First mechanical version fails under conservative assumptions. Do not optimize the raw full-RTH 1m rule directly. If continuing, test a more structural second version: long-only, session-window restriction, EMA slope/HTF trend filter, or displacement requirement before retest.
 
 ## Links
 

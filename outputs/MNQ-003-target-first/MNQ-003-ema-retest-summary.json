@@ -1,0 +1,149 @@
+{
+  "definition": "MNQ-003 1m 200 EMA retest continuation; max 10pt default EMA overshoot/undershoot; 1R target default.",
+  "input": "data/processed/DATA-001/ohlcv_1m.csv",
+  "ema_period": 200,
+  "tolerance_points": 10.0,
+  "trend_bars": 10,
+  "stop_buffer_points": 2.0,
+  "risk_reward": 1.0,
+  "same_bar_policy": "target_first",
+  "min_risk_points": 0.25,
+  "max_risk_points": null,
+  "cost_assumption": "0.0 points round turn",
+  "slippage_assumption": "0 points unless included in round_turn_cost_points",
+  "variants": {
+    "all": {
+      "trades": 26396,
+      "net_total_points": 6307.5,
+      "net_total_dollars": 126150.0,
+      "net_avg_points": 0.239,
+      "net_avg_dollars": 4.78,
+      "win_rate": 0.5297,
+      "avg_win_points": 4.9655,
+      "avg_loss_points": -5.0965,
+      "median_net_points": 2.0,
+      "profit_factor": 1.0999,
+      "max_drawdown_points": -372.0,
+      "max_drawdown_dollars": -7440.0,
+      "max_recovery_trades": 2170,
+      "by_year": {
+        "2017": {
+          "trades": 1746,
+          "net_total_points": -72.5,
+          "net_avg_points": -0.0415,
+          "win_rate": 0.4857,
+          "profit_factor": 0.971,
+          "max_drawdown_points": -153.0
+        },
+        "2018": {
+          "trades": 2838,
+          "net_total_points": 756.0,
+          "net_avg_points": 0.2664,
+          "win_rate": 0.5384,
+          "profit_factor": 1.1531,
+          "max_drawdown_points": -113.75
+        },
+        "2019": {
+          "trades": 4214,
+          "net_total_points": 263.0,
+          "net_avg_points": 0.0624,
+          "win_rate": 0.5112,
+          "profit_factor": 1.0367,
+          "max_drawdown_points": -176.75
+        },
+        "2020": {
+          "trades": 2920,
+          "net_total_points": 1406.5,
+          "net_avg_points": 0.4817,
+          "win_rate": 0.5483,
+          "profit_factor": 1.1973,
+          "max_drawdown_points": -221.25
+        },
+        "2021": {
+          "trades": 3116,
+          "net_total_points": 441.5,
+          "net_avg_points": 0.1417,
+          "win_rate": 0.5276,
+          "profit_factor": 1.0602,
+          "max_drawdown_points": -220.25
+        },
+        "2022": {
+          "trades": 2111,
+          "net_total_points": 1131.25,
+          "net_avg_points": 0.5359,
+          "win_rate": 0.5538,
+          "profit_factor": 1.1696,
+          "max_drawdown_points": -200.0
+        },
+        "2023": {
+          "trades": 2920,
+          "net_total_points": 260.75,
+          "net_avg_points": 0.0893,
+          "win_rate": 0.5336,
+          "profit_factor": 1.0345,
+          "max_drawdown_points": -366.5
+        },
+        "2024": {
+          "trades": 2974,
+          "net_total_points": 570.25,
+          "net_avg_points": 0.1917,
+          "win_rate": 0.5282,
+          "profit_factor": 1.0672,
+          "max_drawdown_points": -372.0
+        },
+        "2025": {
+          "trades": 2547,
+          "net_total_points": 1355.75,
+          "net_avg_points": 0.5323,
+          "win_rate": 0.543,
+          "profit_factor": 1.1757,
+          "max_drawdown_points": -213.0
+        },
+        "2026": {
+          "trades": 1010,
+          "net_total_points": 195.0,
+          "net_avg_points": 0.1931,
+          "win_rate": 0.5218,
+          "profit_factor": 1.0537,
+          "max_drawdown_points": -228.75
+        }
+      }
+    },
+    "long": {
+      "trades": 14574,
+      "net_total_points": 4295.0,
+      "net_total_dollars": 85900.0,
+      "net_avg_points": 0.2947,
+      "net_avg_dollars": 5.89,
+      "win_rate": 0.5315,
+      "avg_win_points": 4.9128,
+      "avg_loss_points": -4.9573,
+      "median_net_points": 2.0,
+      "profit_factor": 1.1272,
+      "max_drawdown_points": -313.25,
+      "max_drawdown_dollars": -6265.0,
+      "max_recovery_trades": 1413
+    },
+    "short": {
+      "trades": 11822,
+      "net_total_points": 2012.5,
+      "net_total_dollars": 40250.0,
+      "net_avg_points": 0.1702,
+      "net_avg_dollars": 3.4,
+      "win_rate": 0.5276,
+      "avg_win_points": 5.031,
+      "avg_loss_points": -5.2665,
+      "median_net_points": 2.0,
+      "profit_factor": 1.0685,
+      "max_drawdown_points": -342.0,
+      "max_drawdown_dollars": -6840.0,
+      "max_recovery_trades": 2450
+    }
+  },
+  "caveats": [
+    "Stop uses retest candle extreme plus buffer because target is defined as 1R.",
+    "Multiple trades are allowed, but positions do not overlap.",
+    "Uses 1m OHLC data; same-bar stop/target order is unknown and controlled by same_bar_policy.",
+    "This first pass uses full sessions in the input file; session-window splits still need to be tested."
+  ]
+}
