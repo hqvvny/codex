@@ -306,6 +306,23 @@ Initial suggested tests:
 - Cooldown only: test `CooldownBars` 30/60/120.
 - Max trades: test `MaxTradesPerSession = 1` and `MaxTradesPerDay = 1`.
 
+Advanced baseline verification:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-20 10-27.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-advanced-baseline-tradelist-2026-07-20-1027-report.md`.
+- Strategy: `MNQ003EmaLimitEntryAdvancedStrategy`.
+- Intended configuration: all new optional filters disabled, matching 2R / 35-trend-bars long-only baseline.
+- Trades: 5,489, exactly matching the prior simple-strategy baseline.
+- Net profit: $297,643.36 after fees.
+- Profit factor: 1.102.
+- Win rate: 41.94%.
+- Fees: $31,616.64 total, about $5.76 per trade.
+- Trade-list max drawdown: -$48,082.40.
+- Longest closed recovery: about 360.8 days.
+- Year split: 2024 remains the only negative year; 2016 is nearly flat at $268.28 after the higher fee assumption.
+
+Interpretation update: the advanced strategy passes compatibility on signal count and broad behavior. The lower net profit versus the simple baseline appears mostly due to a different/higher fee template plus minor fill-price differences. Keep commission template and fill settings identical for all future filter comparisons.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
