@@ -228,6 +228,27 @@ NY-session-only export check:
 - Entries appear across almost all platform hours, including 00:00-14:00, with only about 34.5% of entries falling in a broad 15:00-22:00 platform-time bucket.
 - Conclusion: treat this file as the prior broad-session export until a true NY-session-only export is provided. A true NY-only export should have materially fewer trades and entry times constrained to the NY/RTH session.
 
+Verified NY-session-only summary export:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-20 07-46.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-ny-session-summary-2026-07-20-0746-report.md`.
+- Session context from user: same 2R / 35 trend bars branch, but NY session only.
+- Export type: Strategy Analyzer summary, not trade list.
+- Date range shown in summary: 2016-01-01 to 2026-07-20.
+- Trades: 2,792.
+- Fees: included; exported fees are $14,406.72.
+- Slippage: 0.
+- Net profit: $124,356.28.
+- Profit factor: 1.11.
+- Win rate: 46.42%.
+- Max drawdown: -$20,834.88.
+- Sharpe ratio: 0.22.
+- Sortino ratio: 0.36.
+- Max recovery time: 489 days.
+- Average trade: $44.54.
+
+Interpretation update: NY-only reduces trade count, net profit, and absolute drawdown, while win rate improves and profit factor is roughly unchanged versus broad session. However, Sharpe, Sortino, average trade, and max recovery are worse. This is not a clear improvement over the broad-session branch unless the user's main objective is lower absolute drawdown. A NY-only trade-list export is needed to check year split and whether 2024 improves.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
