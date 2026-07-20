@@ -100,6 +100,7 @@ Artifacts:
 - `outputs/MNQ-003-ema-retest-depth-report.md`
 - `outputs/MNQ-003-ema-retest-depth-summary.csv`
 - `outputs/MNQ-003-ema-retest-depth-summary.json`
+- `outputs/MNQ003EmaLimitEntryStrategy.cs`
 
 ## NinjaTrader 8 Visual Backtest
 
@@ -118,6 +119,25 @@ Default parameters:
 - `TradeStartTime = 0`, `TradeEndTime = 235959`, so session scope is controlled mainly by the NinjaTrader data series/trading hours template unless these fields are changed.
 
 Implementation note: entry is signaled on the rejection candle close. Stop is set at the rejection candle extreme plus/minus buffer. Target is calculated after entry fill using actual fill price, so 1R is based on the platform fill rather than the signal candle close.
+
+## NinjaTrader 8 EMA Limit Entry Variant
+
+Artifact: `outputs/MNQ003EmaLimitEntryStrategy.cs`.
+
+Purpose: visual Strategy Analyzer / chart-strategy variant where entry is placed directly at the 200 EMA with a fixed 50-point stop.
+
+Default parameters:
+
+- `EmaPeriod = 200`.
+- `TrendBars = 10`.
+- `EntryOffsetPoints = 0`, so entry limit is exactly at the EMA.
+- `StopLossPoints = 50`.
+- `UseProfitTarget = 1`.
+- `TargetPoints = 50`, so default target is 1R with the 50-point stop. Set `UseProfitTarget = 0` to test stop-only plus session close / max-hold behavior.
+- `MaxHoldBars = 0`, meaning no time exit. Set a positive number for max-hold exits.
+- `DirectionMode = 0`, both long and short. Use `1` for long-only and `2` for short-only.
+
+Implementation note: this version does not wait for a rejection close. If trend is confirmed above EMA, it posts a buy limit at the EMA. If trend is confirmed below EMA, it posts a sell-short limit at the EMA. This is a different hypothesis branch than the first Python test.
 
 ## First Python Result
 
