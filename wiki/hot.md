@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] implementation | Added MNQ-003 NinjaTrader 8 clean filter strategy | New clean strategy removes Advanced overload and keeps only core 2R/35 parameters plus trade window, weak-hour, EMA-slope, cooldown, and max-trades-per-session filters
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 slippage-1 full-day trade-list export | Full-day 2R/35 baseline with NinjaTrader monthly fees and slippage 1 has 5,494 trades, $298,890.96 net profit, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, and 2024 as the only negative year
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 advanced baseline trade-list export | Advanced strategy with optional filters off has 5,489 trades, $297,643.36 net profit after higher fees, PF 1.102, 41.94% win rate, and confirms baseline-compatible signal count
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 advanced filter strategy | New strategy keeps the 2R/35 EMA limit-entry core and adds optional session windows, weak-hour exclusion, EMA slope, HTF trend, ATR regime, cooldown, max-trade, and time-exit parameters
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 NY-session-only summary export | NY-only summary has 2,792 trades, $124,356.28 net profit after fees, PF 1.11, 46.42% win rate, -$20,834.88 max drawdown, Sharpe 0.22, Sortino 0.36, and 489-day max recovery
 - [2026-07-20] analysis | Checked claimed MNQ-003 NY-only export | The provided file still has 5,489 trades across nearly all platform hours, so it appears to be the prior broad-session export rather than a true NY-session-only export
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 2R 35-trend-bars trade-list export | Export has 5,489 trades from 2016-01-04 to 2026-07-17, $316,128.76 net profit after fees, PF 1.109, 42.03% win rate, and confirms 2024 as the only negative year
-- [2026-07-20] analysis | Recorded user-reported MNQ-003 year split note | For the 2R long-only branch, user reports 2024 was the only negative year and all other years were positive
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

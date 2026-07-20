@@ -344,6 +344,40 @@ Slippage 1 baseline verification:
 
 Interpretation update: this is the most realistic baseline so far because it includes slippage 1 and fees. The strategy remains promising, but the same weaknesses remain: modest PF around 1.10, about one-year recovery, 2024 regime failure, and material dependence on session-close exits.
 
+## NinjaTrader 8 Clean Filter Variant
+
+Artifact: `outputs/MNQ003EmaLimitEntryCleanStrategy.cs`.
+
+Purpose: replace the overloaded Advanced variant for practical Strategy Analyzer testing. This version keeps only the parameters we actually want to vary next.
+
+Core defaults:
+
+- `OrderQuantity = 1`.
+- `DirectionMode = 1`, long-only.
+- `EmaPeriod = 200`.
+- `TrendBars = 35`.
+- `EntryOffsetPoints = 0`.
+- `StopLossPoints = 50`.
+- `TargetPoints = 100`, 2:1R.
+- `MaxHoldBars = 0`.
+
+Usable filters:
+
+- Trade window: `UseTradeWindow`, `TradeStartTime`, `TradeEndTime`.
+- Weak-hour exclusion: `UseWeakHourFilter`, `WeakHoursCsv`, default `10,11,21,2`.
+- EMA slope: `UseEmaSlopeFilter`, `EmaSlopeLookbackBars`, `MinEmaSlopePoints`.
+- Trade frequency: `CooldownBars`, `MaxTradesPerSession`.
+
+Removed from the overloaded Advanced version: HTF trend filter, ATR filter, multiple session windows, max trades per day, and time-exit-before-session-end. These can be reintroduced only if a clean single-filter test proves they are needed.
+
+Recommended first tests:
+
+- Baseline: all filters off.
+- Weak hours only: `UseWeakHourFilter = 1`, `WeakHoursCsv = 10,11,21,2`.
+- EMA slope only: `UseEmaSlopeFilter = 1`, `EmaSlopeLookbackBars = 20`, `MinEmaSlopePoints = 5`.
+- Cooldown only: `CooldownBars = 60`.
+- Max trades only: `MaxTradesPerSession = 1`.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
