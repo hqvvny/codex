@@ -6,8 +6,8 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Summary
 
-- Last regenerated: 2026-07-11
-- Indexed wiki pages: 29
+- Last regenerated: 2026-07-20
+- Indexed wiki pages: 30
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
 - `work-items/`: 9
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-20] candidate | Captured MNQ-003 1m 200 EMA retest continuation thesis | Hypothesis is raw and needs mechanical retest, stop, target, cooldown, and session rules before build/test
 - [2026-07-11] analysis | Built and ran Python MNQ-002 R:R grid | Conservative stop-first bracket tests do not improve the timed-exit baseline; target-first results show high intrabar-fill sensitivity
 - [2026-07-11] fix | Added simplified MNQ-002 RR NinjaTrader strategy fallback | New class avoids custom enums and display/range attributes after NT8 reported many CS0121/CS0229/CS101/CS111-style compile errors
 - [2026-07-11] implementation | Added R:R bracket exits to MNQ-002 NinjaTrader strategy | Strategy can now test TimedOnly, BracketOnly, or BracketWithTimeStop using StopLossPoints and RiskReward parameters
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-11] analysis | Added confirmed MNQ-002 NT8 overnight-negative export | Negative overnight filter carries most of the edge with PF 1.12 and +2.65 NQ points/trade, while non-negative remains weak
 - [2026-07-11] analysis | Parsed first MNQ-002 NinjaTrader Strategy Analyzer exports | All-style run matches Python baseline, but two exports are identical and the available filtered run is worse, so the three-filter comparison is incomplete
 - [2026-07-11] platform | Identified user's NinjaTrader environment as Web/JavaScript rather than NT8 Strategy Analyzer | Next Ninja-side artifact should be a JavaScript visual marker indicator, while Python remains the backtest source of truth
-- [2026-07-11] fix | Clarified MNQ-002 NinjaTrader script must be used as C# NinjaScript | Removed C# region directives and documented that `.js` editors will reject the NT8 strategy code
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
