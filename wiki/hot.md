@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R result | Long-only 2:1R with 50-point stop reportedly has 41.80% win rate after fees, about $318k profit, Sharpe 0.35, Sortino 0.66, and 354-day max recovery
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 1.5R result | Long-only 1.5:1R with 50-point stop reportedly has 45.60% win rate after fees, Sharpe 0.31, Sortino 0.54, and 357-day max recovery
 - [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only EMA limit result | Long-only 1:1R with 50-point stop reportedly has 52.11% win rate after fees, about $167k profit, Sharpe 0.24, Sortino 0.41, and 441-day max recovery
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 EMA limit-entry variant | New strategy enters at the 200 EMA with fixed 50-point stop and optional target/max-hold exits
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 visual backtest strategy | Strategy mirrors the 200 EMA retest rule with candle-extreme plus 2-point stop buffer and 1R target based on entry fill
 - [2026-07-20] analysis | Ran MNQ-003 1m 200 EMA retest first Python backtest | Raw full-RTH 1R version fails under conservative stop-first fills with PF 0.957 and high intrabar-fill sensitivity
 - [2026-07-20] candidate | Captured MNQ-003 1m 200 EMA retest continuation thesis | Hypothesis is raw and needs mechanical retest, stop, target, cooldown, and session rules before build/test
-- [2026-07-11] analysis | Built and ran Python MNQ-002 R:R grid | Conservative stop-first bracket tests do not improve the timed-exit baseline; target-first results show high intrabar-fill sensitivity
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

@@ -47,3 +47,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 EMA limit-entry variant | New strategy enters at the 200 EMA with fixed 50-point stop and optional target/max-hold exits
 ## [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only EMA limit result | Long-only 1:1R with 50-point stop reportedly has 52.11% win rate after fees, about $167k profit, Sharpe 0.24, Sortino 0.41, and 441-day max recovery
 ## [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 1.5R result | Long-only 1.5:1R with 50-point stop reportedly has 45.60% win rate after fees, Sharpe 0.31, Sortino 0.54, and 357-day max recovery
+## [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only 2R result | Long-only 2:1R with 50-point stop reportedly has 41.80% win rate after fees, about $318k profit, Sharpe 0.35, Sortino 0.66, and 354-day max recovery

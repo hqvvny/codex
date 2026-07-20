@@ -168,6 +168,21 @@ User-reported NT8 1.5R result for same long-only branch:
 
 Interpretation: 1.5R improves Sharpe, Sortino, and max recovery versus the 1:1R result, while the win rate falls as expected. This is a healthier risk-adjusted direction than the 1R branch, but R:R only just meets the minimum standard and still needs exported Strategy Analyzer data before comparing net expectancy, drawdown shape, yearly consistency, and profit factor.
 
+User-reported NT8 2R result for same long-only branch:
+
+- Direction: long-only (`DirectionMode = 1`).
+- Entry: buy limit at 200 EMA.
+- Stop: 50 points.
+- Target: 100 points, 2:1R.
+- Fees: included in NinjaTrader result.
+- Net profit: about $318,000.
+- Win rate: 41.80%.
+- Sharpe ratio: 0.35.
+- Sortino ratio: 0.66.
+- Max recovery time: 354 days.
+
+Interpretation: 2R is the best user-reported risk-adjusted variant so far among 1R, 1.5R, and 2R. It has the lowest win rate, as expected, but the highest Sharpe and Sortino and the highest reported net profit, while max recovery is slightly better than 1.5R. It still needs exported Strategy Analyzer data before drawing conclusions about profit factor, drawdown shape, outlier dependence, and year-by-year consistency.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
