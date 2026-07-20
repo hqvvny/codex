@@ -139,6 +139,21 @@ Default parameters:
 
 Implementation note: this version does not wait for a rejection close. If trend is confirmed above EMA, it posts a buy limit at the EMA. If trend is confirmed below EMA, it posts a sell-short limit at the EMA. This is a different hypothesis branch than the first Python test.
 
+User-reported NT8 result for EMA limit-entry variant:
+
+- Direction: long-only (`DirectionMode = 1`).
+- Entry: buy limit at 200 EMA.
+- Stop: 50 points.
+- Target: 50 points, 1:1R.
+- Fees: included in NinjaTrader result.
+- Net profit: about $167,000.
+- Win rate: 52.11%.
+- Sharpe ratio: 0.24.
+- Sortino ratio: 0.41.
+- Max recovery time: 441 days.
+
+Interpretation: this is the first promising MNQ-003 branch. A 52.11% win rate at 1:1R after fees is directionally meaningful. However, Sharpe 0.24 and 441-day recovery are still weak from a prop-firm evaluation perspective. This needs exported Strategy Analyzer data before conclusions: trade count, profit factor, max drawdown, year split, exact date range, instrument, trading-hours template, commission template, and slippage/fill settings.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.

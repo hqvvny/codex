@@ -45,3 +45,4 @@ Append-only chronological log. Each entry is one dated line using:
 ## [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 visual backtest strategy | Strategy mirrors the 200 EMA retest rule with candle-extreme plus 2-point stop buffer and 1R target based on entry fill
 ## [2026-07-20] analysis | Measured MNQ-003 EMA retest depth | Selected retests average about 5.36 points from EMA, but true EMA penetration occurs in only 8.74% of signals and averages 1.87 points when it happens
 ## [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 EMA limit-entry variant | New strategy enters at the 200 EMA with fixed 50-point stop and optional target/max-hold exits
+## [2026-07-20] analysis | Recorded user-reported MNQ-003 NT8 long-only EMA limit result | Long-only 1:1R with 50-point stop reportedly has 52.11% win rate after fees, about $167k profit, Sharpe 0.24, Sortino 0.41, and 441-day max recovery
