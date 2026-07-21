@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] scout | Ran daily MNQ/NQ strategy scout | Added five raw candidates to the queue; recommended MNQ-005 overnight extreme reversal with NY confirmation first, then MNQ-006 volatility-volume-gap regime overlay
 - [2026-07-21] analysis | Added MNQ-003 LucidFlex monthly income target check | One serial account cannot meet a $1.5k/month payout goal; average monthly cashflow needs about 3 staggered serial slots, while more regular monthly payouts require closer to 5 slots
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex all major payout levers | Multiple payout cycles on 50k are the biggest improvement; practical leader is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target up to 5 payouts, with about $3.79k mean net and $4.18k average paid lifecycle
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex larger-payout policies | Serial 1k grid shows minimum-payout harvesting leaves money on the table; best mean is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross payout target, while Eval 7 MNQ / Funded 8 MNQ / $1,500 is the balanced candidate
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
 - [2026-07-21] analysis | Simulated MNQ-003 LucidFlex with 1k bankroll | With $1,000 bankroll, $90 attempts, max 10 active slots, and immediate recycling, 8 MNQ has about $17.6k mean net and $19.3k median net over 252 trading days, while 5 MNQ is smoother with 91.19% profit probability
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
-- [2026-07-21] analysis | Scaled MNQ-003 LucidFlex model across multiple account slots | With 5 slots, static 2 MNQ projects about 6.52 first payouts/year and $2,281 EV/year after challenge costs; dynamic +$500/+250 is slightly lower EV but smoother
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
