@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Corrected MNQ-003 LucidFlex bankroll model to serial one-account operation | With 1k and one active account at a time, 7 MNQ is the cleaner compromise: about $1.8k mean 252-day net, 81.3% profit probability, 9.8% ruin probability, and 51 median days to first payout
 - [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
 - [2026-07-21] analysis | Simulated MNQ-003 LucidFlex with 1k bankroll | With $1,000 bankroll, $90 attempts, max 10 active slots, and immediate recycling, 8 MNQ has about $17.6k mean net and $19.3k median net over 252 trading days, while 5 MNQ is smoother with 91.19% profit probability
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Added time-weighted MNQ-003 LucidFlex payout-path model | With time as primary constraint, static 2 MNQ leads the tested plans at about 3.08 attempts/year/slot, 1.30 first payouts/year/slot, $1.81 EV/trading day, and $456 EV/year/slot after $90 cost
 - [2026-07-21] analysis | Reframed MNQ-003 LucidFlex as convex payoff EV | Static 2 MNQ remains positive EV under capped challenge cost and $500-$2,000 payout assumptions; rough lifecycle model gives about 42.35% joint first-payout rate and $148-$133 EV after a $90-$105 cost band
 - [2026-07-21] analysis | Simulated MNQ-003 dynamic sizing for 50k LucidFlex evaluation | Dynamic 1-to-2 MNQ sizing improves pass speed but not pass rate; conservative +$1,250 up / +$750 down gives 72.44% pass rate, 25.59% breach rate, and 123.5 median pass days
-- [2026-07-21] analysis | Corrected MNQ-003 LucidFlex 50k evaluation-pass framing | 50k evaluation requires reaching $53,000; 1 MNQ static passes slowly with 175 median rolling pass days, while 2 MNQ static passes faster at 58 median rolling days but breaches about 44.61% of starts
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
