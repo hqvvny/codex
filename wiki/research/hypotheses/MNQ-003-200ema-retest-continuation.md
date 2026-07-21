@@ -392,6 +392,27 @@ Python/offline filter scout:
 
 Next NT8 test priority: first run Clean strategy with `UseWeakHourFilter = 1`, `WeakHoursCsv = 10,11,21`; second run `UseWeakHourFilter = 1`, `WeakHoursCsv = 10,11,21,2`.
 
+Verified NT8 weak-hour filter result:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 06-49.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-weak-hours-10-11-21-tradelist-2026-07-21-0649-report.md`.
+- Strategy: `MNQ003EmaLimitEntryCleanStrategy`.
+- User context: weak-hour filter enabled with the first/conservative variant, intended platform hours `10,11,21`.
+- Date range in trade list: 2016-01-04 20:01 to 2026-07-20 18:42.
+- Trades: 5,104.
+- Net profit: $329,006.56 after fees.
+- Fees: $22,253.44 total, about $4.36 per trade.
+- Profit factor: 1.121.
+- Win rate: 42.07%.
+- Average trade: $64.46.
+- Trade-list max drawdown: -$37,140.72.
+- Longest closed recovery: about 354.7 days.
+- 2024 net: -$18,990.20.
+- Year split: 2016 turns slightly negative at -$799.76; 2024 remains negative but improves versus baseline.
+- Hour check: hours 10 and 11 are absent; hour 21 still has 7 entries for -$5,145.52, likely due to timestamp/session-boundary behavior or filter setup details.
+
+Interpretation update: the first weak-hour filter variant is confirmed as an improvement direction versus the slippage-1 baseline: higher net, PF, win rate, average trade, lower max drawdown, slightly shorter recovery, and less 2024 damage. It does not solve 2024, and the fee template appears different from the baseline, so the next comparison should keep commission/slippage settings identical.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
