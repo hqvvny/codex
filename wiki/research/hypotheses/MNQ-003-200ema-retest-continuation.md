@@ -472,6 +472,7 @@ LucidFlex funded-account risk review:
 - Report: `outputs/MNQ-003-lucid-flex-risk-report-2026-07-21.md`.
 - Detailed sizing CSV: `outputs/MNQ-003-lucid-flex-risk-sizing-2026-07-21.csv`.
 - 50k expectancy sketch: `outputs/MNQ-003-lucid-flex-50k-expectancy-2026-07-21.md`.
+- 50k 2 MNQ expectancy sketch: `outputs/MNQ-003-lucid-flex-50k-2mnq-expectancy-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -483,6 +484,7 @@ LucidFlex funded-account risk review:
 - Main risk read: MNQ-003 should be treated as a micro-contract strategy for LucidFlex. The binding constraint is not Lucid's max position size, it is the account's EOD MLL buffer during clustered losing periods.
 - For 50k at 1 MNQ, historical average is about $7.03 per trade or $13.05 per trading day before profit split. At 90% split, the 90 EUR account fee breaks even after roughly 8-9 average trading days, before payout-rule caveats.
 - Rolling-start 50k/1 MNQ sketches show positive approximate EV after the 90 EUR fee across 20-252 trading day horizons, but breach risk rises from about 0.34% over 20 days to about 13.56% over 252 days.
+- For 50k at 2 MNQ, average expectancy doubles to about $14.06 per trade or $26.11 per trading day before split, but the actual full historical path breaches on 2016-02-05 after 24 trading days. Rolling-start breach risk is about 14.70% over 20 days, 23.24% over 30 days, 38.02% over 60 days, and 47.69% over 252 days, so 2 MNQ is too fragile from account start despite positive average EV.
 
 ## First Python Result
 
