@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Tested MNQ-003 LucidFlex all major payout levers | Multiple payout cycles on 50k are the biggest improvement; practical leader is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target up to 5 payouts, with about $3.79k mean net and $4.18k average paid lifecycle
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex larger-payout policies | Serial 1k grid shows minimum-payout harvesting leaves money on the table; best mean is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross payout target, while Eval 7 MNQ / Funded 8 MNQ / $1,500 is the balanced candidate
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex bankroll model to serial one-account operation | With 1k and one active account at a time, 7 MNQ is the cleaner compromise: about $1.8k mean 252-day net, 81.3% profit probability, 9.8% ruin probability, and 51 median days to first payout
 - [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
 - [2026-07-21] analysis | Scaled MNQ-003 LucidFlex model across multiple account slots | With 5 slots, static 2 MNQ projects about 6.52 first payouts/year and $2,281 EV/year after challenge costs; dynamic +$500/+250 is slightly lower EV but smoother
 - [2026-07-21] analysis | Added time-weighted MNQ-003 LucidFlex payout-path model | With time as primary constraint, static 2 MNQ leads the tested plans at about 3.08 attempts/year/slot, 1.30 first payouts/year/slot, $1.81 EV/trading day, and $456 EV/year/slot after $90 cost
-- [2026-07-21] analysis | Reframed MNQ-003 LucidFlex as convex payoff EV | Static 2 MNQ remains positive EV under capped challenge cost and $500-$2,000 payout assumptions; rough lifecycle model gives about 42.35% joint first-payout rate and $148-$133 EV after a $90-$105 cost band
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
