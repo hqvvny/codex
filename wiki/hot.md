@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour fee-matched export | Clean strategy with weak-hour 10/11/21/2 and about $5.16 fees per trade has 4,999 trades, $351,415.16 net profit, PF 1.133, 42.15% win rate, -$37,336.84 max drawdown, and confirms the filter improvement under baseline-like fees
 - [2026-07-21] analysis | Ran MNQ-003 weak-hour OOS overfit check | Skip 10/11/21/2 improves 2022-2026 OOS net from $150.8k to $196.7k and max drawdown from -$47.8k to -$24.2k, while brute-force IS-mined hour combos often fail OOS
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour filter trade-list export | Clean strategy with weak-hour filter 10/11/21/2 has 4,999 trades, $355,414.36 net profit, PF 1.134, 42.37% win rate, -$36,977.64 max drawdown, and keeps 2016 barely positive while 2024 remains negative
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 weak-hour filter trade-list export | Clean strategy with weak-hour filter first variant has 5,104 trades, $329,006.56 net profit, PF 1.121, 42.07% win rate, -$37,140.72 max drawdown, and improves 2024 to -$18,990.20
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Ran MNQ-003 offline filter scout on slippage-1 NT trade list | Weak-hour filters are the best next candidates, especially skipping platform hours 10/11/21; cooldown, max-trade caps, and EMA-slope filters are lower priority based on the scout
 - [2026-07-21] implementation | Added MNQ-003 NinjaTrader 8 clean filter strategy | New clean strategy removes Advanced overload and keeps only core 2R/35 parameters plus trade window, weak-hour, EMA-slope, cooldown, and max-trades-per-session filters
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 slippage-1 full-day trade-list export | Full-day 2R/35 baseline with NinjaTrader monthly fees and slippage 1 has 5,494 trades, $298,890.96 net profit, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, and 2024 as the only negative year
-- [2026-07-20] analysis | Reviewed MNQ-003 NT8 advanced baseline trade-list export | Advanced strategy with optional filters off has 5,489 trades, $297,643.36 net profit after higher fees, PF 1.102, 41.94% win rate, and confirms baseline-compatible signal count
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

@@ -447,6 +447,26 @@ Weak-hour OOS / overfit check:
 
 Interpretation update: the weak-hour concept still has overfit risk, but `10/11/21/2` passes a useful OOS smoke test. It is not merely one of the top in-sample-mined combinations; it leaves 2016-2021 essentially unchanged while improving the later and harder 2022-2026 period. Treat it as a plausible session-quality filter, not a proven standalone edge.
 
+Verified NT8 aggressive weak-hour filter with baseline-like fees:
+
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
+- Review artifact: `outputs/MNQ-003-nt8-weak-hours-10-11-21-2-fee-matched-tradelist-2026-07-21-0719-report.md`.
+- Strategy: `MNQ003EmaLimitEntryCleanStrategy`.
+- User context: aggressive weak-hour filter, intended platform hours `10,11,21,2`.
+- Date range in trade list: 2016-01-04 20:01 to 2026-07-20 18:42.
+- Trades: 4,999.
+- Net profit: $351,415.16 after fees.
+- Fees: $25,794.84 total, about $5.16 per trade, matching the slippage-1 baseline fee template.
+- Profit factor: 1.133.
+- Win rate: 42.15%.
+- Average trade: $70.30.
+- Trade-list max drawdown: -$37,336.84.
+- Longest closed recovery: about 355.8 days.
+- 2024 net: -$19,605.72.
+- Year split: only 2024 is negative; 2016 is nearly flat at $83.08.
+
+Interpretation update: this removes the biggest caveat from the prior aggressive weak-hour export. With the same approximate per-trade fee template as the slippage-1 baseline, `10/11/21/2` remains a clear improvement: higher net profit, PF, win rate, average trade, and lower max drawdown. It is the current best MNQ-003 candidate configuration, pending 2024 regime validation and exact platform-hour/session mapping.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
