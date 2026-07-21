@@ -434,6 +434,19 @@ Verified NT8 aggressive weak-hour filter result:
 
 Interpretation update: this is the best headline MNQ-003 variant so far among tested weak-hour filters. It improves net profit, PF, win rate, average trade, and drawdown versus baseline, while keeping 2016 barely positive. It does not improve 2024 versus the conservative weak-hour filter, so the next research target should be 2024 regime/session behavior rather than more hour pruning.
 
+Weak-hour OOS / overfit check:
+
+- Report: `outputs/MNQ-003-weak-hour-oos-2026-07-21-report.md`.
+- Detailed CSV: `outputs/MNQ-003-weak-hour-oos-2026-07-21.csv`.
+- Source baseline: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 12-23.csv`.
+- Method: offline hour filters applied to the baseline NT trade list.
+- Baseline 2022-2026 OOS: 3,119 trades, $150,805.96 net, PF 1.081, -$47,788.40 max drawdown.
+- Skip 10/11/21/2 2022-2026 OOS: 2,550 trades, $196,722 net, PF 1.130, -$24,222 max drawdown.
+- Skip 10/11/21 2022-2026 OOS: 2,771 trades, $178,537 net, PF 1.107, -$32,930 max drawdown.
+- A brute-force search of 1- to 4-hour combinations optimized on 2016-2021 showed classic overfitting: the best IS hour sets often degraded 2022-2026 badly.
+
+Interpretation update: the weak-hour concept still has overfit risk, but `10/11/21/2` passes a useful OOS smoke test. It is not merely one of the top in-sample-mined combinations; it leaves 2016-2021 essentially unchanged while improving the later and harder 2022-2026 period. Treat it as a plausible session-quality filter, not a proven standalone edge.
+
 ## First Python Result
 
 Conservative same-bar policy: if stop and target are both touched inside the same 1m candle, stop fills first.
