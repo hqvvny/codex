@@ -482,6 +482,8 @@ LucidFlex funded-account risk review:
 - 1k bankroll report: `outputs/MNQ-003-lucid-flex-1k-bankroll-2026-07-21.md`.
 - 1k bankroll time profile: `outputs/MNQ-003-lucid-flex-1k-bankroll-time-profile-2026-07-21.md`.
 - 1k serial bankroll report: `outputs/MNQ-003-lucid-flex-1k-serial-bankroll-2026-07-21.md`.
+- Payout policy grid report: `outputs/MNQ-003-lucid-flex-payout-policy-grid-2026-07-21.md`.
+- Payout policy grid CSV: `outputs/MNQ-003-lucid-flex-payout-policy-grid-2026-07-21.csv`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -503,6 +505,7 @@ LucidFlex funded-account risk review:
 - 1k bankroll simulation: with $1,000 starting bankroll, $90 attempts, max 10 active slots, and immediate recycling, Monte Carlo strongly favors 7-9 MNQ. 8 MNQ has about $17.6k mean net, $19.3k median net, 85.27% profit probability, 14.70% ruin/no-active probability, and 28.23 mean first payouts over 252 trading days. 5 MNQ is smoother with 91.19% profit probability and positive P10 net. Caveat: this first bankroll model does not separately enforce the 5 active funded-account cap.
 - 1k time profile: adding time-to-cashflow keeps 7-9 MNQ as the fast-payout region. Median first payout is about 17-18 days for 7-9 MNQ, and 60-day first-payout probability is about 88-92%. 8 MNQ has the best 60/90/252-day mean net, while 5 MNQ is the smoother business start because it is the only tested size with positive 252-day P10 net.
 - Serial correction: user clarified the real start plan is 0 accounts and one account at a time. Under a 1k serial bankroll model, the five-figure multi-slot expectation does not apply. 8-9 MNQ still leads expected 252-day net at about $2.0k, but 7 MNQ is the cleaner compromise with about $1.8k mean net, 81.3% profit probability, 9.8% ruin probability, 55.9% first-payout probability by 60 days, and 51 median days to first payout.
+- Payout policy grid: testing eval size 5/7/8/9, funded size 7/8/10/12, and gross payout targets $500/$1,000/$1,500/$2,000 shows that minimum-payout harvesting leaves money on the table. Best 252-day mean is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target at about $2,523 mean net, $2,660 median net, 80.3% profit probability, 14.6% ruin probability, and about $1,599 average trader payout when paid. The best balanced candidate is Eval 7 MNQ / Funded 8 MNQ / $1,500 target.
 
 ## First Python Result
 
