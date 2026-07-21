@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
 - [2026-07-21] analysis | Scaled MNQ-003 LucidFlex model across multiple account slots | With 5 slots, static 2 MNQ projects about 6.52 first payouts/year and $2,281 EV/year after challenge costs; dynamic +$500/+250 is slightly lower EV but smoother
 - [2026-07-21] analysis | Added time-weighted MNQ-003 LucidFlex payout-path model | With time as primary constraint, static 2 MNQ leads the tested plans at about 3.08 attempts/year/slot, 1.30 first payouts/year/slot, $1.81 EV/trading day, and $456 EV/year/slot after $90 cost
 - [2026-07-21] analysis | Reframed MNQ-003 LucidFlex as convex payoff EV | Static 2 MNQ remains positive EV under capped challenge cost and $500-$2,000 payout assumptions; rough lifecycle model gives about 42.35% joint first-payout rate and $148-$133 EV after a $90-$105 cost band
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex 50k evaluation-pass framing | 50k evaluation requires reaching $53,000; 1 MNQ static passes slowly with 175 median rolling pass days, while 2 MNQ static passes faster at 58 median rolling days but breaches about 44.61% of starts
 - [2026-07-21] analysis | Estimated MNQ-003 expectancy for 50k LucidFlex at 2 MNQ | Expectancy doubles to about $14.06 per trade and $26.11 per day before split, but the full historical path breaches after 24 trading days and rolling-start breach risk reaches about 47.69% over 252 trading days
 - [2026-07-21] analysis | Estimated MNQ-003 expectancy for 50k LucidFlex at 1 MNQ | Historical expectancy is about $7.03 per trade and $13.05 per trading day before split; 90 EUR fee breaks even after roughly 8-9 average days, with rolling-start breach risk rising by horizon
-- [2026-07-21] analysis | Built MNQ-003 LucidFlex funded-account risk review | EOD drawdown simulation shows the current best candidate must be traded as micros: 25k is not viable at 1 MNQ, 50k supports 1 MNQ, 100k supports 1-2 MNQ, and 150k supports 2-3 MNQ under historical path assumptions
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

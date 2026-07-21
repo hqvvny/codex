@@ -478,6 +478,7 @@ LucidFlex funded-account risk review:
 - Convex payoff EV report: `outputs/MNQ-003-lucid-flex-convex-payoff-ev-2026-07-21.md`.
 - Time-weighted payout path: `outputs/MNQ-003-lucid-flex-time-weighted-payout-path-2026-07-21.md`.
 - Account-slot scaling report: `outputs/MNQ-003-lucid-flex-account-slot-scaling-2026-07-21.md`.
+- Static size curve report: `outputs/MNQ-003-lucid-flex-size-curve-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -495,6 +496,7 @@ LucidFlex funded-account risk review:
 - Convex payoff correction: with a roughly 90 EUR challenge cost and potential $500-$2,000 payout, static 2 MNQ is not "bad" just because breach risk is high. At 55.27% evaluation pass rate, a $500 payout only needs to be realized on about 36.2% of passed accounts to break even before FX/frictions. Rough lifecycle simulation of eval plus funded first payout gives static 2 MNQ about 42.35% joint first-payout rate, $562.52 average trader payout when paid, and about $148-$133 EV after a $90-$105 cost band, with much faster resolution than static 1 MNQ.
 - Time-weighted correction: if time is the dominant constraint, static 2 MNQ is the current leader. It has lower per-attempt EV than static 1 MNQ but resolves much faster: about 3.08 attempts/year/slot, 1.30 first payouts/year/slot, $1.81 EV/trading day, and $456 EV/year/slot after $90 challenge cost. Dynamic +$500/+250 is the closest compromise at about $1.73 EV/trading day and 1.11 first payouts/year/slot.
 - Account-slot scaling: if the user can buy multiple 50k accounts, the objective becomes throughput. Static 2 MNQ with 5 slots projects about 15.39 attempts/year, 6.52 first payouts/year, $3,666 gross trader payouts/year, and $2,281 EV/year after challenge costs. Dynamic +$500/+250 with 5 slots projects about 10.14 attempts/year, 5.55 first payouts/year, $3,089 gross payouts/year, and $2,177 EV/year. Copy-traded accounts are correlated; stagger starts or mix plans for timing diversification.
+- Size curve: testing static 1-10 MNQ on 50k LucidFlex shows the time-weighted EV/day peaks around 8-9 MNQ in this sample. 9 MNQ has 36.74% evaluation pass rate, 63.26% evaluation breach rate, 17.83% joint first-payout rate, 12.1 average days to resolution, and about $9.77 EV/day or $2,462 EV/year/slot after $90 attempt cost. This is aggressive account-farming math, not conservative risk management.
 
 ## First Python Result
 
