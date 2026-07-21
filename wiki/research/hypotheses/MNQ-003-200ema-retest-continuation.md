@@ -486,6 +486,7 @@ LucidFlex funded-account risk review:
 - Payout policy grid CSV: `outputs/MNQ-003-lucid-flex-payout-policy-grid-2026-07-21.csv`.
 - All-levers review: `outputs/MNQ-003-lucid-flex-all-levers-2026-07-21.md`.
 - All-levers grid CSV: `outputs/MNQ-003-lucid-flex-all-levers-grid-2026-07-21.csv`.
+- Monthly income target report: `outputs/MNQ-003-lucid-flex-monthly-income-target-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -509,6 +510,7 @@ LucidFlex funded-account risk review:
 - Serial correction: user clarified the real start plan is 0 accounts and one account at a time. Under a 1k serial bankroll model, the five-figure multi-slot expectation does not apply. 8-9 MNQ still leads expected 252-day net at about $2.0k, but 7 MNQ is the cleaner compromise with about $1.8k mean net, 81.3% profit probability, 9.8% ruin probability, 55.9% first-payout probability by 60 days, and 51 median days to first payout.
 - Payout policy grid: testing eval size 5/7/8/9, funded size 7/8/10/12, and gross payout targets $500/$1,000/$1,500/$2,000 shows that minimum-payout harvesting leaves money on the table. Best 252-day mean is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target at about $2,523 mean net, $2,660 median net, 80.3% profit probability, 14.6% ruin probability, and about $1,599 average trader payout when paid. The best balanced candidate is Eval 7 MNQ / Funded 8 MNQ / $1,500 target.
 - All-levers review: biggest lever is not larger account size, but multiple payout cycles on the same 50k funded account. Best aggressive 50k policy is Eval 9 MNQ / Funded 12 MNQ / $2,000 gross target, keeping up to 5 payouts: about $4.16k mean net, $2.61k median net, 66.5% profit probability, 25.1% ruin probability, and $5.5k average trader payout per paid lifecycle. Best practical starting policy is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target, keeping up to 5 payouts: about $3.79k mean net, $4.23k median net, 76.7% profit probability, 14.1% ruin probability, and $4.18k average trader payout per paid lifecycle.
+- Monthly target: one serial account is not enough for the user's $1.5k/month payout goal. Eval 9 / Funded 8 / $1.5k gross target averages about $501/month with a $0 median month. To average around $1.5k/month requires about 3 staggered serial slots; to make most months exceed $1.5k requires closer to 5 slots, especially under the Eval 9 / Funded 10 / $2k gross policy.
 
 ## First Python Result
 
