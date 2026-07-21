@@ -6,7 +6,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Summary
 
-- Last regenerated: 2026-07-21
+- Last regenerated: 2026-07-22
 - Indexed wiki pages: 31
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-22] analysis | Tested MNQ-003 LucidFlex monthly cashflow with 2k budget | With 2k budget, 3 staggered slots using Eval 9 MNQ / Funded 10 MNQ / $2k gross target clear the average $1.5k/month objective with about $1,628/month and $15.96k mean annual net in the model
 - [2026-07-21] scout | Ran daily MNQ/NQ strategy scout | Added five raw candidates to the queue; recommended MNQ-005 overnight extreme reversal with NY confirmation first, then MNQ-006 volatility-volume-gap regime overlay
 - [2026-07-21] analysis | Added MNQ-003 LucidFlex monthly income target check | One serial account cannot meet a $1.5k/month payout goal; average monthly cashflow needs about 3 staggered serial slots, while more regular monthly payouts require closer to 5 slots
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex all major payout levers | Multiple payout cycles on 50k are the biggest improvement; practical leader is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target up to 5 payouts, with about $3.79k mean net and $4.18k average paid lifecycle
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex bankroll model to serial one-account operation | With 1k and one active account at a time, 7 MNQ is the cleaner compromise: about $1.8k mean 252-day net, 81.3% profit probability, 9.8% ruin probability, and 51 median days to first payout
 - [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
 - [2026-07-21] analysis | Simulated MNQ-003 LucidFlex with 1k bankroll | With $1,000 bankroll, $90 attempts, max 10 active slots, and immediate recycling, 8 MNQ has about $17.6k mean net and $19.3k median net over 252 trading days, while 5 MNQ is smoother with 91.19% profit probability
-- [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
