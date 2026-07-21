@@ -7,7 +7,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 ## Summary
 
 - Last regenerated: 2026-07-21
-- Indexed wiki pages: 30
+- Indexed wiki pages: 31
 - Main unit of work: work items in `wiki/work-items/`
 - Content counts:
 - `work-items/`: 9
@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] implementation | Added MNQ-004 dual EMA momentum retest example strategy | New NT8 example uses fast/slow EMA trend, fast EMA retest tolerance, confirmation close, swing/max stop, R:R target, position sizing option, trend invalidation exit, and session attempt limits
 - [2026-07-21] analysis | Ran MNQ-003 offline filter scout on slippage-1 NT trade list | Weak-hour filters are the best next candidates, especially skipping platform hours 10/11/21; cooldown, max-trade caps, and EMA-slope filters are lower priority based on the scout
 - [2026-07-21] implementation | Added MNQ-003 NinjaTrader 8 clean filter strategy | New clean strategy removes Advanced overload and keeps only core 2R/35 parameters plus trade window, weak-hour, EMA-slope, cooldown, and max-trades-per-session filters
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 slippage-1 full-day trade-list export | Full-day 2R/35 baseline with NinjaTrader monthly fees and slippage 1 has 5,494 trades, $298,890.96 net profit, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, and 2024 as the only negative year
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-20] implementation | Added MNQ-003 NinjaTrader 8 advanced filter strategy | New strategy keeps the 2R/35 EMA limit-entry core and adds optional session windows, weak-hour exclusion, EMA slope, HTF trend, ATR regime, cooldown, max-trade, and time-exit parameters
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 Asia-to-NY-open summary export | Asia-to-NY-open summary has 3,715 trades, $201,095.60 net profit after fees, PF 1.10, 40.59% win rate, -$40,737.80 max drawdown, Sharpe 0.27, Sortino 0.52, and 531.98-day max recovery
 - [2026-07-20] analysis | Reviewed MNQ-003 NT8 NY-session-only summary export | NY-only summary has 2,792 trades, $124,356.28 net profit after fees, PF 1.11, 46.42% win rate, -$20,834.88 max drawdown, Sharpe 0.22, Sortino 0.36, and 489-day max recovery
-- [2026-07-20] analysis | Checked claimed MNQ-003 NY-only export | The provided file still has 5,489 trades across nearly all platform hours, so it appears to be the prior broad-session export rather than a true NY-session-only export
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

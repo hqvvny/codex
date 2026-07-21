@@ -26,6 +26,7 @@ This catalog is the first wiki file to read at the start of every substantive se
 - [[research/hypotheses/MNQ-001-opening-range-liquidity-sweep]] - NY open liquidity sweep hypothesis and first-filter review.
 - [[research/hypotheses/MNQ-002-open-long-1530-exit-1600]] - first mechanical open-long baseline test.
 - [[research/hypotheses/MNQ-003-200ema-retest-continuation]] - 1m 200 EMA retest continuation hypothesis.
+- [[research/hypotheses/MNQ-004-dual-ema-momentum-retest]] - dual EMA momentum retest example hypothesis.
 - [[reference/README]] - router pages that point to authoritative sources.
 - [[reference/hypothesis-template]] - canonical template for strategy hypothesis pages.
 - [[reference/first-filter]] - first-pass acceptance criteria for raw strategy ideas.
