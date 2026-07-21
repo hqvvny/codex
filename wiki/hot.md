@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Reframed MNQ-003 LucidFlex as convex payoff EV | Static 2 MNQ remains positive EV under capped challenge cost and $500-$2,000 payout assumptions; rough lifecycle model gives about 42.35% joint first-payout rate and $148-$133 EV after a $90-$105 cost band
 - [2026-07-21] analysis | Simulated MNQ-003 dynamic sizing for 50k LucidFlex evaluation | Dynamic 1-to-2 MNQ sizing improves pass speed but not pass rate; conservative +$1,250 up / +$750 down gives 72.44% pass rate, 25.59% breach rate, and 123.5 median pass days
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex 50k evaluation-pass framing | 50k evaluation requires reaching $53,000; 1 MNQ static passes slowly with 175 median rolling pass days, while 2 MNQ static passes faster at 58 median rolling days but breaches about 44.61% of starts
 - [2026-07-21] analysis | Estimated MNQ-003 expectancy for 50k LucidFlex at 2 MNQ | Expectancy doubles to about $14.06 per trade and $26.11 per day before split, but the full historical path breaches after 24 trading days and rolling-start breach risk reaches about 47.69% over 252 trading days
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Built MNQ-003 LucidFlex funded-account risk review | EOD drawdown simulation shows the current best candidate must be traded as micros: 25k is not viable at 1 MNQ, 50k supports 1 MNQ, 100k supports 1-2 MNQ, and 150k supports 2-3 MNQ under historical path assumptions
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour fee-matched export | Clean strategy with weak-hour 10/11/21/2 and about $5.16 fees per trade has 4,999 trades, $351,415.16 net profit, PF 1.133, 42.15% win rate, -$37,336.84 max drawdown, and confirms the filter improvement under baseline-like fees
 - [2026-07-21] analysis | Ran MNQ-003 weak-hour OOS overfit check | Skip 10/11/21/2 improves 2022-2026 OOS net from $150.8k to $196.7k and max drawdown from -$47.8k to -$24.2k, while brute-force IS-mined hour combos often fail OOS
-- [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour filter trade-list export | Clean strategy with weak-hour filter 10/11/21/2 has 4,999 trades, $355,414.36 net profit, PF 1.134, 42.37% win rate, -$36,977.64 max drawdown, and keeps 2016 barely positive while 2024 remains negative
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions

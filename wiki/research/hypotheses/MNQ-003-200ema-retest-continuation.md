@@ -475,6 +475,7 @@ LucidFlex funded-account risk review:
 - 50k 2 MNQ expectancy sketch: `outputs/MNQ-003-lucid-flex-50k-2mnq-expectancy-2026-07-21.md`.
 - 50k evaluation-pass simulation: `outputs/MNQ-003-lucid-flex-50k-evaluation-pass-2026-07-21.md`.
 - 50k dynamic-sizing simulation: `outputs/MNQ-003-lucid-flex-50k-dynamic-sizing-2026-07-21.md`.
+- Convex payoff EV report: `outputs/MNQ-003-lucid-flex-convex-payoff-ev-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -489,6 +490,7 @@ LucidFlex funded-account risk review:
 - For 50k at 2 MNQ, average expectancy doubles to about $14.06 per trade or $26.11 per trading day before split, but the actual full historical path breaches on 2016-02-05 after 24 trading days. Rolling-start breach risk is about 14.70% over 20 days, 23.24% over 30 days, 38.02% over 60 days, and 47.69% over 252 days, so 2 MNQ is too fragile from account start despite positive average EV.
 - Corrected evaluation framing: 50k LucidFlex requires $3,000 profit to reach $53,000. A 1 MNQ static plan passes from the full historical start after 496 trading days; rolling starts pass 84.14% of the time with 13.11% breach risk and 175 median pass days. A 2 MNQ static plan breaches from the full historical start after 24 days; rolling starts pass 55.27% of the time with 44.61% breach risk and 58 median pass days.
 - Dynamic sizing grid: daily EOD sizing improves speed but not pass rate. Static 1 MNQ has the best pass rate at 84.14% but median pass time of 175 days. The best first compromise is scale from 1 MNQ to 2 MNQ at +$1,250 buffer and cut back at +$750; this gives 72.44% pass rate, 25.59% breach rate, and 123.5 median pass days. Aggressive scale-up at +$500/+750 is faster but too breach-prone.
+- Convex payoff correction: with a roughly 90 EUR challenge cost and potential $500-$2,000 payout, static 2 MNQ is not "bad" just because breach risk is high. At 55.27% evaluation pass rate, a $500 payout only needs to be realized on about 36.2% of passed accounts to break even before FX/frictions. Rough lifecycle simulation of eval plus funded first payout gives static 2 MNQ about 42.35% joint first-payout rate, $562.52 average trader payout when paid, and about $148-$133 EV after a $90-$105 cost band, with much faster resolution than static 1 MNQ.
 
 ## First Python Result
 
