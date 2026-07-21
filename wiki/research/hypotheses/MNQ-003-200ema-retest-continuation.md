@@ -480,6 +480,7 @@ LucidFlex funded-account risk review:
 - Account-slot scaling report: `outputs/MNQ-003-lucid-flex-account-slot-scaling-2026-07-21.md`.
 - Static size curve report: `outputs/MNQ-003-lucid-flex-size-curve-2026-07-21.md`.
 - 1k bankroll report: `outputs/MNQ-003-lucid-flex-1k-bankroll-2026-07-21.md`.
+- 1k bankroll time profile: `outputs/MNQ-003-lucid-flex-1k-bankroll-time-profile-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -499,6 +500,7 @@ LucidFlex funded-account risk review:
 - Account-slot scaling: if the user can buy multiple 50k accounts, the objective becomes throughput. Static 2 MNQ with 5 slots projects about 15.39 attempts/year, 6.52 first payouts/year, $3,666 gross trader payouts/year, and $2,281 EV/year after challenge costs. Dynamic +$500/+250 with 5 slots projects about 10.14 attempts/year, 5.55 first payouts/year, $3,089 gross payouts/year, and $2,177 EV/year. Copy-traded accounts are correlated; stagger starts or mix plans for timing diversification.
 - Size curve: testing static 1-10 MNQ on 50k LucidFlex shows the time-weighted EV/day peaks around 8-9 MNQ in this sample. 9 MNQ has 36.74% evaluation pass rate, 63.26% evaluation breach rate, 17.83% joint first-payout rate, 12.1 average days to resolution, and about $9.77 EV/day or $2,462 EV/year/slot after $90 attempt cost. This is aggressive account-farming math, not conservative risk management.
 - 1k bankroll simulation: with $1,000 starting bankroll, $90 attempts, max 10 active slots, and immediate recycling, Monte Carlo strongly favors 7-9 MNQ. 8 MNQ has about $17.6k mean net, $19.3k median net, 85.27% profit probability, 14.70% ruin/no-active probability, and 28.23 mean first payouts over 252 trading days. 5 MNQ is smoother with 91.19% profit probability and positive P10 net. Caveat: this first bankroll model does not separately enforce the 5 active funded-account cap.
+- 1k time profile: adding time-to-cashflow keeps 7-9 MNQ as the fast-payout region. Median first payout is about 17-18 days for 7-9 MNQ, and 60-day first-payout probability is about 88-92%. 8 MNQ has the best 60/90/252-day mean net, while 5 MNQ is the smoother business start because it is the only tested size with positive 252-day P10 net.
 
 ## First Python Result
 

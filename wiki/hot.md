@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
 - [2026-07-21] analysis | Simulated MNQ-003 LucidFlex with 1k bankroll | With $1,000 bankroll, $90 attempts, max 10 active slots, and immediate recycling, 8 MNQ has about $17.6k mean net and $19.3k median net over 252 trading days, while 5 MNQ is smoother with 91.19% profit probability
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex static size curve | Static 1-10 MNQ curve shows time-weighted EV/day peaking around 8-9 MNQ; 9 MNQ is aggressive with 63.26% eval breach rate but about $9.77 EV/day and $2,462 EV/year/slot
 - [2026-07-21] analysis | Scaled MNQ-003 LucidFlex model across multiple account slots | With 5 slots, static 2 MNQ projects about 6.52 first payouts/year and $2,281 EV/year after challenge costs; dynamic +$500/+250 is slightly lower EV but smoother
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Reframed MNQ-003 LucidFlex as convex payoff EV | Static 2 MNQ remains positive EV under capped challenge cost and $500-$2,000 payout assumptions; rough lifecycle model gives about 42.35% joint first-payout rate and $148-$133 EV after a $90-$105 cost band
 - [2026-07-21] analysis | Simulated MNQ-003 dynamic sizing for 50k LucidFlex evaluation | Dynamic 1-to-2 MNQ sizing improves pass speed but not pass rate; conservative +$1,250 up / +$750 down gives 72.44% pass rate, 25.59% breach rate, and 123.5 median pass days
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex 50k evaluation-pass framing | 50k evaluation requires reaching $53,000; 1 MNQ static passes slowly with 175 median rolling pass days, while 2 MNQ static passes faster at 58 median rolling days but breaches about 44.61% of starts
-- [2026-07-21] analysis | Estimated MNQ-003 expectancy for 50k LucidFlex at 2 MNQ | Expectancy doubles to about $14.06 per trade and $26.11 per day before split, but the full historical path breaches after 24 trading days and rolling-start breach risk reaches about 47.69% over 252 trading days
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
