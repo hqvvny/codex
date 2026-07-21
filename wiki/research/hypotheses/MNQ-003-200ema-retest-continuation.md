@@ -471,6 +471,7 @@ LucidFlex funded-account risk review:
 
 - Report: `outputs/MNQ-003-lucid-flex-risk-report-2026-07-21.md`.
 - Detailed sizing CSV: `outputs/MNQ-003-lucid-flex-risk-sizing-2026-07-21.csv`.
+- 50k expectancy sketch: `outputs/MNQ-003-lucid-flex-50k-expectancy-2026-07-21.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -480,6 +481,8 @@ LucidFlex funded-account risk review:
 - $100k survives at 2 MNQ, with minimum modeled buffer about $418; 1 MNQ is safer.
 - $150k survives at 3 MNQ, with minimum modeled buffer about $627; 2 MNQ is safer.
 - Main risk read: MNQ-003 should be treated as a micro-contract strategy for LucidFlex. The binding constraint is not Lucid's max position size, it is the account's EOD MLL buffer during clustered losing periods.
+- For 50k at 1 MNQ, historical average is about $7.03 per trade or $13.05 per trading day before profit split. At 90% split, the 90 EUR account fee breaks even after roughly 8-9 average trading days, before payout-rule caveats.
+- Rolling-start 50k/1 MNQ sketches show positive approximate EV after the 90 EUR fee across 20-252 trading day horizons, but breach risk rises from about 0.34% over 20 days to about 13.56% over 252 days.
 
 ## First Python Result
 

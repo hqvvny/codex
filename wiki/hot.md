@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Estimated MNQ-003 expectancy for 50k LucidFlex at 1 MNQ | Historical expectancy is about $7.03 per trade and $13.05 per trading day before split; 90 EUR fee breaks even after roughly 8-9 average days, with rolling-start breach risk rising by horizon
 - [2026-07-21] analysis | Built MNQ-003 LucidFlex funded-account risk review | EOD drawdown simulation shows the current best candidate must be traded as micros: 25k is not viable at 1 MNQ, 50k supports 1 MNQ, 100k supports 1-2 MNQ, and 150k supports 2-3 MNQ under historical path assumptions
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour fee-matched export | Clean strategy with weak-hour 10/11/21/2 and about $5.16 fees per trade has 4,999 trades, $351,415.16 net profit, PF 1.133, 42.15% win rate, -$37,336.84 max drawdown, and confirms the filter improvement under baseline-like fees
 - [2026-07-21] analysis | Ran MNQ-003 weak-hour OOS overfit check | Skip 10/11/21/2 improves 2022-2026 OOS net from $150.8k to $196.7k and max drawdown from -$47.8k to -$24.2k, while brute-force IS-mined hour combos often fail OOS
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 weak-hour filter trade-list export | Clean strategy with weak-hour filter first variant has 5,104 trades, $329,006.56 net profit, PF 1.121, 42.07% win rate, -$37,140.72 max drawdown, and improves 2024 to -$18,990.20
 - [2026-07-21] implementation | Added MNQ-004 dual EMA momentum retest example strategy | New NT8 example uses fast/slow EMA trend, fast EMA retest tolerance, confirmation close, swing/max stop, R:R target, position sizing option, trend invalidation exit, and session attempt limits
 - [2026-07-21] analysis | Ran MNQ-003 offline filter scout on slippage-1 NT trade list | Weak-hour filters are the best next candidates, especially skipping platform hours 10/11/21; cooldown, max-trade caps, and EMA-slope filters are lower priority based on the scout
-- [2026-07-21] implementation | Added MNQ-003 NinjaTrader 8 clean filter strategy | New clean strategy removes Advanced overload and keeps only core 2R/35 parameters plus trade window, weak-hour, EMA-slope, cooldown, and max-trades-per-session filters
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
