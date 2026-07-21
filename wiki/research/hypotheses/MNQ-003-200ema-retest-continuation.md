@@ -1,6 +1,6 @@
 ---
 type: strategy-hypothesis
-updated: 2026-07-20
+updated: 2026-07-21
 status: testing
 verdict: failed-first-pass
 ---
@@ -466,6 +466,20 @@ Verified NT8 aggressive weak-hour filter with baseline-like fees:
 - Year split: only 2024 is negative; 2016 is nearly flat at $83.08.
 
 Interpretation update: this removes the biggest caveat from the prior aggressive weak-hour export. With the same approximate per-trade fee template as the slippage-1 baseline, `10/11/21/2` remains a clear improvement: higher net profit, PF, win rate, average trade, and lower max drawdown. It is the current best MNQ-003 candidate configuration, pending 2024 regime validation and exact platform-hour/session mapping.
+
+LucidFlex funded-account risk review:
+
+- Report: `outputs/MNQ-003-lucid-flex-risk-report-2026-07-21.md`.
+- Detailed sizing CSV: `outputs/MNQ-003-lucid-flex-risk-sizing-2026-07-21.csv`.
+- Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
+- LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
+- Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
+- 1 NQ source size breaches every listed LucidFlex account size early in 2016.
+- $25k is not viable with normal 1 MNQ execution; historical path breaches even at 1 MNQ.
+- $50k survives at 1 MNQ, with minimum modeled buffer about $709.
+- $100k survives at 2 MNQ, with minimum modeled buffer about $418; 1 MNQ is safer.
+- $150k survives at 3 MNQ, with minimum modeled buffer about $627; 2 MNQ is safer.
+- Main risk read: MNQ-003 should be treated as a micro-contract strategy for LucidFlex. The binding constraint is not Lucid's max position size, it is the account's EOD MLL buffer during clustered losing periods.
 
 ## First Python Result
 

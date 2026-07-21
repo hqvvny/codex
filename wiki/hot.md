@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-21] analysis | Built MNQ-003 LucidFlex funded-account risk review | EOD drawdown simulation shows the current best candidate must be traded as micros: 25k is not viable at 1 MNQ, 50k supports 1 MNQ, 100k supports 1-2 MNQ, and 150k supports 2-3 MNQ under historical path assumptions
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour fee-matched export | Clean strategy with weak-hour 10/11/21/2 and about $5.16 fees per trade has 4,999 trades, $351,415.16 net profit, PF 1.133, 42.15% win rate, -$37,336.84 max drawdown, and confirms the filter improvement under baseline-like fees
 - [2026-07-21] analysis | Ran MNQ-003 weak-hour OOS overfit check | Skip 10/11/21/2 improves 2022-2026 OOS net from $150.8k to $196.7k and max drawdown from -$47.8k to -$24.2k, while brute-force IS-mined hour combos often fail OOS
 - [2026-07-21] analysis | Reviewed MNQ-003 NT8 aggressive weak-hour filter trade-list export | Clean strategy with weak-hour filter 10/11/21/2 has 4,999 trades, $355,414.36 net profit, PF 1.134, 42.37% win rate, -$36,977.64 max drawdown, and keeps 2016 barely positive while 2024 remains negative
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] implementation | Added MNQ-004 dual EMA momentum retest example strategy | New NT8 example uses fast/slow EMA trend, fast EMA retest tolerance, confirmation close, swing/max stop, R:R target, position sizing option, trend invalidation exit, and session attempt limits
 - [2026-07-21] analysis | Ran MNQ-003 offline filter scout on slippage-1 NT trade list | Weak-hour filters are the best next candidates, especially skipping platform hours 10/11/21; cooldown, max-trade caps, and EMA-slope filters are lower priority based on the scout
 - [2026-07-21] implementation | Added MNQ-003 NinjaTrader 8 clean filter strategy | New clean strategy removes Advanced overload and keeps only core 2R/35 parameters plus trade window, weak-hour, EMA-slope, cooldown, and max-trades-per-session filters
-- [2026-07-21] analysis | Reviewed MNQ-003 NT8 slippage-1 full-day trade-list export | Full-day 2R/35 baseline with NinjaTrader monthly fees and slippage 1 has 5,494 trades, $298,890.96 net profit, PF 1.103, 41.92% win rate, -$47,788.40 max drawdown, and 2024 as the only negative year
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
