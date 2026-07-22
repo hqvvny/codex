@@ -489,6 +489,7 @@ LucidFlex funded-account risk review:
 - Monthly income target report: `outputs/MNQ-003-lucid-flex-monthly-income-target-2026-07-21.md`.
 - 2k budget monthly target report: `outputs/MNQ-003-lucid-flex-2k-budget-monthly-target-2026-07-22.md`.
 - 3-strategy portfolio assumption report: `outputs/MNQ-003-lucid-flex-3-strategy-portfolio-assumption-2026-07-22.md`.
+- Deployment readiness report: `outputs/MNQ-003-deployment-readiness-2026-07-22.md`.
 - Source export: `/Users/farell.trades/Downloads/NinjaTrader Grid 2026-07-21 07-19.csv`.
 - LucidFlex rules checked from Lucid Trading Help Center on 2026-07-21: no daily loss limit, no consistency rule, account MLL is EOD trailing drawdown, and max position limits are much larger than the safe size for this strategy.
 - Simulation method: EOD balance by trade exit date, no payout withdrawals, no intraday mark-to-market breach model, source 1 NQ PnL scaled linearly to MNQ equivalents.
@@ -515,6 +516,7 @@ LucidFlex funded-account risk review:
 - Monthly target: one serial account is not enough for the user's $1.5k/month payout goal. Eval 9 / Funded 8 / $1.5k gross target averages about $501/month with a $0 median month. To average around $1.5k/month requires about 3 staggered serial slots; to make most months exceed $1.5k requires closer to 5 slots, especially under the Eval 9 / Funded 10 / $2k gross policy.
 - 2k budget monthly target: three staggered slots using Eval 9 MNQ / Funded 10 MNQ / $2k gross target are the first tested configuration that clears the user's average $1.5k/month goal: about $1,628 average monthly cashflow, $1,800 median month, $15.96k mean annual net, $5.85k P10 annual net, and 93.9% profit probability. Balanced Eval 9 / Funded 8 / $1.5k target has lower ruin risk but weaker monthly target hit.
 - 3-strategy portfolio assumption: if two more independent strategies with MNQ-003-like lifecycle stats are found, a 3-strategy x 1-slot portfolio produces about $1.8k average monthly cashflow and $18.0k mean annual net in the assumption model. A 3-strategy x 2-slot portfolio produces about $3.5k average monthly cashflow, $3.6k median month, $35.0k mean annual net, and about 20.3% zero-cash months. This is an assumption test; the extra strategies do not exist yet.
+- Deployment readiness: MNQ-003 is promising but not deployment ready. Freeze `MNQ-003-B1` and run promotion checks before funded use: locked provenance, parameter sensitivity, proper walk-forward/OOS, 2024 regime review, cost stress, execution realism, risk shell, manual review, and SIM/secondary observation. Build MNQ-005 in parallel rather than adding random new MNQ-003 filters.
 
 ## First Python Result
 

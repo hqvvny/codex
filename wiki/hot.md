@@ -18,6 +18,7 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 
 ## Recent Log Entries
 
+- [2026-07-22] planning | Added MNQ-003 deployment-readiness checklist | Current EMA candidate is promising but not deployment ready; freeze MNQ-003-B1, run promotion checks, and build MNQ-005 in parallel instead of stacking more random filters
 - [2026-07-22] analysis | Modeled MNQ-003-like 3-strategy prop portfolio assumption | If two more independent strategies with similar lifecycle stats are found, 3 strategies x 1 slot gives about $1.8k/month, while 3 strategies x 2 slots gives about $3.5k/month and $35k mean annual net in the assumption model
 - [2026-07-22] analysis | Tested MNQ-003 LucidFlex monthly cashflow with 2k budget | With 2k budget, 3 staggered slots using Eval 9 MNQ / Funded 10 MNQ / $2k gross target clear the average $1.5k/month objective with about $1,628/month and $15.96k mean annual net in the model
 - [2026-07-21] scout | Ran daily MNQ/NQ strategy scout | Added five raw candidates to the queue; recommended MNQ-005 overnight extreme reversal with NY confirmation first, then MNQ-006 volatility-volume-gap regime overlay
@@ -25,7 +26,6 @@ This page is auto-generated from wiki files. Do not hand-edit outside the marked
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex all major payout levers | Multiple payout cycles on 50k are the biggest improvement; practical leader is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross target up to 5 payouts, with about $3.79k mean net and $4.18k average paid lifecycle
 - [2026-07-21] analysis | Tested MNQ-003 LucidFlex larger-payout policies | Serial 1k grid shows minimum-payout harvesting leaves money on the table; best mean is Eval 9 MNQ / Funded 8 MNQ / $1,500 gross payout target, while Eval 7 MNQ / Funded 8 MNQ / $1,500 is the balanced candidate
 - [2026-07-21] analysis | Corrected MNQ-003 LucidFlex bankroll model to serial one-account operation | With 1k and one active account at a time, 7 MNQ is the cleaner compromise: about $1.8k mean 252-day net, 81.3% profit probability, 9.8% ruin probability, and 51 median days to first payout
-- [2026-07-21] analysis | Added time profile to MNQ-003 LucidFlex 1k bankroll model | Median first payout is about 17-18 days for 7-9 MNQ; 8 MNQ leads mean net by 60/90/252 days, while 5 MNQ is smoother with positive 252-day P10 net
 
 <!-- NEXT_ACTIONS_START -->
 ## Next Actions
